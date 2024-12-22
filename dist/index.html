@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html>
+
+<head><script defer src="main.js"></script></head>
+<meta charset="utf-8" />
+<meta content="IE=edge" http-equiv="X-UA-Compatible" />
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<title>РемТоргХолод</title>
+<link href="images/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+<link href="images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+<link href="images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+<link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+<link href="images/manifest.json" rel="manifest" />
+<meta content="images/mstile-150x150.png" name="msapplication-TileImage" />
+<meta content="#ffffff" name="theme-color" />
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src="js/config.js"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect" />
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;amp;display=swap"
+  rel="stylesheet" />
+<link href="css/simplebar.min.css" rel="stylesheet" />
+<link href="/css/line.css" rel="stylesheet" type="text/css" />
+<link href="css/theme-rtl.min.css" id="style-rtl" rel="stylesheet" type="text/css" />
+<link href="css/theme.min.css" id="style-default" rel="stylesheet" type="text/css" />
+<link href="css/user-rtl.min.css" id="user-style-rtl" rel="stylesheet" type="text/css" />
+<link href="css/user.min.css" id="user-style-default" rel="stylesheet" type="text/css" />
+<script>
+  var phoenixIsRTL = window.config.config.phoenixIsRTL;
+  if (phoenixIsRTL) {
+    var linkDefault = document.getElementById('style-default');
+    var userLinkDefault = document.getElementById('user-style-default');
+    linkDefault.setAttribute('disabled', true);
+    userLinkDefault.setAttribute('disabled', true);
+    document.querySelector('html').setAttribute('dir', 'rtl');
+  } else {
+    var linkRTL = document.getElementById('style-rtl');
+    var userLinkRTL = document.getElementById('user-style-rtl');
+    linkRTL.setAttribute('disabled', true);
+    userLinkRTL.setAttribute('disabled', true);
+  }
+</script>
+<link href="css/leaflet.css" rel="stylesheet" />
+<link href="css/MarkerCluster.css" rel="stylesheet" />
+<link href="css/MarkerCluster.Default.css" rel="stylesheet" />
+
+<body>
+  <main class="main" id="top">
+    <nav class="navbar navbar-vertical navbar-expand-lg" style="display:none;">
+      <script>
+        var navbarStyle = window.config.config.phoenixNavbarStyle;
+        if (navbarStyle && navbarStyle !== 'transparent') {
+          document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
+        }
+        div.collapse.navbar - collapse #navbarVerticalCollapse
+      </script>
+      <div class="navbar-vertical-content">
+        <ul class="navbar-nav flex-column" id="navbarVerticalNav">
+          <li class="nav-item">
+            <div class="nav-item-wrapper"><a aria-expanded="false" class="nav-link label-1" data-bs-toggle=""
+                href="index.html"><span class="nav-link-icon"><span data-feather="home"></span></span><span
+                  class="nav-link-text">Главная</span></a></div>
+          </li>
+          <p class="navbar-vertical-label">Портал</p>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-docs" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-docs" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="file-text"></span></span><span
+                    class="nav-link-text">Документы</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-docs">
+                  <li class="nav-item"><a aria-controls="nv-admin" aria-expanded="true"
+                      class="nav-link dropdown-indicator" data-bs-toggle="collapse" href="#nv-admin">
+                      <div class="d-flex align-items-center">
+                        <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                          class="nav-link-text">Заявки на ремонт</span>
+                      </div>
+                    </a>
+                    <div class="parent-wrapper">
+                      <ul class="nav collapse parent" data-bs-parent="#e-commerce" id="nv-admin">
+                        <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                            href="repair_orders.html">
+                            <div class="d-flex align-items-center"><span class="nav-link-text">Заявки ремонт на
+                                адресе</span></div>
+                          </a></li>
+                        <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                            href="repair_orders.html">
+                            <div class="d-flex align-items-center"><span class="nav-link-text">Заявки ремонт на
+                                складе</span></div>
+                          </a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="assembly_orders.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Заявки на монтаж</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="service_orders.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Заявки на обслуживание</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="fault_requests.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Сообщения о
+                          неисправности</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="complaints.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Рекламации </span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-delivery" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-delivery" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="truck"></span></span><span
+                    class="nav-link-text">Доставка</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-delivery">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="equipment_orders.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Подбор оборудования</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="delivery_equipments.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Доставка оборудования</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="delivery_equipments.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Заявки на доставку</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="delivery_routes.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Маршруты доставки</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="routes.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Маршруты</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="day_tracks.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Дневные треки</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="drivers.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Водители</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="vehicle_types.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Тип транспортных средств</span>
+                      </div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-equipment" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-equipment"
+                role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="bar-chart-2"></span></span><span
+                    class="nav-link-text">Учет оборудования</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-equipment">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="incomings.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Приходы</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="carts.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Комплектация</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="carts/view.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Корзина</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="shipments.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Отгрузки</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="reports/stock_product_instances.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Отчет по остаткам</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="/reports/stock_product_instances_detail.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Детальный отчет по
+                          остаткам</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="/reports/stock_product_instances_move.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Движение оборудования на
+                          складе</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-tms" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-tms" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="layers"></span></span><span class="nav-link-text">Учет
+                    ТМЦ</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-tms">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="incomings.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Приходы</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="warehouses.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Склады</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="incoming_documents.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Документы поступления
+                          ТМЦ</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="movement_documents.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Документы перемещения
+                          ТМЦ</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="disposal_documents.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Документы списания ТМЦ</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="inventory_documents.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Документы инвенторизации
+                          ТМЦ</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="part_movement_registers.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Реестр движения ТМЦ</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="remainders.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Реестр остатков ТМЦ</span>
+                      </div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-handbook" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-handbook" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="book-open"></span></span><span
+                    class="nav-link-text">Справочники</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-handbook">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="companies.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Клиенты</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="masters.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Мастера</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="brands.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Бренды</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="products.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Оборудование</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="malfunctions.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Заявленные неисправности</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="service_companies.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Обслуживающие компании</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="general_contractors.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Генеральные подрядчики</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="assembly_teams.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Монтажные бригады</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="unit_of_measures.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Единицы измерения</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="parts.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Запчасти</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="jobs.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Работы</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="defects.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Неисправности</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="price_lists.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Прайс-листы</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="payment_statuses.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Статусы оплаты</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="order_priorities.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Приоритеты заявок</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="colors.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Цвета</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="product_states.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Состояние оборудования</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="product_states.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Статусы оборудования</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="assembly_types.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Типы монтажа</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="complaint_types.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Виды рекламаций</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="readiness_status_groups.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Группы статусов
+                          готовности</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="readiness_statuses.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Статусы готовности</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="contractors.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Подрядчик</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-repair" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-repair" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="file-text"></span></span><span
+                    class="nav-link-text">Отчеты</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-repair">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="service_acts.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Акты выполненных работ</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="reports/repair_orders_time.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Отчет по заявкам на
+                          ремонт</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="reports/repair_orders_register.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Сводный реестр заявок на
+                          ремонт</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="reports/register_parts_for_disposal.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Реестр ТМЦ на списание со
+                          склада</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-maps" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-maps" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="map"></span></span><span
+                    class="nav-link-text">Карты</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-maps">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="reports/repair_orders_time.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Карта заявок на ремонт</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="/reports/assembly_map.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Карта заявок на монтаж</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="service_map.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Карта заявок на
+                          обслуживание</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <p class="navbar-vertical-label">Администрирование </p>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="members.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="users"></span></span><span class="nav-link-text">Пользователи</span></div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="members.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="command"></span></span><span class="nav-link-text">Департаменты</span></div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="members.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="user-check"></span></span><span class="nav-link-text">Партнеры</span></div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-settings" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-settings" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="settings"></span></span><span
+                    class="nav-link-text">Настройки</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-settings">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="settings.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Настройки портала</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="widgets.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Виджеты</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="roles.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Роли</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <p class="navbar-vertical-label">Компоненты </p>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-forms" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-forms" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="layout"></span></span><span
+                    class="nav-link-text">Формы</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-forms">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="form_base.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Базовые формы</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="form_advance.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Продвинутые формы</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="buttons.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="box"></span></span>Кнопки</div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="nv-icons" aria-expanded="false"
+                class="nav-link dropdown-indicator label-1" data-bs-toggle="collapse" href="#nv-icons" role="button">
+                <div class="d-flex align-items-center">
+                  <div class="dropdown-indicator-icon"><span class="fas fa-caret-right"></span></div><span
+                    class="nav-link-icon"><span data-feather="codesandbox"></span></span><span
+                    class="nav-link-text">Иконки</span>
+                </div>
+              </a>
+              <div class="parent-wrapper label-1">
+                <ul class="nav collapse parent" data-bs-parent="#navbarVerticalCollapse" id="nv-icons">
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="feather.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Иконки Feather</span></div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle=""
+                      href="fontawesome.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Иконки Font Awesome</span>
+                      </div>
+                    </a></li>
+                  <li class="nav-item"><a aria-expanded="false" class="nav-link" data-bs-toggle="" href="unicons.html">
+                      <div class="d-flex align-items-center"><span class="nav-link-text">Иконки Unicons</span></div>
+                    </a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="notes.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="info"></span></span><span class="nav-link-text">Уведомления</span></div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="srm.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="bar-chart-2"></span></span><span class="nav-link-text">Графики и диаграммы</span>
+                </div>
+              </a></div>
+          </li>
+          <li class="nav-item">
+            <hr class="navbar-vertical-line" />
+            <div class="nav-item-wrapper"><a aria-controls="" aria-expanded="false" class="nav-link label-1"
+                data-bs-toggle="" href="tables.html" role="button">
+                <div class="d-flex align-items-center"><span class="nav-link-icon"><span
+                      data-feather="menu"></span></span><span class="nav-link-text">Таблицы</span></div>
+              </a></div>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-vertical-footer"><button
+          class="btn navbar-vertical-toggle border-0 fw-semibold w-100 white-space-nowrap d-flex align-items-center"><span
+            class="uil uil-left-arrow-to-left fs-8"></span><span class="uil uil-arrow-from-right fs-8"></span><span
+            class="navbar-vertical-footer-text ms-2">Свернуть</span></button></div>
+    </nav>
+    <div class="navbar navbar-top fixed-top navbar-expand" id="navbarDefault">
+      <div class="collapse navbar-collapse justify-content-between">
+        <div class="navbar-logo"><button aria-controls="navbarVerticalCollapse" aria-expanded="false"
+            aria-label="Toggle Navigation" class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent"
+            data-bs-target="#navbarVerticalCollapse" data-bs-toggle="collapse" type="button"><span
+              class="navbar-toggle-icon"><span class="toggle-line"></span></span></button><a
+            class="navbar-brand me-1 me-sm-3" href="index.html">
+            <div class="d-flex align-items-center">
+              <div class="d-flex align-items-center"><img alt="РемТоргХолод" src="images/logo.svg" width="100%" /></div>
+            </div>
+          </a></div>
+        <div class="search-box navbar-top-search-box d-none d-lg-block"
+          data-list="{\&quot;valueNames\&quot;:[\&quot;title\&quot;]}" style="width:25rem;">
+          <form class="position-relative" data-bs-display="static" data-bs-toggle="search"><input aria-label="Найти"
+              class="form-control search-input fuzzy-search rounded-pill form-control-sm" placeholder="Найти..."
+              type="search" /><span class="fas fa-search search-box-icon"></span></form>
+          <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
+            data-bs-dismiss="search"><button aria-label="Close" class="btn btn-link p-0"></button></div>
+          <div class="dropdown-menu border start-0 py-0 overflow-hidden w-100">
+            <div class="scrollbar-overlay" style="max-height: 30rem;">
+              <div class="list pb-3">
+                <h6 class="dropdown-header text-body-highlight fs-10 py-2">24 <span
+                    class="text-body-quaternary">результата</span></h6>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Вы искали
+                </h6>
+                <div class="py-2"><a class="dropdown-item" href="repair_orders.html.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+                          data-fa-transform="shrink-2"></span> Заявка № 15171</div>
+                    </div>
+                  </a><a class="dropdown-item" href="users.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+                          data-fa-transform="shrink-2"></span> Компания "РемТоргХолод"</div>
+                    </div>
+                  </a></div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Документы</h6>
+                <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center"
+                    href="apps/e-commerce/landing/product-details.html">
+                    <div class="flex-1">
+                      <h6 class="mb-0 text-body-highlight title">Заявка № 15171</h6>
+                      <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+                          class="fw-medium text-body-tertiary text-opactity-85">г. Химки, ул. Совхозная, д. 9</span></p>
+                    </div>
+                  </a><a class="dropdown-item py-2 d-flex align-items-center"
+                    href="apps/e-commerce/landing/product-details.html">
+                    <div class="flex-1">
+                      <h6 class="mb-0 text-body-highlight title">Заявка № 151</h6>
+                      <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+                          class="fw-medium text-body-tertiary text-opactity-85 ms-2">Московская область Щелковский
+                          м.р.Огуднево д.Центральная ул.25</span></p>
+                    </div>
+                  </a></div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Карты</h6>
+                <div class="py-2"><a class="dropdown-item" href="maps.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-link text-body"
+                          data-fa-transform="shrink-2"></span> г. Химки, ул. Совхозная, д. 9</div>
+                    </div>
+                  </a></div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Файлы</h6>
+                <div class="py-2"><a class="dropdown-item" href="files.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span
+                          class="fa-solid fa-file-zipper text-body me-2" data-fa-transform="shrink-2"></span>Накладная №
+                        15171.pdf</div>
+                    </div>
+                  </a><a class="dropdown-item" href="apps/e-commerce/landing/product-details.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span
+                          class="fa-solid fa-file-lines text-body me-2" data-fa-transform="shrink-2"></span>Заявка №
+                        15171.pdf</div>
+                    </div>
+                  </a><a class="dropdown-item" href="apps/e-commerce/landing/product-details.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-image text-body me-2"
+                          data-fa-transform="shrink-2"></span>Заявка № 151.png</div>
+                    </div>
+                  </a></div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Пользователи
+                </h6>
+                <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
+                    <div class="avatar avatar-l status-online me-2 text-body"><img alt="" class="rounded-circle"
+                        src="images/10.webp" /></div>
+                    <div class="flex-1">
+                      <h6 class="mb-0 text-body-highlight title">Журавлева Анна</h6>
+                      <p class="fs-10 mb-0 d-flex text-body-tertiary">anna@service.galievr.ru</p>
+                    </div>
+                  </a><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
+                    <div class="avatar avatar-l me-2 text-body"><img alt="" class="rounded-circle"
+                        src="images/12.webp" /></div>
+                    <div class="flex-1">
+                      <h6 class="mb-0 text-body-highlight title">Жуков Иван</h6>
+                      <p class="fs-10 mb-0 d-flex text-body-tertiary">ivan@@service.galievr.ru</p>
+                    </div>
+                  </a></div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Похожее:</h6>
+                <div class="py-2"><a class="dropdown-item" href="apps/e-commerce/landing/product-details.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span
+                          class="fa-brands fa-firefox-browser text-body" data-fa-transform="shrink-2"></span> Заявка №
+                        18789</div>
+                    </div>
+                  </a><a class="dropdown-item" href="apps/e-commerce/landing/product-details.html">
+                    <div class="d-flex align-items-center">
+                      <div class="fw-normal text-body-highlight title"><span class="fa-brands fa-chrome text-body"
+                          data-fa-transform="shrink-2"></span> г. Химки, ул.Мира</div>
+                    </div>
+                  </a></div>
+              </div>
+              <div class="text-center">
+                <p class="fallback fw-bold fs-7 d-none">Ничего не найдено</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="navbar-nav navbar-nav-icons flex-row">
+          <li class="nav-item">
+            <div class="theme-control-toggle fa-icon-wait px-2"><input
+                class="form-check-input ms-0 theme-control-toggle-input" data-theme-control="phoenixTheme"
+                id="themeControlToggle" type="checkbox" value="dark" /><label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-light" data-bs-placement="left"
+                data-bs-toggle="tooltip" for="themeControlToggle" title="Переключить на дневную"><span class="icon"
+                  data-feather="moon"></span></label><label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-dark" data-bs-placement="left"
+                data-bs-toggle="tooltip" for="themeControlToggle" title="Переключить на ночную"><span class="icon"
+                  data-feather="sun"></span></label></div>
+          </li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link"
+              data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" role="button"
+              style="min-width: 2.25rem"><span data-feather="bell" style="height:20px;width:20px;"></span></a>
+            <div aria-labelledby="navbarDropdownNotfication"
+              class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
+              id="navbarDropdownNotfication">
+              <div class="card position-relative border-0">
+                <div class="card-header p-2">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="text-body-emphasis mb-0">Уведомления</h5><button class="btn btn-link p-0 fs-9 fw-normal"
+                      type="button">Отметить все прочитанными</button>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="scrollbar-overlay" style="height: 27rem;">
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer p-0 border-top border-translucent border-0">
+                  <div class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"><a class="fw-bolder"
+                      href="pages/notifications.html">История уведомлений</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link"
+              data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="navbarDropdownNindeDots"
+              role="button"><svg fill="none" height="16" viewbox="0 0 16 16" width="16"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2" cy="2" fill="currentColor" r="2"></circle>
+                <circle cx="2" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="2" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="2" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="2" fill="currentColor" r="2"></circle>
+              </svg></a>
+            <div aria-labelledby="navbarDropdownNindeDots"
+              class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
+              data-bs-popper="static">
+              <div class="card bg-body-emphasis position-relative border-0">
+                <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
+                  <div class="row text-center align-items-center gx-0 gy-0">
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/yandex.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Яндекс</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/logo-icon.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">РемТоргХолод</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/google-drive.webp" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Гугл-диск</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/skype.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Скайп</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/whatsapp.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">WhatsApp</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/outlook.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Oultlook</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/yandex.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Яндекс</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/logo-icon.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">РемТоргХолод</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/google-drive.webp" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Гугл-диск</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/skype.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Скайп</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/whatsapp.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">WhatsApp</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/outlook.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Oultlook</p>
+                      </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link lh-1 pe-0"
+              data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="navbarDropdownUser" role="button">
+              <div class="avatar avatar-l"><img alt="" class="rounded-circle" src="images/57.webp" /></div>
+            </a>
+            <div aria-labelledby="navbarDropdownUser"
+              class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border">
+              <div class="card position-relative border-0">
+                <div class="card-body p-0">
+                  <div class="text-center pt-4 pb-3">
+                    <div class="avatar avatar-xl"><img alt="" class="rounded-circle" src="images/57.webp" /></div>
+                    <h6 class="mt-2 text-body-emphasis">Анна Журавлева</h6>
+                  </div>
+                  <div class="mb-3 mx-3"><input class="form-control form-control-sm" id="statusUpdateInput"
+                      placeholder="Обновить свой статус" type="text" /></div>
+                </div>
+                <div class="overflow-auto scrollbar" style="height: 10rem;">
+                  <ul class="nav d-flex flex-column mb-2 pb-1">
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="user"></span><span>Профиль</span></a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="pie-chart"></span>Главная страница</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="settings"></span>Настройки аккаунта </a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="help-circle"></span>Техподдержка</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="globe"></span>Язык</a></li>
+                  </ul>
+                </div>
+                <div class="card-footer p-0 border-top border-translucent">
+                  <hr />
+                  <div class="px-3"><a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="#!"><span
+                        class="me-2" data-feather="log-out"></span>Выход</a></div>
+                  <div class="my-2 text-center fw-bold fs-10 text-body-quaternary"><a class="text-body-quaternary me-1"
+                      href="#!">Политика конфенденциальности</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <div class="d-flex flex-center content-min-h">
+        <div class="text-center py-9"><img alt="" class="img-fluid mb-7 d-dark-none" src="images/logo.svg" /></div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="js/popper.min.js"></script>
+
+</html>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/anchor.min.js"></script>
+<script src="js/is.min.js"></script>
+<script src="js/all.min.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+<script src="js/list.min.js"></script>
+<script src="js/feather.min.js"></script>
+<script src="js/dayjs.min.js"></script>
+<script src="js/phoenix.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/leaflet.markercluster.js"></script>
+<script src="js/leaflet-tilelayer-colorfilter.min.js"></script>
+<script src="js/ecommerce-dashboard.js"></script>

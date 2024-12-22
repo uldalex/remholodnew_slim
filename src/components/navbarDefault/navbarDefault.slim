@@ -1,0 +1,47 @@
+div#navbarDefault.navbar.navbar-top.fixed-top.navbar-expand
+				div.collapse.navbar-collapse.justify-content-between
+						div.navbar-logo
+								button.btn.navbar-toggler.navbar-toggler-humburger-icon.hover-bg-transparent[type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"]
+										span.navbar-toggle-icon
+												span.toggle-line
+								a.navbar-brand.me-1.me-sm-3[href="index.html"]
+									.d-flex.align-items-center
+												.d-flex.align-items-center
+														img[src="images/logo.svg" alt="РемТоргХолод" width="100%"]
+						.search-box.navbar-top-search-box.d-none.d-lg-block[data-list="{\"valueNames\":[\"title\"]}" style="width:25rem;"]
+								form.position-relative[data-bs-toggle="search" data-bs-display="static"]
+										input.form-control.search-input.fuzzy-search.rounded-pill.form-control-sm[type="search" placeholder="Найти..." aria-label="Найти"]
+										span.fas.fa-search.search-box-icon
+								.btn-close.position-absolute.end-0.top-50.translate-middle.cursor-pointer.shadow-none[data-bs-dismiss="search"]
+										button.btn.btn-link.p-0[aria-label="Close"]
+								include ./src/components/navbarDefault/search_dropdown.slim
+						ul.navbar-nav.navbar-nav-icons.flex-row
+								li.nav-item
+									div.theme-control-toggle.fa-icon-wait.px-2
+											input#themeControlToggle.form-check-input.ms-0.theme-control-toggle-input[type="checkbox" data-theme-control="phoenixTheme" value="dark"]
+											label.mb-0.theme-control-toggle-label.theme-control-toggle-light[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на дневную"]
+													span.icon[data-feather="moon"]
+											label.mb-0.theme-control-toggle-label.theme-control-toggle-dark[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на ночную"]
+													span.icon[data-feather="sun"]
+								li.nav-item.dropdown
+										a.nav-link[href="#" style="min-width: 2.25rem" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside"]
+												span[data-feather="bell" style="height:20px;width:20px;"]
+										include ./src/components/navbarDefault/note_dropdown.slim
+								li.nav-item.dropdown
+										a#navbarDropdownNindeDots.nav-link[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+												svg[width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"]
+														circle[cx="2" cy="2" r="2" fill="currentColor"]
+														circle[cx="2" cy="8" r="2" fill="currentColor"]
+														circle[cx="2" cy="14" r="2" fill="currentColor"]
+														circle[cx="8" cy="8" r="2" fill="currentColor"]
+														circle[cx="8" cy="14" r="2" fill="currentColor"]
+														circle[cx="14" cy="8" r="2" fill="currentColor"]
+														circle[cx="14" cy="14" r="2" fill="currentColor"]
+														circle[cx="8" cy="2" r="2" fill="currentColor"]
+														circle[cx="14" cy="2" r="2" fill="currentColor"]
+										include ./src/components/navbarDefault/links_dropdown.slim
+								li.nav-item.dropdown
+										a#navbarDropdownUser.nav-link.lh-1.pe-0[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+												.avatar.avatar-l
+														img.rounded-circle[src="images/57.webp" alt=""]
+										include ./src/components/navbarDefault/user_dropdown.slim

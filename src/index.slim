@@ -1,0 +1,13 @@
+- require 'slim/include'
+doctype html
+html
+	include ./components/head/head.slim
+	body
+		main#top.main
+			include ./components/navbar/navbar.slim
+			include ./components/navbarDefault/navbarDefault.slim
+			.content
+				.d-flex.flex-center.content-min-h
+					.text-center.py-9
+						img.img-fluid.mb-7.d-dark-none[src="images/logo.svg" alt=""]
+	include ./components/footer/footer.slim

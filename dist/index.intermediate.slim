@@ -1,0 +1,671 @@
+- require 'slim/include'
+doctype html
+html
+	head
+	meta[charset="utf-8"]
+	meta[http-equiv="X-UA-Compatible" content="IE=edge"]
+ 	meta[name="viewport" content="width=device-width, initial-scale=1"]
+ 	title 
+		| РемТоргХолод
+	link[rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"]
+	link[rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"]
+	link[rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"]
+	link[rel="shortcut icon" type="image/x-icon" href="images/favicon.png"]
+	link[rel="manifest" href="images/manifest.json"]
+	meta[name="msapplication-TileImage" content="images/mstile-150x150.png"]
+	meta[name="theme-color" content="#ffffff"]
+	script[src="js/imagesloaded.pkgd.min.js"]
+	script[src="js/simplebar.min.js"]
+	script[src="js/config.js"]
+	link[rel="preconnect" href="https://fonts.googleapis.com"]
+	link[rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""]
+	link[rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"]
+	link[href="css/simplebar.min.css" rel="stylesheet"]
+	link[href="/css/line.css" type="text/css" rel="stylesheet"]
+	link#style-rtl[href="css/theme-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#style-default[href="css/theme.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-rtl[href="css/user-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-default[href="css/user.min.css" type="text/css" rel="stylesheet"]
+	javascript:
+		var phoenixIsRTL = window.config.config.phoenixIsRTL; if (phoenixIsRTL) { var linkDefault = document.getElementById('style-default'); var userLinkDefault = document.getElementById('user-style-default'); linkDefault.setAttribute('disabled', true); userLinkDefault.setAttribute('disabled', true); document.querySelector('html').setAttribute('dir', 'rtl'); } else { var linkRTL = document.getElementById('style-rtl'); var userLinkRTL = document.getElementById('user-style-rtl'); linkRTL.setAttribute('disabled', true); userLinkRTL.setAttribute('disabled', true); } 
+	link[href="css/leaflet.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.Default.css" rel="stylesheet"]
+	body
+		main#top.main
+			nav.navbar.navbar-vertical.navbar-expand-lg style="display:none;"
+				javascript:
+						var navbarStyle = window.config.config.phoenixNavbarStyle;
+						if (navbarStyle && navbarStyle !== 'transparent') {
+							document.querySelector('body').classList.add(`navbar-${navbarStyle}`);
+						}
+								div.collapse.navbar-collapse#navbarVerticalCollapse
+				/ scrollbar removed
+				div.navbar-vertical-content
+					ul.navbar-nav.flex-column#navbarVerticalNav
+						li.nav-item
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="index.html" data-bs-toggle="" aria-expanded="false"]
+									span.nav-link-icon
+										span[data-feather="home"]
+									span.nav-link-text
+										| Главная
+						p.navbar-vertical-label
+							| Портал
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-docs" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-docs"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="file-text"]
+										span.nav-link-text
+											| Документы
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-docs"]
+										li.nav-item
+											a.nav-link.dropdown-indicator[href="#nv-admin" data-bs-toggle="collapse" aria-expanded="true" aria-controls="nv-admin"]
+												div.d-flex.align-items-center
+													div.dropdown-indicator-icon
+														span.fas.fa-caret-right
+													span.nav-link-text
+														| Заявки на ремонт
+											div.parent-wrapper
+												ul.nav.collapse.parent[data-bs-parent="#e-commerce" id="nv-admin"]
+													li.nav-item
+														a.nav-link[href="repair_orders.html" data-bs-toggle="" aria-expanded="false"]
+															div.d-flex.align-items-center
+																span.nav-link-text
+																	| Заявки ремонт на адресе
+													li.nav-item
+														a.nav-link[href="repair_orders.html" data-bs-toggle="" aria-expanded="false"]
+															div.d-flex.align-items-center
+																span.nav-link-text
+																	| Заявки ремонт на складе
+										li.nav-item
+											a.nav-link[href="assembly_orders.html" data-bs-toggle="" aria-expanded="false" ]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Заявки на монтаж
+										li.nav-item
+											a.nav-link[href="service_orders.html" data-bs-toggle="" aria-expanded="false" ]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Заявки на обслуживание
+										li.nav-item
+											a.nav-link[href="fault_requests.html" data-bs-toggle="" aria-expanded="false" ]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Сообщения о неисправности
+										li.nav-item
+											a.nav-link[href="complaints.html" data-bs-toggle="" aria-expanded="false" ]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Рекламации                        
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-delivery" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-delivery"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="truck"]
+										span.nav-link-text
+											| Доставка
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-delivery"]
+										li.nav-item
+											a.nav-link[href="equipment_orders.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Подбор оборудования
+										li.nav-item
+											a.nav-link[href="delivery_equipments.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Доставка оборудования
+										li.nav-item
+											a.nav-link[href="delivery_equipments.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Заявки на доставку
+										li.nav-item
+											a.nav-link[href="delivery_routes.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Маршруты доставки
+										li.nav-item
+											a.nav-link[href="routes.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Маршруты
+										li.nav-item
+											a.nav-link[href="day_tracks.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Дневные треки
+										li.nav-item
+											a.nav-link[href="drivers.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Водители
+										li.nav-item
+											a.nav-link[href="vehicle_types.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Тип транспортных средств
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-equipment" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-equipment"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="bar-chart-2"]
+										span.nav-link-text
+											| Учет оборудования
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-equipment"]
+										li.nav-item
+											a.nav-link[href="incomings.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Приходы
+										li.nav-item
+											a.nav-link[href="carts.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Комплектация
+										li.nav-item
+											a.nav-link[href="carts/view.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Корзина
+										li.nav-item
+											a.nav-link[href="shipments.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Отгрузки
+										li.nav-item
+											a.nav-link[href="reports/stock_product_instances.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Отчет по остаткам
+										li.nav-item
+											a.nav-link[href="/reports/stock_product_instances_detail.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Детальный отчет по остаткам
+										li.nav-item
+											a.nav-link[href="/reports/stock_product_instances_move.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Движение оборудования на складе
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-tms" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-tms"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="layers"]
+										span.nav-link-text
+											| Учет ТМЦ
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-tms"]
+										li.nav-item
+											a.nav-link[href="incomings.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Приходы
+										li.nav-item
+											a.nav-link[href="warehouses.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Склады
+										li.nav-item
+											a.nav-link[href="incoming_documents.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Документы поступления ТМЦ
+										li.nav-item
+											a.nav-link[href="movement_documents.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Документы перемещения ТМЦ
+										li.nav-item
+											a.nav-link[href="disposal_documents.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Документы списания ТМЦ
+										li.nav-item
+											a.nav-link[href="inventory_documents.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Документы инвенторизации ТМЦ
+										li.nav-item
+											a.nav-link[href="part_movement_registers.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Реестр движения ТМЦ
+										li.nav-item
+											a.nav-link[href="remainders.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Реестр остатков ТМЦ
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-handbook" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-handbook"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="book-open"]
+										span.nav-link-text
+											| Справочники
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-handbook"]
+										li.nav-item
+											a.nav-link[href="companies.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Клиенты
+										li.nav-item
+											a.nav-link[href="masters.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Мастера
+										li.nav-item
+											a.nav-link[href="brands.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Бренды
+										li.nav-item
+											a.nav-link[href="products.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Оборудование
+										li.nav-item
+											a.nav-link[href="malfunctions.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Заявленные неисправности
+										li.nav-item
+											a.nav-link[href="service_companies.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Обслуживающие компании
+										li.nav-item
+											a.nav-link[href="general_contractors.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Генеральные подрядчики
+										li.nav-item
+											a.nav-link[href="assembly_teams.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Монтажные бригады
+										li.nav-item
+											a.nav-link[href="unit_of_measures.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Единицы измерения
+										li.nav-item
+											a.nav-link[href="parts.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Запчасти
+										li.nav-item
+											a.nav-link[href="jobs.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Работы
+										li.nav-item
+											a.nav-link[href="defects.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Неисправности
+										li.nav-item
+											a.nav-link[href="price_lists.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Прайс-листы
+										li.nav-item
+											a.nav-link[href="payment_statuses.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Статусы оплаты
+										li.nav-item
+											a.nav-link[href="order_priorities.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Приоритеты заявок
+										li.nav-item
+											a.nav-link[href="colors.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Цвета
+										li.nav-item
+											a.nav-link[href="product_states.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Состояние оборудования
+										li.nav-item
+											a.nav-link[href="product_states.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Статусы оборудования
+										li.nav-item
+											a.nav-link[href="assembly_types.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Типы монтажа
+										li.nav-item
+											a.nav-link[href="complaint_types.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Виды рекламаций
+										li.nav-item
+											a.nav-link[href="readiness_status_groups.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Группы статусов готовности
+										li.nav-item
+											a.nav-link[href="readiness_statuses.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Статусы готовности
+										li.nav-item
+											a.nav-link[href="contractors.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Подрядчик
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-repair" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-repair"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="file-text"]
+										span.nav-link-text
+											| Отчеты
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-repair"]
+										li.nav-item
+											a.nav-link[href="service_acts.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Акты выполненных работ
+										li.nav-item
+											a.nav-link[href="reports/repair_orders_time.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Отчет по заявкам на ремонт
+										li.nav-item
+											a.nav-link[href="reports/repair_orders_register.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Сводный реестр заявок на ремонт
+										li.nav-item
+											a.nav-link[href="reports/register_parts_for_disposal.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Реестр ТМЦ на списание со склада
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-maps" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-maps"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="map"]
+										span.nav-link-text
+											| Карты
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-maps"]
+										li.nav-item
+											a.nav-link[href="reports/repair_orders_time.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Карта заявок на ремонт
+										li.nav-item
+											a.nav-link[href="/reports/assembly_map.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Карта заявок на монтаж
+										li.nav-item
+											a.nav-link[href="service_map.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Карта заявок на обслуживание
+						p.navbar-vertical-label
+							| Администрирование				
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="members.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="users"]
+										span.nav-link-text
+											| Пользователи
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="members.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="command"]
+										span.nav-link-text
+											| Департаменты
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="members.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="user-check"]
+										span.nav-link-text
+											| Партнеры
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-settings" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-settings"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="settings"]
+										span.nav-link-text
+											| Настройки
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-settings"]
+										li.nav-item
+											a.nav-link[href="settings.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Настройки портала
+										li.nav-item
+											a.nav-link[href="widgets.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Виджеты
+										li.nav-item
+											a.nav-link[href="roles.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Роли
+						p.navbar-vertical-label
+							| Компоненты				
+						li.nav-item
+							hr.navbar-vertical-line
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-forms" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-forms"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="layout"]
+										span.nav-link-text
+											| Формы
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-forms"]
+										li.nav-item
+											a.nav-link[href="form_base.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Базовые формы
+										li.nav-item
+											a.nav-link[href="form_advance.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Продвинутые формы
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="buttons.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="box"]
+										| Кнопки
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.dropdown-indicator.label-1[href="#nv-icons" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="nv-icons"]
+									div.d-flex.align-items-center
+										div.dropdown-indicator-icon
+											span.fas.fa-caret-right
+										span.nav-link-icon
+											span[data-feather="codesandbox"]
+										span.nav-link-text
+											| Иконки
+								div.parent-wrapper.label-1
+									ul.nav.collapse.parent[data-bs-parent="#navbarVerticalCollapse" id="nv-icons"]
+										li.nav-item
+											a.nav-link[href="feather.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Иконки Feather
+										li.nav-item
+											a.nav-link[href="fontawesome.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Иконки Font Awesome
+										li.nav-item
+											a.nav-link[href="unicons.html" data-bs-toggle="" aria-expanded="false"]
+												div.d-flex.align-items-center
+													span.nav-link-text
+														| Иконки Unicons
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="notes.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="info"]
+										span.nav-link-text
+											| Уведомления
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="srm.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="bar-chart-2"]
+										span.nav-link-text
+											| Графики и диаграммы
+						li.nav-item
+							hr.navbar-vertical-line
+							div.nav-item-wrapper
+								a.nav-link.label-1[href="tables.html" role="button" data-bs-toggle="" aria-expanded="false" aria-controls=""]
+									div.d-flex.align-items-center
+										span.nav-link-icon
+											span[data-feather="menu"]
+										span.nav-link-text
+											| Таблицы
+				div.navbar-vertical-footer
+					button.btn.navbar-vertical-toggle.border-0.fw-semibold.w-100.white-space-nowrap.d-flex.align-items-center
+						span.uil.uil-left-arrow-to-left.fs-8
+						span.uil.uil-arrow-from-right.fs-8
+						span.navbar-vertical-footer-text.ms-2
+							| Свернуть
+
+			div#navbarDefault.navbar.navbar-top.fixed-top.navbar-expand
+				div.collapse.navbar-collapse.justify-content-between
+						div.navbar-logo
+								button.btn.navbar-toggler.navbar-toggler-humburger-icon.hover-bg-transparent[type="button" data-bs-toggle="collapse" data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false" aria-label="Toggle Navigation"]
+										span.navbar-toggle-icon
+												span.toggle-line
+								a.navbar-brand.me-1.me-sm-3[href="index.html"]
+									.d-flex.align-items-center
+												.d-flex.align-items-center
+														img[src="images/logo.svg" alt="РемТоргХолод" width="100%"]
+						.search-box.navbar-top-search-box.d-none.d-lg-block[data-list="{\"valueNames\":[\"title\"]}" style="width:25rem;"]
+								form.position-relative[data-bs-toggle="search" data-bs-display="static"]
+										input.form-control.search-input.fuzzy-search.rounded-pill.form-control-sm[type="search" placeholder="Найти..." aria-label="Найти"]
+										span.fas.fa-search.search-box-icon
+								.btn-close.position-absolute.end-0.top-50.translate-middle.cursor-pointer.shadow-none[data-bs-dismiss="search"]
+										button.btn.btn-link.p-0[aria-label="Close"]
+								include ./src/components/navbarDefault/search_dropdown.slim
+						ul.navbar-nav.navbar-nav-icons.flex-row
+								li.nav-item
+									div.theme-control-toggle.fa-icon-wait.px-2
+											input#themeControlToggle.form-check-input.ms-0.theme-control-toggle-input[type="checkbox" data-theme-control="phoenixTheme" value="dark"]
+											label.mb-0.theme-control-toggle-label.theme-control-toggle-light[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на дневную"]
+													span.icon[data-feather="moon"]
+											label.mb-0.theme-control-toggle-label.theme-control-toggle-dark[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на ночную"]
+													span.icon[data-feather="sun"]
+								li.nav-item.dropdown
+										a.nav-link[href="#" style="min-width: 2.25rem" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside"]
+												span[data-feather="bell" style="height:20px;width:20px;"]
+										include ./src/components/navbarDefault/note_dropdown.slim
+								li.nav-item.dropdown
+										a#navbarDropdownNindeDots.nav-link[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+												svg[width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"]
+														circle[cx="2" cy="2" r="2" fill="currentColor"]
+														circle[cx="2" cy="8" r="2" fill="currentColor"]
+														circle[cx="2" cy="14" r="2" fill="currentColor"]
+														circle[cx="8" cy="8" r="2" fill="currentColor"]
+														circle[cx="8" cy="14" r="2" fill="currentColor"]
+														circle[cx="14" cy="8" r="2" fill="currentColor"]
+														circle[cx="14" cy="14" r="2" fill="currentColor"]
+														circle[cx="8" cy="2" r="2" fill="currentColor"]
+														circle[cx="14" cy="2" r="2" fill="currentColor"]
+										include ./src/components/navbarDefault/links_dropdown.slim
+								li.nav-item.dropdown
+										a#navbarDropdownUser.nav-link.lh-1.pe-0[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+												.avatar.avatar-l
+														img.rounded-circle[src="images/57.webp" alt=""]
+										include ./src/components/navbarDefault/user_dropdown.slim
+
+			.content
+				.d-flex.flex-center.content-min-h
+					.text-center.py-9
+						img.img-fluid.mb-7.d-dark-none[src="images/logo.svg" alt=""]
+	script[src="js/popper.min.js"]
+script[src="js/bootstrap.min.js"]
+script[src="js/anchor.min.js"]
+script[src="js/is.min.js"]
+script[src="js/all.min.js"]
+script[src="js/lodash.min.js"]
+script[src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"]
+script[src="js/list.min.js"]
+script[src="js/feather.min.js"]
+script[src="js/dayjs.min.js"]
+script[src="js/phoenix.js"]
+script[src="js/echarts.min.js"]
+script[src="js/leaflet.js"]
+script[src="js/leaflet.markercluster.js"]
+script[src="js/leaflet-tilelayer-colorfilter.min.js"]
+script[src="js/ecommerce-dashboard.js"]

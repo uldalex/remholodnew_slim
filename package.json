@@ -1,0 +1,39 @@
+{
+  "name": "rem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "node browser-sync.js",
+    "watch": "nodemon --watch 'src/**/*' --exec 'npm run preprocess'",
+    "preprocess": "node preprocess.js",
+    "build": "npm run preprocess && webpack --mode production",
+    "dev": "webpack serve --mode development",
+    "block-add": "node createComponent.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "glob": "^11.0.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "jquery": "^3.7.1",
+    "sass": "^1.83.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.3",
+    "chokidar": "^4.0.3",
+    "eslint": "^9.17.0",
+    "js-beautify": "^1.15.1",
+    "json-loader": "^0.5.7",
+    "nodemon": "^3.1.9",
+    "prettier": "^3.4.2",
+    "stylelint": "^16.12.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
+  }
+}

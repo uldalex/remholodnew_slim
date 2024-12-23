@@ -1,3 +1,6 @@
+include ./src/components/modals/modal_search.slim
+javascript:
+		var navbarTopShape = window.config.config.phoenixNavbarTopShape; var navbarPosition = window.config.config.phoenixNavbarPosition; var body = document.querySelector('body'); var navbarDefault = document.querySelector('#navbarDefault'); var navbarTop = document.querySelector('#navbarTop'); var topNavSlim = document.querySelector('#topNavSlim'); var navbarTopSlim = document.querySelector('#navbarTopSlim'); var navbarCombo = document.querySelector('#navbarCombo'); var navbarComboSlim = document.querySelector('#navbarComboSlim'); var dualNav = document.querySelector('#dualNav'); var documentElement = document.documentElement; var navbarVertical = document.querySelector('.navbar-vertical'); if (navbarPosition === 'dual-nav') { topNavSlim.remove(); navbarTop.remove(); navbarVertical.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarDefault.remove(); dualNav.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'dual'); } else if (navbarTopShape === 'slim' 
 script[src="js/popper.min.js"]
 script[src="js/bootstrap.min.js"]
 script[src="js/anchor.min.js"]

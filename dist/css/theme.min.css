@@ -32153,7 +32153,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical.navbar-expand-xs .navbar-v
 
 .navbar-vertical .navbar-vertical-content .nav-link-text {
     padding-top: .125rem;
-    white-space: pre-wrap;
+    white-space: normal;
 }
 
 .navbar-vertical .nav-item-wrapper:has(.active) .dropdown-indicator.label-1.collapsed .nav-link-text,

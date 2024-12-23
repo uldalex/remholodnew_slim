@@ -1016,6 +1016,325 @@
         </ul>
       </div>
     </div>
+    <nav class="navbar navbar-top navbar-slim fixed-top navbar-expand" id="topNavSlim" style="display:none;">
+      <div class="collapse navbar-collapse justify-content-between">
+        <div class="navbar-logo"><button aria-controls="navbarVerticalCollapse" aria-expanded="false"
+            aria-label="Toggle Navigation" class="btn navbar-toggler navbar-toggler-humburger-icon hover-bg-transparent"
+            data-bs-target="#navbarVerticalCollapse" data-bs-toggle="collapse" type="button"><span
+              class="navbar-toggle-icon"></span><span class="toggle-line"></span></button><a
+            class="navbar-brand navbar-brand" href="index.html"><img alt="РемТоргХолод" src="images/logo-min.svg"
+              width="100%" /></a></div>
+        <ul class="navbar-nav navbar-nav-icons flex-row">
+          <li class="nav-item">
+            <div class="theme-control-toggle fa-ion-wait pe-2 theme-control-toggle-slim"><input
+                class="form-check-input ms-0 theme-control-toggle-input" data-theme-control="phoenixTheme"
+                id="themeControlToggle" type="checkbox" value="dark" /><label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-light" data-bs-placement="left"
+                data-bs-toggle="tooltip" for="themeControlToggle" title="Переключить на ночную"><span
+                  class="icon me-1 d-none d-sm-block" data-feather="moon"></span><span
+                  class="fs-9 fw-bold">Ночь</span></label><label
+                class="mb-0 theme-control-toggle-label theme-control-toggle-dark" data-bs-placement="left"
+                data-bs-toggle="tooltip" for="themeControlToggle" title="Переключить на дневную"><span
+                  class="icon me-1 d-none d-sm-block" data-feather="sun"></span><span
+                  class="fs-9 fw-bold">День</span></label></div>
+          </li>
+          <li class="nav-item"><a class="nav-link" data-bs-target="#searchBoxModal" data-bs-toggle="modal"
+              href="#"><span data-feather="search" style="height:12px;width:12px;"></span></a></li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link"
+              data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="navbarDropdownNotification"
+              role="button"><span data-feather="bell" style="height:12px;width:12px;"></span></a>
+            <div aria-labelledby="navbarDropdownNotfication"
+              class="dropdown-menu dropdown-menu-end notification-dropdown-menu py-0 shadow border navbar-dropdown-caret"
+              id="navbarDropdownNotfication">
+              <div class="card position-relative border-0">
+                <div class="card-header p-2">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="text-body-emphasis mb-0">Уведомления</h5><button class="btn btn-link p-0 fs-9 fw-normal"
+                      type="button">Отметить все прочитанными</button>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="scrollbar-overlay" style="height: 27rem;">
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative read border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3"><img alt="" class="rounded-circle"
+                              src="images/30.webp" /></div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Фролов Дмитрий</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span
+                                class="me-1 fs-10">????</span>Когда сдашь отчет?<span
+                                class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">10мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:41 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="px-2 px-sm-3 py-3 notification-card position-relative unread border-bottom">
+                      <div class="d-flex align-items-center justify-content-between position-relative">
+                        <div class="d-flex">
+                          <div class="avatar avatar-m status-online me-3">
+                            <div class="avatar-name rounded-circle"><span>А</span></div>
+                          </div>
+                          <div class="flex-1 me-sm-3">
+                            <h4 class="fs-9 text-body-emphasis">Журавлева Анна</h4>
+                            <p class="fs-9 text-body-highlight mb-2 mb-sm-3 fw-normal"><span class="me-1 fs-10">Создано
+                                системное событие</span>
+                            <p>Уведомление системы</p><span
+                              class="ms-2 text-body-quaternary text-opacity-75 fw-bold fs-10">20мин</span></p>
+                            <p class="text-body-secondary fs-9 mb-0"><span class="me-1 fas fa-clock"></span><span
+                                class="fw-bold">10:20 </span>Декабрь 7,2024</p>
+                          </div>
+                        </div>
+                        <div class="d-none d-sm-block"><button aria-expanded="false" aria-haspopup="true"
+                            class="btn fs-10 btn-sm dropdown-toggle dropdown-caret-none transition-none notification-dropdown-toggle"
+                            data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown"
+                            type="button"><span class="fas fa-ellipsis-h fs-10 text-body"></span></button>
+                          <div class="dropdown-menu dropdown-menu-end py-2"><a class="dropdown-item" href="#!">Отметить
+                              как непрочитанное</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer p-0 border-top border-translucent border-0">
+                  <div class="my-2 text-center fw-bold fs-10 text-body-tertiary text-opactity-85"><a class="fw-bolder"
+                      href="pages/notifications.html">История уведомлений</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true" class="nav-link"
+              data-bs-auto-close="outside" data-bs-toggle="dropdown" href="#" id="navbarDropdownNindeDots"
+              role="button"><svg fill="none" height="10" viewBox="0 0 16 16" width="10"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="2" cy="2" fill="currentColor" r="2"></circle>
+                <circle cx="2" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="2" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="8" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="14" fill="currentColor" r="2"></circle>
+                <circle cx="8" cy="2" fill="currentColor" r="2"></circle>
+                <circle cx="14" cy="2" fill="currentColor" r="2"></circle>
+              </svg></a>
+            <div aria-labelledby="navbarDropdownNindeDots"
+              class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-nine-dots shadow border"
+              data-bs-popper="static">
+              <div class="card bg-body-emphasis position-relative border-0">
+                <div class="card-body pt-3 px-3 pb-0 overflow-auto scrollbar" style="height: 20rem;">
+                  <div class="row text-center align-items-center gx-0 gy-0">
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/yandex.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Яндекс</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/logo-icon.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">РемТоргХолод</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/google-drive.webp" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Гугл-диск</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/skype.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Скайп</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/whatsapp.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">WhatsApp</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/outlook.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Oultlook</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/yandex.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Яндекс</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/logo-icon.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">РемТоргХолод</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/google-drive.webp" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Гугл-диск</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/skype.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Скайп</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/whatsapp.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">WhatsApp</p>
+                      </a></div>
+                    <div class="col-4"><a
+                        class="d-block bg-body-secondary-hover p-2 rounded-3 text-center text-decoration-none mb-3"
+                        href="#!"><img alt="" src="images/outlook.svg" width="30" />
+                        <p class="mb-0 text-body-emphasis text-truncate fs-10 mt-1 pt-1">Oultlook</p>
+                      </a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item dropdown"><a aria-expanded="false" aria-haspopup="true"
+              class="nav-link lh-1 pe-0 white-space-nowrap" data-bs-auto-close="outside" data-bs-toggle="dropdown"
+              href="#!" id="navbarDropdownUser" role="button">Анна<span
+                class="fa-solid fa-chevron-down fs-10"></span></a>
+            <div aria-labelledby="navbarDropdownUser"
+              class="dropdown-menu dropdown-menu-end navbar-dropdown-caret py-0 dropdown-profile shadow border">
+              <div class="card position-relative border-0">
+                <div class="card-body p-0">
+                  <div class="text-center pt-4 pb-3">
+                    <div class="avatar avatar-xl"><img alt="" class="rounded-circle" src="images/57.webp" /></div>
+                    <h6 class="mt-2 text-body-emphasis">Анна Журавлева</h6>
+                  </div>
+                  <div class="mb-3 mx-3"><input class="form-control form-control-sm" id="statusUpdateInput"
+                      placeholder="Обновить свой статус" type="text" /></div>
+                </div>
+                <div class="overflow-auto scrollbar" style="height: 10rem;">
+                  <ul class="nav d-flex flex-column mb-2 pb-1">
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="user"></span><span>Профиль</span></a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="pie-chart"></span>Главная страница</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="settings"></span>Настройки аккаунта </a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="help-circle"></span>Техподдержка</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#!"><span class="me-2 text-body"
+                          data-feather="globe"></span>Язык</a></li>
+                  </ul>
+                </div>
+                <div class="card-footer p-0 border-top border-translucent">
+                  <hr />
+                  <div class="px-3"><a class="btn btn-phoenix-secondary d-flex flex-center w-100" href="#!"><span
+                        class="me-2" data-feather="log-out"></span>Выход</a></div>
+                  <div class="my-2 text-center fw-bold fs-10 text-body-quaternary"><a class="text-body-quaternary me-1"
+                      href="#!">Политика конфенденциальности</a></div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <div class="content">
       <div class="d-flex flex-center content-min-h">
         <div class="text-center py-9"><img alt="" class="img-fluid mb-7 d-dark-none" src="images/logo.svg" /></div>
@@ -1023,9 +1342,145 @@
     </div>
   </main>
 </body>
-<script src="js/popper.min.js"></script>
+<div aria-hidden="true" class="modal fade" data-bs-backdrop="true" data-phoenix-modal="data-phoenix-modal"
+  id="searchBoxModal" style="--phoenix-backdrop-opacity: 1;" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content mt-15 rounded-pill">
+      <div class="modal-body p-0">
+        <div class="search-box navbar-top-search-box" data-list="{\&quot;valueNames\&quot;:[\&quot;title\&quot;]}"
+          style="width: auto;">
+          <form class="position-relative" data-bs-display="static" data-bs-toggle="search"><input aria-label="Поиск"
+              class="form-control search-input fuzzy-search rounded-pill form-control-lg" placeholder="Найти..."
+              type="search" /><span class="fas fa-search search-box-icon"></span></form>
+          <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
+            data-bs-dismiss="search"><button aria-label="Close" class="btn btn-link p-0"></button></div>
+          <div class="dropdown-menu border start-0 py-0 overflow-hidden w-100">
+            <div class="scrollbar-overlay" style="max-height: 30rem;">
+              <div class="list pb-3">
+                <h6 class="dropdown-header text-body-highlight fs-10 py-2">24 <span
+                    class="text-body-quaternary">результата</span></h6>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Вы искали
+                </h6>
+                <div class="py-2"><a class="dropdown-item" href=""></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+                        data-fa-transform="shrink-2"></span> Заявка № 15171</div>
+                  </div><a class="dropdown-item" href="users.html"></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+                        data-fa-transform="shrink-2"></span> Компания "РемТоргХолод"</div>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Документы</h6>
+                <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href=""></a>
+                  <div class="flex-1">
+                    <h6 class="mb-0 text-body-highlight title">Заявка № 15171</h6>
+                    <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+                        class="fw-medium text-body-tertiary text-opactity-85">г. Химки, ул. Совхозная, д. 9</span></p>
+                  </div><a class="dropdown-item py-2 d-flex align-items-center" href=""></a>
+                  <div class="flex-1">
+                    <h6 class="mb-0 text-body-highlight title">Заявка № 151</h6>
+                    <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+                        class="fw-medium text-body-tertiary text-opactity-85 ms-2">Московская область Щелковский
+                        м.р.Огуднево д.Центральная ул.25</span></p>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Карты</h6>
+                <div class="py-2"><a class="dropdown-item" href="maps.html"></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-link text-body"
+                        data-fa-transform="shrink-2"></span> г. Химки, ул. Совхозная, д. 9</div>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Файлы</h6>
+                <div class="py-2"><a class="dropdown-item" href="files.html"></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span
+                        class="fa-solid fa-file-zipper text-body me-2" data-fa-transform="shrink-2"></span>Накладная №
+                      15171.pdf</div>
+                  </div><a class="dropdown-item" href=""></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-file-lines text-body me-2"
+                        data-fa-transform="shrink-2"></span>Заявка № 15171.pdf</div>
+                  </div><a class="dropdown-item" href=""></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-image text-body me-2"
+                        data-fa-transform="shrink-2"></span>Заявка № 151.png</div>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Пользователи
+                </h6>
+                <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html"></a>
+                  <div class="avatar avatar-l status-online me-2 text-body"><img alt="" class="rounded-circle"
+                      src="images/10.webp" /></div>
+                  <div class="flex-1">
+                    <h6 class="mb-0 text-body-highlight title">Журавлева Анна</h6>
+                    <p class="fs-10 mb-0 d-flex text-body-tertiary">anna@service.galievr.ru</p>
+                  </div><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html"></a>
+                  <div class="avatar avatar-l me-2 text-body"><img alt="" class="rounded-circle" src="images/12.webp" />
+                  </div>
+                  <div class="flex-1">
+                    <h6 class="mb-0 text-body-highlight title">Жуков Иван</h6>
+                    <p class="fs-10 mb-0 d-flex text-body-tertiary">ivan@@service.galievr.ru</p>
+                  </div>
+                </div>
+                <hr class="my-0" />
+                <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Похожее:</h6>
+                <div class="py-2"><a class="dropdown-item" href=""></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span
+                        class="fa-brands fa-firefox-browser text-body" data-fa-transform="shrink-2"></span> Заявка №
+                      18789</div>
+                  </div><a class="dropdown-item" href=""></a>
+                  <div class="d-flex align-items-center">
+                    <div class="fw-normal text-body-highlight title"><span class="fa-brands fa-chrome text-body"
+                        data-fa-transform="shrink-2"></span> г. Химки, ул.Мира</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center">
+                <p class="fallback fw-bold fs-7 d-none">Ничего не найдено</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 </html>
+<script>
+  var navbarTopShape = window.config.config.phoenixNavbarTopShape;
+  var navbarPosition = window.config.config.phoenixNavbarPosition;
+  var body = document.querySelector('body');
+  var navbarDefault = document.querySelector('#navbarDefault');
+  var navbarTop = document.querySelector('#navbarTop');
+  var topNavSlim = document.querySelector('#topNavSlim');
+  var navbarTopSlim = document.querySelector('#navbarTopSlim');
+  var navbarCombo = document.querySelector('#navbarCombo');
+  var navbarComboSlim = document.querySelector('#navbarComboSlim');
+  var dualNav = document.querySelector('#dualNav');
+  var documentElement = document.documentElement;
+  var navbarVertical = document.querySelector('.navbar-vertical');
+  if (navbarPosition === 'dual-nav') {
+    topNavSlim.remove();
+    navbarTop.remove();
+    navbarVertical.remove();
+    navbarTopSlim.remove();
+    navbarCombo.remove();
+    navbarComboSlim.remove();
+    navbarDefault.remove();
+    dualNav.removeAttribute('style');
+    document.documentElement.setAttribute('data-navigation-type', 'dual');
+  } else if (navbarTopShape === 'slim'
+</script>
+<script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/anchor.min.js"></script>
 <script src="js/is.min.js"></script>

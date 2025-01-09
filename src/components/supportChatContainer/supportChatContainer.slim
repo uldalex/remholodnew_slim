@@ -1,0 +1,64 @@
+div.support-chat-container
+				.container-fluid.support-chat	
+					.card.bg-body-emphasis
+						.card-header.d-flex.flex-between-center.px-4.py-3.border-bottom.border-translucent
+							h5.mb-0.d-flex.align-items-center.gap-2
+								| Чат с поддержкой
+								span.fa-solid.fa-circle.text-success.fs-11
+							.btn-reveal-trigger
+								button#support-chat-dropdown.btn.btn-link.p-0.dropdown-toggle.dropdown-caret-none.transition-none.d-flex[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+									span.fas.fa-ellipsis-h.text-body
+								.dropdown-menu.dropdown-menu-end.py-2[aria-labelledby="support-chat-dropdown"]
+									a.dropdown-item[href="#!"]
+										| Запросить обратный звонок
+									a.dropdown-item[href="#!"]
+										| Поиск в чате
+									a.dropdown-item[href="#!"]
+										| Показать историю
+									a.dropdown-item[href="#!"]
+										| Заявка в техподдержку
+									a.dropdown-item.btn-support-chat[href="#!"]
+										| Закрыть
+						.card-body.chat.p-0
+							.d-flex.flex-column-reverse.scrollbar.h-100.p-3
+								.text-end.mt-6
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужна помощь
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Я не могу найти нужный документ
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужно искать по номеру?
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Ответьте!
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+								.text-center.mt-auto
+									.avatar.avatar-3xl.status-online
+										img.rounded-circle[src="images/30.webp" alt=""]
+									h5.mt-2.mb-3
+										| Иван Иванов
+									p.text-center.text-body-emphasis.mb-0
+									  | Задайте нам любой вопрос — мы ответим вам здесь или по электронной почте в течение 24 часов.
+						.card-footer.d-flex.align-items-center.gap-2.border-top.border-translucent.ps-3.pe-4.py-3
+							.d-flex.align-items-center.flex-1.gap-3.border.border-translucent.rounded-pill.px-4
+								input.form-control.outline-none.border-0.flex-1.fs-9.px-0[ type="text" placeholder="Напишите сообщение"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatPhotos"]
+									span.fa-solid.fa-image
+								input#supportChatPhotos.d-none[type="file" accept="image/*"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatAttachment"]
+									span.fa-solid.fa-paperclip
+								input#supportChatAttachment.d-none[type="file"]
+							button.btn.p-0.border-0.send-btn
+								span.fa-solid.fa-paper-plane.fs-9
+
+				button.btn.p-0.border.border-translucent.btn-support-chat
+					span.fs-8.btn-text.text-primary.text-nowrap
+						| Чат
+					span.fa-solid.fa-circle.text-success.fs-9.ms-2
+					span.fa-solid.fa-chevron-down.text-primary.fs-7

@@ -2,6 +2,6 @@ linters:
   Indentation:
     enabled: true
     character: tab
-    width: 2
+    width: 1
   TrailingWhitespace:
     enabled: true

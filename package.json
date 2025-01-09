@@ -9,7 +9,8 @@
     "preprocess": "node preprocess.js",
     "build": "npm run preprocess && webpack --mode production",
     "dev": "webpack serve --mode development",
-    "block-add": "node createComponent.js"
+    "block-add": "node createComponent.js",
+    "watch": "nodemon --watch src --ext slim --exec \"npm run build\""
   },
   "keywords": [],
   "author": "",

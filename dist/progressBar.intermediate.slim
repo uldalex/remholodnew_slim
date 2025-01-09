@@ -3359,14 +3359,37 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 
 
 			.content
-				.d-flex.flex-center.content-min-h
-					.text-center.py-9
-						img.img-fluid.mb-7.d-dark-none[src="images/logo.svg" alt=""]
-						img.img-fluid.mb-7.d-light-none[src="images/logo.svg" alt=""]
-						h1.text-body-secondary.fw-normal.mb-5.fst-italic
-							| Сделайте что-нибудь прекрасное!
-						a.btn.btn-lg.btn-primary[href="#!"]
-							| Погнали!
+				.w-100
+							h2.mb-2.lh-sm
+								| Прогресс-бар
+							.d-flex.flex-start
+									p.mb-2.text-body-tertiary.fw-semibold.fs-9[style="width: 20%"]
+										font[style="vertical-align: inherit;"]
+											font[style="vertical-align: inherit;"]
+												| Регистрация
+									p.mb-2.text-body-tertiary.fw-semibold.fs-9[style="width: 20%"]
+										font[style="vertical-align: inherit;"]
+											font[style="vertical-align: inherit;"]
+												| Подтверждение оператором
+									p.mb-2.text-body-tertiary.fw-semibold.fs-9[style="width: 20%"]
+										font[style="vertical-align: inherit;"]
+											font[style="vertical-align: inherit;"]
+												| Приемка в работу
+									p.mb-2.text-body-tertiary.fw-semibold.fs-9[style="width: 20%"]
+										font[style="vertical-align: inherit;"]
+											font[style="vertical-align: inherit;"]
+												| В работе
+									p.mb-2.text-body-tertiary.fw-semibold.fs-9[style="width: 20%"]
+										font[style="vertical-align: inherit;"]
+											font[style="vertical-align: inherit;"]
+												| Завершено
+							.progress.mb-3.rounded-3[style="height: 10px;"]
+									.progress-bar.border-end.border-2.bg-info-lighter[role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Встреча" data-bs-original-title="Подсказка"]
+									.progress-bar.border-end.border-2.bg-info-light[role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Подсказка" data-bs-original-title="Подсказка"]
+									.progress-bar.bg-success.border-end.border-2.bg-info-dark[role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Подсказка" data-bs-original-title="Подсказка"]
+									.progress-bar.bg-info.bg-info-darker[role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Подсказка" data-bs-original-title="Подсказка"]
+									.progress-bar.bg-info.bg-info-darked[role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Подсказка" data-bs-original-title="Подсказка"]
+							
 			div.support-chat-container
 				.container-fluid.support-chat	
 					.card.bg-body-emphasis

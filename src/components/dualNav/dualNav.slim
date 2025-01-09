@@ -1,0 +1,516 @@
+#dualNav.navbar.navbar-top.fixed-top.navbar-expand-lg[style="display:none;"]
+				.w-100
+					.d-flex.flex-between-center.dual-nav-first-layer
+						.navbar-logo
+							button.btn.navbar-toggler.navbar-toggler-humburger-icon.hover-bg-transparent[type="button" data-bs-toggle="collapse" data-bs-target="#navbarTopCollapse" aria-controls="navbarTopCollapse" aria-expanded="false" aria-label="Toggle Navigation"]
+								span.navbar-toggle-icon
+									span.toggle-line
+							a.navbar-brand.me-1.me-sm-3[href="index.html"]
+							.d-flex.align-items-center
+								.d-flex.align-items-center
+									img[src="images/logo.svg" alt="РемТоргХолод" width="230px"]
+						.search-box.navbar-top-search-box.d-none.d-lg-block[data-list='{"valueNames":["title"]}' style="width:25rem;"]
+							form.position-relative[data-bs-toggle="search" data-bs-display="static"]
+								input.form-control.search-input.fuzzy-search.rounded-pill.form-control-sm[type="search" placeholder="Найти..." aria-label="Найти"]
+								span.fas.fa-search.search-box-icon
+							.btn-close.position-absolute.end-0.top-50.translate-middle.cursor-pointer.shadow-none[data-bs-dismiss="search"]
+								button.btn.btn-link.p-0[aria-label="Закрыть"]
+							include ./src/components/navbarDefault/search_dropdown.slim
+						ul.navbar-nav.navbar-nav-icons.flex-row
+							li.nav-item
+								div.theme-control-toggle.fa-icon-wait.px-2
+									input#themeControlToggle.form-check-input.ms-0.theme-control-toggle-input[type="checkbox" data-theme-control="phoenixTheme" value="dark"]
+									label.mb-0.theme-control-toggle-label.theme-control-toggle-light[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на дневную"]
+										span.icon[data-feather="moon"]
+									label.mb-0.theme-control-toggle-label.theme-control-toggle-dark[for="themeControlToggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Переключить на ночную"]
+										span.icon[data-feather="sun"]
+							li.nav-item.dropdown
+								a.nav-link[href="#" style="min-width: 2.25rem" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-bs-auto-close="outside"]
+										span[data-feather="bell" style="height:20px;width:20px;"]
+								include ./src/components/navbarDefault/note_dropdown.slim
+							li.nav-item.dropdown
+								a#navbarDropdownNindeDots.nav-link[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+									svg[width="16" height="16" viewbox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"]
+										circle[cx="2" cy="2" r="2" fill="currentColor"]
+										circle[cx="2" cy="8" r="2" fill="currentColor"]
+										circle[cx="2" cy="14" r="2" fill="currentColor"]
+										circle[cx="8" cy="8" r="2" fill="currentColor"]
+										circle[cx="8" cy="14" r="2" fill="currentColor"]
+										circle[cx="14" cy="8" r="2" fill="currentColor"]
+										circle[cx="14" cy="14" r="2" fill="currentColor"]
+										circle[cx="8" cy="2" r="2" fill="currentColor"]
+										circle[cx="14" cy="2" r="2" fill="currentColor"]
+								include ./src/components/navbarDefault/links_dropdown.slim
+							li.nav-item.dropdown
+								a#navbarDropdownUser.nav-link.lh-1.pe-0[href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" data-bs-auto-close="outside" aria-expanded="false"]
+									.avatar.avatar-l
+										img.rounded-circle[src="images/57.webp" alt=""]
+								include ./src/components/navbarDefault/user_dropdown.slim
+					#navbarTopCollapse.collapse.navbar-collapse.navbar-top-collapse.justify-content-center
+						ul.navbar-nav.navbar-nav-top[data-dropdown-on-hover="data-dropdown-on-hover"]
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="index.html" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-home
+									| Главная
+								ul.dropdown-menu.navbar-dropdown-caret
+									li.dropdown
+										a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.uil-angle-right.lh-1.dropdown-indicator-icon
+												span
+													span.me-2.uil[data-feather="settings"]
+													| Администрирование
+										ul.dropdown-menu
+											li
+												a.dropdown-item.dropdown-toggle[href="" data-bs-toggle="" data-bs-auto-close="outside"]
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Пользователи
+											li.dropdown
+												a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Департаменты
+											li.dropdown
+												a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Партнеры
+											li.dropdown
+												a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Настройки
+											li.dropdown
+												a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Виджеты
+											li.dropdown
+												a.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Роли
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="help-circle"]
+													| Техническая поддержка
+										li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="airplay"]
+													| Сайт РемТехХолод
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-files-landscapes-alt
+									| Документы
+								ul.dropdown-menu.navbar-dropdown-caret
+									li.dropdown
+										a#docs.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.uil-angle-right.lh-1.dropdown-indicator-icon
+												span
+													span.me-2.uil[data-feather="edit"]
+													| Заявки на ремонт
+										ul.dropdown-menu
+											li
+												a#docs1.dropdown-item.dropdown-toggle[href="" data-bs-toggle="" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Заявки ремонт на адресе
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Заявки ремонт на складе
+									li
+										a#docs3.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="tool"]
+													| Заявки на монтаж
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="umbrella"]
+													| Заявки на обслуживание
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="x-octagon"]
+													| Сообщение о неисправности
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-bus-school
+									| Доставка
+								ul.dropdown-menu.navbar-dropdown-caret
+									li
+										a#docs3.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Подбор оборудования
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Доставка оборудования
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Заявки на доставку
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Маршруты доставки
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Маршруты
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Дневные треки
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Водители
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Типы транспортных средств
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-puzzle-piece
+									| Учет
+								ul.dropdown-menu.navbar-dropdown-caret
+									li.dropdown
+										a#docs.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.uil-angle-right.lh-1.dropdown-indicator-icon
+												span
+													span.me-2.uil[data-feather="edit"]
+													| Учет оборудования
+										ul.dropdown-menu
+											li
+												a#docs1.dropdown-item.dropdown-toggle[href="" data-bs-toggle="" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Приходы
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Комплектация
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Корзина
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Отгрузки
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Отчет по остаткам
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Детальный отчет по остаткам
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Движение оборудования на складе
+									li.dropdown
+										a#docs.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+											.dropdown-item-wrapper
+												span.uil.fs-8.uil-angle-right.lh-1.dropdown-indicator-icon
+												span
+													span.me-2.uil[data-feather="edit"]
+													| Учет ТМЦ
+										ul.dropdown-menu
+											li
+												a#docs1.dropdown-item.dropdown-toggle[href="" data-bs-toggle="" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Склады
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Документы поступления ТМЦ
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Документы перемещения ТМЦ
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Документы списания ТМЦ
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Документы инвентаризации ТМЦ
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Реестр движения ТМЦ
+											li.dropdown
+												a#docs2.dropdown-item.dropdown-toggle[href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside"]
+
+													.dropdown-item-wrapper
+														span.uil.fs-8.lh-1.dropdown-indicator-icon
+														span
+															span.me-2.uil
+															| Реестр остатков ТМЦ
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-document-layout-right
+									| Справочники
+								ul.dropdown-menu.navbar-dropdown-caret.dropdown-menu-card.py-0
+									.border-0.scrollbar[style="max-height: 60vh;"]
+										.px-3.pt-4.pb-3.img-dropdown
+											.row.gx-4.gy-5
+												.col-12.col-sm-6.col-md-4
+													.dropdown-item-group
+														span.me-2[data-feather="user" style="stroke-width:2;"]
+														h6.dropdown-item-title
+															| Контрагенты
+													a.dropdown-link[href=""]
+														| Клиенты
+													a.dropdown-link[href=""]
+														| Мастера
+													a.dropdown-link[href=""]
+														| Бренды
+													a.dropdown-link[href=""]
+														| Подрядчики
+													a.dropdown-link[href=""]
+														| Монтажные бригады
+													a.dropdown-link[href=""]
+														| Обслуживающие компании
+													a.dropdown-link[href=""]
+														| Генеральные подрядчики
+												.col-12.col-sm-6.col-md-4
+													.dropdown-item-group
+														span.me-2[data-feather="tool" style="stroke-width:2; min-width:16px"]
+														h6.dropdown-item-title
+															| Оборудование
+													a.dropdown-link[href=""]
+														| Оборудование
+													a.dropdown-link[href=""]
+														| Состояние оборудования
+													a.dropdown-link[href=""]
+														| Статусы оборудования
+													a.dropdown-link[href=""]
+														| Заявленные неисправности
+													a.dropdown-link[href=""]
+														| Неисправности
+													a.dropdown-link[href=""]
+														| Запчасти
+													a.dropdown-link[href=""]
+														| Категории работ
+													a.dropdown-link[href=""]
+														| Работы
+													a.dropdown-link[href=""]
+														| Типы монтажа
+												.col-12.col-sm-6.col-md-4
+													.dropdown-item-group
+														span.me-2[data-feather="file-text" style="stroke-width:2;"]
+														h6.dropdown-item-title
+															| Прочее
+													a.dropdown-link[href=""]
+														| Прайс-листы
+													a.dropdown-link[href=""]
+														| Статусы оплаты
+													a.dropdown-link[href=""]
+														| Приоритеты заявок
+													a.dropdown-link[href=""]
+														| Виды рекламаций
+													a.dropdown-link[href=""]
+														| Группы статусов готовности
+													a.dropdown-link[href=""]
+														| Статусы готовности
+													a.dropdown-link[href=""]
+														| Цвета
+													a.dropdown-link[href=""]
+														| Единицы измерения
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-file-info-alt
+									| Отчеты
+								ul.dropdown-menu.navbar-dropdown-caret
+									li
+										a#docs3.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Акты выполненных работ
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Отчет по заявкам на ремонт
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Сводный реестр заявок на ремонт
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Реестр ТМЦ на списание со склада
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.lh-1[href="#!" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false"]
+									span.uil.fs-8.me-2.uil-map
+									| Карты
+								ul.dropdown-menu.navbar-dropdown-caret
+									li
+										a#docs3.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Карта заявок на ремонт
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Карта заявок на монтаж
+									li
+										a.dropdown-item[href="#" data-bs-toggle="" data-bs-auto-close="outside"]
+											.dropdown-item-wrapper
+												span.uil.fs-8.lh-1
+												span
+													span.me-2.uil[data-feather="check"]
+													| Карта заявок на обслуживание
+
+
+

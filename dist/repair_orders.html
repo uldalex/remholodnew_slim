@@ -3460,306 +3460,424 @@
     data-bs-toggle="offcanvas" type="button">Новая заявка</button>
   </div>
   <div aria-modal="true" class="offcanvas offcanvas-start" id="offcanvasMenu" role="dialog" tabindex="-1">
-   <div class="offcanvas-header">
-    <div>
-     <h5 class="offcanvas-title" id="offcanvasMenuLabel">Новая заявка</h5>
-     <p> Текст из json в папке компонента</p>
-    </div><button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas" type="button"></button>
-   </div>
-   <div class="offcanvas-body">
+   <div class="offcanvas-body"><button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+     type="button"></button>
     <div class="theme-wizard mb-5" data-theme-wizard="data-theme-wizard">
      <div class="pt-4 pb-0">
       <div class="row justify-content-between">
        <div class="col-md-3">
+        <h3 class="offcanvas-title" id="offcanvasMenuLabel">Новая заявка</h3>
         <div class="scrollbar mb-4">
          <ul class="nav justify-content-between flex-nowrap nav-wizard nav-wizard-vertical-md" role="tablist">
           <li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link active py-0 py-md-3"
             data-bs-toggle="tab" data-wizard-step="1" href="#bootstrap-vertical-wizard-tab1" role="tab">
             <div class="d-inline-block d-md-flex align-items-center gap-3"><span class="nav-item-circle-parent"><span
-               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span></span></span><span
-              class="nav-item-title fs-9 fs-xl-8">
+               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span><span
+                class="fa-solid fa-check check-icon"></span></span></span><span class="nav-item-title fs-9 fs-xl-8">
               <font inherit;="" vertical-align:="">Регистрация</font>
              </span></div>
            </a></li>
-          <li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link py-0 py-md-3"
+          <li class="nav-item" role="presentation"><a aria-selected="false" class="nav-link py-0 py-md-3"
             data-bs-toggle="tab" data-wizard-step="2" href="#bootstrap-vertical-wizard-tab2" role="tab">
             <div class="d-inline-block d-md-flex align-items-center gap-3"><span class="nav-item-circle-parent"><span
-               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span></span></span><span
-              class="nav-item-title fs-9 fs-xl-8">
+               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span><span
+                class="fa-solid fa-check check-icon"></span></span></span><span class="nav-item-title fs-9 fs-xl-8">
               <font inherit;="" vertical-align:="">Подтверждение оператором</font>
              </span></div>
            </a></li>
-          <li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link py-0 py-md-3"
+          <li class="nav-item" role="presentation"><a aria-selected="false" class="nav-link py-0 py-md-3"
             data-bs-toggle="tab" data-wizard-step="3" href="#bootstrap-vertical-wizard-tab3" role="tab">
             <div class="d-inline-block d-md-flex align-items-center gap-3"><span class="nav-item-circle-parent"><span
-               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span></span></span><span
-              class="nav-item-title fs-9 fs-xl-8">
+               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span><span
+                class="fa-solid fa-check check-icon"></span></span></span><span class="nav-item-title fs-9 fs-xl-8">
               <font inherit;="" vertical-align:="">Приемка в работу</font>
              </span></div>
            </a></li>
-          <li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link py-0 py-md-3"
+          <li class="nav-item" role="presentation"><a aria-selected="false" class="nav-link py-0 py-md-3"
             data-bs-toggle="tab" data-wizard-step="4" href="#bootstrap-vertical-wizard-tab4" role="tab">
             <div class="d-inline-block d-md-flex align-items-center gap-3"><span class="nav-item-circle-parent"><span
-               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span></span></span><span
-              class="nav-item-title fs-9 fs-xl-8">
+               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span><span
+                class="fa-solid fa-check check-icon"></span></span></span><span class="nav-item-title fs-9 fs-xl-8">
               <font inherit;="" vertical-align:="">В работе</font>
              </span></div>
            </a></li>
-          <li class="nav-item" role="presentation"><a aria-selected="true" class="nav-link py-0 py-md-3"
+          <li class="nav-item" role="presentation"><a aria-selected="false" class="nav-link py-0 py-md-3"
             data-bs-toggle="tab" data-wizard-step="5" href="#bootstrap-vertical-wizard-tab5" role="tab">
             <div class="d-inline-block d-md-flex align-items-center gap-3"><span class="nav-item-circle-parent"><span
-               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span></span></span><span
-              class="nav-item-title fs-9 fs-xl-8">
+               class="nav-item-circle"><span class="fa-solid fa-file nav-item-icon"></span><span
+                class="fa-solid fa-check check-icon"></span></span></span><span class="nav-item-title fs-9 fs-xl-8">
               <font inherit;="" vertical-align:="">Работы выполнены</font>
              </span></div>
            </a></li>
          </ul>
-        </div><button class="btn btn-subtle-info mb-2 me-2">Подсказка</button><button
-         class="btn btn-info mb-2">Сохранить</button>
+        </div>
+        <div class="tab-content" data-wizard-form="1">
+         <div aria-labelledby="bootstrap-vertical-wizard-tab1" class="tab-pane active"
+          id="bootstrap-vertical-wizard-tab1" role="tabpanel"></div>
+         <div aria-labelledby="bootstrap-vertical-wizard-tab2" class="tab-pane" id="bootstrap-vertical-wizard-tab2"
+          role="tabpanel"></div>
+         <div aria-labelledby="bootstrap-vertical-wizard-tab3" class="tab-pane" id="bootstrap-vertical-wizard-tab3"
+          role="tabpanel"></div>
+         <div aria-labelledby="bootstrap-vertical-wizard-tab4" class="tab-pane" id="bootstrap-vertical-wizard-tab4"
+          role="tabpanel"></div>
+         <div aria-labelledby="bootstrap-vertical-wizard-tab5" class="tab-pane" id="bootstrap-vertical-wizard-tab5"
+          role="tabpanel"></div>
+        </div>
+        <div class="pt-4 pb-0" data-wizard-footer="data-wizard-footer"><button class="btn btn-subtle-info mb-2 me-2"
+          data-bs-target="#fuq" data-bs-toggle="modal" type="button">Подсказка</button><button
+          class="btn btn-danger mb-2 me-2 d-none" data-wizard-prev-btn="data-wizard-prev-btn">Отклонить</button><button
+          class="btn btn-info mb-2" data-wizard-next-btn="data-wizard-next-btn">Сохранить </button></div>
        </div>
        <div class="col-md-8">
-        <div class="tab-content">
-         <div aria-labelledby="bootstrap-vertical-wizard-tab1" class="tab-pane active"
-          id="bootstrap-vertical-wizard-tab1" role="tabpanel">
-          <form data-wizard-form="1" id="wizardVerticalForm1">
-           <div class="row">
-            <div class="col-md-6">
-             <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}"
-               id="client-wizard-validation" name="client" required="required">
-               <option value="">Клиент</option>
-               <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
-               <option value="13">СЕРАВИНА Т. А. ИП</option>
-               <option value="9">МЕГА ФАРМ</option>
-               <option value="3">АПТЕКА- А.в.е</option>
-               <option value="2">Вилтан</option>
-               <option value="11">Ю Би Си Кул-Б</option>
-               <option value="10">Калинов Родник</option>
-               <option value="14">Коршикова А. В.</option>
-               <option value="7">РТ-ГРУПП</option>
-               <option value="4">ВкусВилл</option>
-               <option value="12">КОРАБЛИК-Р </option>
-               <option value="15">АПТЕКА-А.В.Е-1 </option>
-               <option value="1">Байрос</option>
-               <option value="8">ПРОФАРМ</option>
-               <option value="18">ФАРМАСИ</option>
-               <option value="20">ВРЕМЯ ЕСТЬ </option>
-               <option value="57">Хлебосол</option>
-               <option value="22">ГРАДИЕНТ</option>
-               <option value="26">Смартен</option>
-               <option value="24">ВИНТОРГ МО</option>
-               <option value="27">МРФК </option>
-               <option value="28">АВАЛОНЖ</option>
-               <option value="29">АВЕСТ </option>
-               <option value="30">КОПТЕВСКИЙ РЫНОК </option>
-               <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
-               <option value="31">ГК Траст Холод</option>
-               <option value="16">ПРОВИЗОР</option>
-               <option value="17">ФАРМАЦЕВТ </option>
-               <option value="19">Мособлфармация</option>
-               <option value="25">Бремор</option>
-               <option value="21">АМ ВОРОНЕЖ</option>
-               <option value="32">АМ Регион</option>
-               <option value="33">АМ Тверь</option>
-               <option value="34">АМ ЯРОСЛАВЛЬ </option>
-               <option value="56">Бо-Фарм</option>
-               <option value="35">АМ Владимир </option>
-               <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
-               <option value="37">АМ ЛИПЕЦК</option>
-               <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
-               <option value="39">АМ Калуга</option>
-               <option value="40">ИП Боженко А.А.</option>
-               <option value="41">Вариант 999</option>
-               <option value="42">Айдекс Лабораториз</option>
-               <option value="46">ООО "Ивоклар Вивадент"</option>
-               <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
-               <option value="48">ИП РОЗЕНТУЛ И. И.</option>
-               <option value="44">АО "Контакт"</option>
-               <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
-               <option value="43">АРОМА МАРКЕТ</option>
-               <option value="50">ДА ЗДОРОВ</option>
-               <option value="51">ЛАВЕРНА XXI ВЕК</option>
-               <option value="52">СТАРАТЕЛИ </option>
-               <option value="53">НСК </option>
-               <option value="54">Фонд «Водный спорт» </option>
-               <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
-               <option value="58">АДАОР ПЛЮС</option>
-               <option value="59">ПРОМСИТ ООО</option>
-               <option value="60">ДЖАСТФОЮ</option>
-               <option value="61">Частное Лицо</option>
-               <option value="62">ООО "Фрут Лайф Джус"</option>
-               <option value="63">КОМПЛЕКС ГРУПП ООО</option>
-               <option value="64">ООО «еАптека»</option>
-               <option value="5">ТД ПОЛАИР</option>
-               <option value="65">ВФГБК</option>
-               <option value="66">ООО ТД НМ </option>
-               <option value="67">ПарусИнвест</option>
-               <option value="68">ИП Цецерская СВ</option>
-               <option value="69">Перспектива</option>
-               <option value="70">ООО «ИИ»</option>
-               <option value="71">АПТЕКА- А.в.е (склад)</option>
-               <option value="72">Кофе Моментс</option>
-               <option value="73">Дельта Дистрибьюшн</option>
-               <option value="74">Калина Фарм</option>
-               <option value="75">Крымские Дары</option>
-               <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
-               <option value="77">ООО "Норд Вил"</option>
-               <option value="78">Буховец Наталья Васильевна</option>
-               <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
-               <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
-               <option value="81">АМ "Иваново"</option>
-               <option value="82">ЭВЕР Нейро Фарма</option>
-               <option value="83">АМ Рязань</option>
-               <option value="84">ООО "ИБТ"</option>
-               <option value="85">МАЙ ФРУКТ ООО</option>
-               <option value="86">ФРОСТЭКО</option>
-               <option value="23">РЕМТОРГХОЛОД /select</option>
-              </select>
-              <div class="invalid-feedback">Обязательно к заполнению</div>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Клиентский номер" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Клиентский номер</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fa-solid far fa-id-card text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control datetimepicker flatpickr-input"
-                data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
-                id="repair_order_date" placeholder="д.м.гг" readonly="readonly" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_date">Дата заявки</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fa-solid far fa-calendar-alt text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
-               name="operator" required="required">
-               <option value="">Оператор</option>
-               <option value="Печёнов Андрей">Печёнов Андрей</option>
-               <option value="Руковишников Антон">Руковишников Антон</option>
-               <option value="Груднов Ярослав">Груднов Ярослав</option>
-               <option value="Лисаков Андрей">Лисаков Андрей</option>
-               <option value="Гаврилов Владислав">Гаврилов Владислав</option>
-               <option value="Амплеев Владислав">Амплеев Владислав</option>
-               <option value="Самсонюк Михаил">Самсонюк Михаил</option>
-               <option value="Тихонов Максим">Тихонов Максим</option>
-               <option value="Поздняков Алексей">Поздняков Алексей</option>
-               <option value="Печенова Оксана">Печенова Оксана</option>
-               <option value="Алексей Карягин">Алексей Карягин</option>
-               <option value="Руслан Рокет">Руслан Рокет</option>
-               <option value="Бажанов Сергей">Бажанов Сергей</option>
-              </select>
-              <div class="invalid-feedback">Обязательно к заполнению</div>
-              <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-                data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="autor" name="autor">
-                <option value="">Автор</option>
-               </select></div>
-              <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-                data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="chif" name="chif">
-                <option value="">Руководитель</option>
-               </select></div>
-              <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-                data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="responsible"
-                name="responsible">
-                <option value="">Ответственный за эксплуатацию</option>
-               </select></div>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control outline-none border-0"
-                id="repair_order_address" name="repair_address" placeholder="Адрес" readonly="readonly"
-                required="required" type="text" /><label class="form-icon-label"
-                for="repair_order_address">Адрес</label><button class="btn btn-outline-info"
-                data-bs-target="#addressForm" data-bs-toggle="modal" type="button">Выберите адрес</button></div><span
-               class="fa-solid fab fa-periscope text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control outline-none border-0"
-                id="repair_order_address" name="repair_tools" placeholder="Оборудование" readonly="readonly"
-                required="required" type="text" /><label class="form-icon-label"
-                for="repair_order_address">Оборудование</label><button class="btn btn-outline-info"
-                data-bs-target="#toolsForm" data-bs-toggle="modal" type="button">Выберите оборудование</button></div>
-              <span class="fa-solid fas fa-tools text-body fs-9 form-icon"></span>
-             </div>
+        <div class="card">
+         <form data-wizard-form="1" id="wizardVerticalForm1">
+          <div class="row">
+           <div class="col-md-6">
+            <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+              data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}"
+              id="client-wizard-validation" name="client" required="required">
+              <option value="">Клиент</option>
+              <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
+              <option value="13">СЕРАВИНА Т. А. ИП</option>
+              <option value="9">МЕГА ФАРМ</option>
+              <option value="3">АПТЕКА- А.в.е</option>
+              <option value="2">Вилтан</option>
+              <option value="11">Ю Би Си Кул-Б</option>
+              <option value="10">Калинов Родник</option>
+              <option value="14">Коршикова А. В.</option>
+              <option value="7">РТ-ГРУПП</option>
+              <option value="4">ВкусВилл</option>
+              <option value="12">КОРАБЛИК-Р </option>
+              <option value="15">АПТЕКА-А.В.Е-1 </option>
+              <option value="1">Байрос</option>
+              <option value="8">ПРОФАРМ</option>
+              <option value="18">ФАРМАСИ</option>
+              <option value="20">ВРЕМЯ ЕСТЬ </option>
+              <option value="57">Хлебосол</option>
+              <option value="22">ГРАДИЕНТ</option>
+              <option value="26">Смартен</option>
+              <option value="24">ВИНТОРГ МО</option>
+              <option value="27">МРФК </option>
+              <option value="28">АВАЛОНЖ</option>
+              <option value="29">АВЕСТ </option>
+              <option value="30">КОПТЕВСКИЙ РЫНОК </option>
+              <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
+              <option value="31">ГК Траст Холод</option>
+              <option value="16">ПРОВИЗОР</option>
+              <option value="17">ФАРМАЦЕВТ </option>
+              <option value="19">Мособлфармация</option>
+              <option value="25">Бремор</option>
+              <option value="21">АМ ВОРОНЕЖ</option>
+              <option value="32">АМ Регион</option>
+              <option value="33">АМ Тверь</option>
+              <option value="34">АМ ЯРОСЛАВЛЬ </option>
+              <option value="56">Бо-Фарм</option>
+              <option value="35">АМ Владимир </option>
+              <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
+              <option value="37">АМ ЛИПЕЦК</option>
+              <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
+              <option value="39">АМ Калуга</option>
+              <option value="40">ИП Боженко А.А.</option>
+              <option value="41">Вариант 999</option>
+              <option value="42">Айдекс Лабораториз</option>
+              <option value="46">ООО "Ивоклар Вивадент"</option>
+              <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
+              <option value="48">ИП РОЗЕНТУЛ И. И.</option>
+              <option value="44">АО "Контакт"</option>
+              <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
+              <option value="43">АРОМА МАРКЕТ</option>
+              <option value="50">ДА ЗДОРОВ</option>
+              <option value="51">ЛАВЕРНА XXI ВЕК</option>
+              <option value="52">СТАРАТЕЛИ </option>
+              <option value="53">НСК </option>
+              <option value="54">Фонд «Водный спорт» </option>
+              <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
+              <option value="58">АДАОР ПЛЮС</option>
+              <option value="59">ПРОМСИТ ООО</option>
+              <option value="60">ДЖАСТФОЮ</option>
+              <option value="61">Частное Лицо</option>
+              <option value="62">ООО "Фрут Лайф Джус"</option>
+              <option value="63">КОМПЛЕКС ГРУПП ООО</option>
+              <option value="64">ООО «еАптека»</option>
+              <option value="5">ТД ПОЛАИР</option>
+              <option value="65">ВФГБК</option>
+              <option value="66">ООО ТД НМ </option>
+              <option value="67">ПарусИнвест</option>
+              <option value="68">ИП Цецерская СВ</option>
+              <option value="69">Перспектива</option>
+              <option value="70">ООО «ИИ»</option>
+              <option value="71">АПТЕКА- А.в.е (склад)</option>
+              <option value="72">Кофе Моментс</option>
+              <option value="73">Дельта Дистрибьюшн</option>
+              <option value="74">Калина Фарм</option>
+              <option value="75">Крымские Дары</option>
+              <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
+              <option value="77">ООО "Норд Вил"</option>
+              <option value="78">Буховец Наталья Васильевна</option>
+              <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
+              <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
+              <option value="81">АМ "Иваново"</option>
+              <option value="82">ЭВЕР Нейро Фарма</option>
+              <option value="83">АМ Рязань</option>
+              <option value="84">ООО "ИБТ"</option>
+              <option value="85">МАЙ ФРУКТ ООО</option>
+              <option value="86">ФРОСТЭКО</option>
+              <option value="23">РЕМТОРГХОЛОД /select</option>
+             </select>
+             <div class="invalid-feedback">Обязательно к заполнению</div>
             </div>
-            <div class="col-md-6">
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control datetimepicker flatpickr-input"
-                data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
-                id="repair_order_expected_date" placeholder="д.м.гг" readonly="readonly" required="required"
-                type="text" /><label class="form-icon-label" for="repair_order_expected_date">Планируемая дата</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fa-solid far fa-calendar-alt text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Наименование обьекта" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Наименование обьекта</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="far fa-address-card text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Адрес" required="required" type="text" /><label class="form-icon-label"
-                for="repair_order_number">Адрес</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fab fa-periscope text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Оборудование" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Оборудование</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fa fa-screwdriver-wrench text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Тип оборудования" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Тип оборудования</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="far fa-list-alt text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Контактное лицо" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Контактное лицо</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fa fa-user text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Телефон" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Телефон</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="fas fa-phone text-body fs-9 form-icon"></span>
-             </div>
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Обслуживающая компания" required="required" type="text" /><label
-                class="form-icon-label" for="repair_order_number">Обслуживающая компания</label>
-               <div class="invalid-feedback">Обязательно к заполнению</div>
-              </div><span class="far fa-star text-body fs-9 form-icon"></span>
-             </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Клиентский номер" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Клиентский номер</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fa-solid far fa-id-card text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control datetimepicker flatpickr-input"
+               data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
+               id="repair_order_date" placeholder="д.м.гг" readonly="readonly" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_date">Дата заявки</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fa-solid far fa-calendar-alt text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+              data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+              name="operator" required="required">
+              <option value="">Оператор</option>
+              <option value="Печёнов Андрей">Печёнов Андрей</option>
+              <option value="Руковишников Антон">Руковишников Антон</option>
+              <option value="Груднов Ярослав">Груднов Ярослав</option>
+              <option value="Лисаков Андрей">Лисаков Андрей</option>
+              <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+              <option value="Амплеев Владислав">Амплеев Владислав</option>
+              <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+              <option value="Тихонов Максим">Тихонов Максим</option>
+              <option value="Поздняков Алексей">Поздняков Алексей</option>
+              <option value="Печенова Оксана">Печенова Оксана</option>
+              <option value="Алексей Карягин">Алексей Карягин</option>
+              <option value="Руслан Рокет">Руслан Рокет</option>
+              <option value="Бажанов Сергей">Бажанов Сергей</option>
+             </select>
+             <div class="invalid-feedback">Обязательно к заполнению</div>
              <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
-               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
-               name="operator" required="required">
-               <option value="На адресе"></option>
-               <option value="На складе"></option>
+               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="autor" name="autor">
+               <option value="">Автор</option>
+              </select></div>
+             <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="chif" name="chif">
+               <option value="">Руководитель</option>
+              </select></div>
+             <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+               data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="responsible"
+               name="responsible">
+               <option value="">Ответственный за эксплуатацию</option>
               </select></div>
             </div>
-            <div class="col-12">
-             <div class="form-icon-container">
-              <div class="form-floating mb-2"><textarea class="form-icon-input form-control" id="repair_order_number"
-                name="repair_order" placeholder="Обслуживающая компания"></textarea><label class="form-icon-label"
-                for="repair_order_number">Дополнительная информация</label></div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control outline-none border-0"
+               id="repair_order_address" name="repair_address" placeholder="Адрес" readonly="readonly"
+               required="required" type="text" /><label class="form-icon-label"
+               for="repair_order_address">Адрес</label><button class="btn btn-outline-info"
+               data-bs-target="#addressForm" data-bs-toggle="modal" type="button">Выберите адрес</button></div><span
+              class="fa-solid fab fa-periscope text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control outline-none border-0"
+               id="repair_order_address" name="repair_tools" placeholder="Оборудование" readonly="readonly"
+               required="required" type="text" /><label class="form-icon-label"
+               for="repair_order_address">Оборудование</label><button class="btn btn-outline-info"
+               data-bs-target="#toolsForm" data-bs-toggle="modal" type="button">Выберите оборудование</button></div>
+             <span class="fa-solid fas fa-tools text-body fs-9 form-icon"></span>
+            </div>
+           </div>
+           <div class="col-md-6">
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control datetimepicker flatpickr-input"
+               data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
+               id="repair_order_expected_date" placeholder="д.м.гг" readonly="readonly" required="required"
+               type="text" /><label class="form-icon-label" for="repair_order_expected_date">Планируемая дата</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fa-solid far fa-calendar-alt text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Наименование обьекта" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Наименование обьекта</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="far fa-address-card text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Адрес" required="required" type="text" /><label class="form-icon-label"
+               for="repair_order_number">Адрес</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fab fa-periscope text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Оборудование" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Оборудование</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fa fa-screwdriver-wrench text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Тип оборудования" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Тип оборудования</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="far fa-list-alt text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Контактное лицо" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Контактное лицо</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fa fa-user text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Телефон" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Телефон</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="fas fa-phone text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Обслуживающая компания" required="required" type="text" /><label
+               class="form-icon-label" for="repair_order_number">Обслуживающая компания</label>
+              <div class="invalid-feedback">Обязательно к заполнению</div>
+             </div><span class="far fa-star text-body fs-9 form-icon"></span>
+            </div>
+            <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+              data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+              name="operator" required="required">
+              <option value="На адресе"></option>
+              <option value="На складе"></option>
+             </select></div>
+           </div>
+           <div class="col-12">
+            <div class="form-icon-container">
+             <div class="form-floating mb-2"><textarea class="form-icon-input form-control" id="repair_order_number"
+               name="repair_order" placeholder="Обслуживающая компания"></textarea><label class="form-icon-label"
+               for="repair_order_number">Дополнительная информация</label></div>
+            </div>
+           </div>
+           <div class="col-12">
+            <div class="dz-message dropzone-area px-2 py-3" data-dz-message="data-dz-message">
+             <div class="text-center text-body-emphasis">
+              <h5 class="mb-2"><span class="fa-solid fa-upload me-2"></span>
+               <div class="mb-0 fs-9 text-body-tertiary text-opacity-85 lh-sm">перенесите файлы для загрузки сюда</div>
+              </h5>
              </div>
             </div>
            </div>
-          </form>
-         </div>
+           <div class="col-12 mt-4">
+            <div class="files-container" data-files-container="data-files-container">
+             <div class="text-center">
+              <div class="file-box-wrapper img-zoom-hover"><input
+                class="form-check-input form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
+                data-bulk-select-row="data-bulk-select-row" data-file="2" name="fileManagerFiles"
+                type="checkbox" /><label class="stretched-link position-absolute top-0 start-0 w-100 h-100"></label>
+               <div class="position-relative h-100">
+                <div class="file-box overflow-hidden"><img class="w-100 h-100 object-fit-cover"
+                  src="../images/files/9.png" /></div>
+               </div>
+               <div class="dropdown lh-1 position-absolute top-0 end-0 mt-2 me-2"><button aria-expanded="false"
+                 aria-haspopup="true" class="btn btn-square-sm text-secondary position-relative z-1"
+                 data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown" type="button"><span
+                  class="fas fa-ellipsis-v"></span></button>
+                <div class="dropdown-menu dropdown-menu-end"><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Копировать</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Скачать</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Отправить</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Переименовать</a>
+                 <hr class="dropdown-divider" /><a
+                  class="dropdown-item fs-9 text-decoration-none text-danger">Удалить</a>
+                </div>
+               </div>
+               <div class="d-block fw-bold text-body-highlight mt-2 text-nowrap text-truncate fs-9 fs-sm-8">Поломка.jpg
+               </div>
+               <div class="mb-0 fw-semibold text-body-tertiary fs-10 fs-sm-9">980 Kb</div>
+              </div>
+             </div>
+             <div class="text-center">
+              <div class="file-box-wrapper img-zoom-hover"><input
+                class="form-check-input form-check-input-transparent position-absolute top-0 start-0 mt-3 ms-3 z-1"
+                data-bulk-select-row="data-bulk-select-row" data-file="2" name="fileManagerFiles"
+                type="checkbox" /><label class="stretched-link position-absolute top-0 start-0 w-100 h-100"></label>
+               <div class="position-relative h-100">
+                <div class="file-box overflow-hidden"><img class="w-100 h-100 object-fit-cover"
+                  src="../images/files/11.png" /></div>
+               </div>
+               <div class="dropdown lh-1 position-absolute top-0 end-0 mt-2 me-2"><button aria-expanded="false"
+                 aria-haspopup="true" class="btn btn-square-sm text-secondary position-relative z-1"
+                 data-boundary="window" data-bs-reference="parent" data-bs-toggle="dropdown" type="button"><span
+                  class="fas fa-ellipsis-v"></span></button>
+                <div class="dropdown-menu dropdown-menu-end"><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Копировать</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Скачать</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Отправить</a><a
+                  class="dropdown-item fs-9 text-decoration-none text-gray-600" href="#">Переименовать</a>
+                 <hr class="dropdown-divider" /><a
+                  class="dropdown-item fs-9 text-decoration-none text-danger">Удалить</a>
+                </div>
+               </div>
+               <div class="d-block fw-bold text-body-highlight mt-2 text-nowrap text-truncate fs-9 fs-sm-8">Поломка.jpg
+               </div>
+               <div class="mb-0 fw-semibold text-body-tertiary fs-10 fs-sm-9">980 Kb</div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </form>
         </div>
        </div>
       </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" class="modal fade modal" id="fuq" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Подсказка</h5><button class="btn btn-close p-1"></button>
+     </div>
+     <div class="modal-body">
+      <ul class="fs-9">
+       <li>
+        <p>Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;</p>
+       </li>
+       <li>
+        <p>Дата подачи заявки-присваивается автоматически текущая дата и время;</p>
+       </li>
+       <li>
+        <p>Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их
+         можно выбрать из списка;</p>
+       </li>
+       <li>
+        <p>Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если
+         необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются
+         к клиенту автоматически и после создания доступны к выбору.</p>
+       </li>
+       <li>
+        <p>Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем
+         выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим
+         серийный номер далее нажимаем сохранить.</p>
+       </li>
+       <li>
+        <p>Заявленный вид ремонта- выбираем необходимый вид ремонта.</p>
+       </li>
+       <li>
+        <p>Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем
+         «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.</p>
+       </li>
+       <li>
+        <p>Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.</p>
+       </li>
+      </ul>
      </div>
     </div>
    </div>

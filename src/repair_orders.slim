@@ -20,400 +20,515 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 				include ./components/breadcrump/breadcrump.slim	
 				button.btn.btn-primary[type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu"]
 					| Новая заявка
-			include ./components/offcanvasMenu/offcanvasMenu.slim
-					.offcanvas-body
-						.theme-wizard.mb-5[data-theme-wizard="data-theme-wizard"]
-							.pt-4.pb-0
-								.row.justify-content-between
-									.col-md-3
-										.scrollbar.mb-4
-											ul.nav.justify-content-between.flex-nowrap.nav-wizard.nav-wizard-vertical-md[role="tablist"]
-												li.nav-item[role="presentation"]
-													a.nav-link.active.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab1" data-bs-toggle="tab" data-wizard-step="1"	aria-selected="true" role="tab"]
-														.d-inline-block.d-md-flex.align-items-center.gap-3
-															span.nav-item-circle-parent
-																span.nav-item-circle
-																	span.fa-solid.fa-file.nav-item-icon
-															span.nav-item-title.fs-9.fs-xl-8
-																font[vertical-align: inherit;]
-																	| Регистрация
-												li.nav-item[role="presentation"]
-													a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab2" data-bs-toggle="tab" data-wizard-step="2"	aria-selected="true" role="tab"]
-														.d-inline-block.d-md-flex.align-items-center.gap-3
-															span.nav-item-circle-parent
-																span.nav-item-circle
-																	span.fa-solid.fa-file.nav-item-icon
-															span.nav-item-title.fs-9.fs-xl-8
-																font[vertical-align: inherit;]
-																	| Подтверждение оператором
-												li.nav-item[role="presentation"]
-													a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab3" data-bs-toggle="tab" data-wizard-step="3"	aria-selected="true" role="tab"]
-														.d-inline-block.d-md-flex.align-items-center.gap-3
-															span.nav-item-circle-parent
-																span.nav-item-circle
-																	span.fa-solid.fa-file.nav-item-icon
-															span.nav-item-title.fs-9.fs-xl-8
-																font[vertical-align: inherit;]
-																	| Приемка в работу
-												li.nav-item[role="presentation"]
-													a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab4" data-bs-toggle="tab" data-wizard-step="4"	aria-selected="true" role="tab"]
-														.d-inline-block.d-md-flex.align-items-center.gap-3
-															span.nav-item-circle-parent
-																span.nav-item-circle
-																	span.fa-solid.fa-file.nav-item-icon
-															span.nav-item-title.fs-9.fs-xl-8
-																font[vertical-align: inherit;]
-																	| В работе
-												li.nav-item[role="presentation"]
-													a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab5" data-bs-toggle="tab" data-wizard-step="5"	aria-selected="true" role="tab"]
-														.d-inline-block.d-md-flex.align-items-center.gap-3
-															span.nav-item-circle-parent
-																span.nav-item-circle
-																	span.fa-solid.fa-file.nav-item-icon
-															span.nav-item-title.fs-9.fs-xl-8
-																font[vertical-align: inherit;]
-																	| Работы выполнены
-										button.btn.btn-subtle-info.mb-2.me-2
-											| Подсказка
-										button.btn.btn-info.mb-2
-											| Сохранить
+			#offcanvasMenu.offcanvas.offcanvas-start[tabindex="-1" aria-modal="true" role="dialog"]
+				.offcanvas-body
+					button.btn-close.text-reset[type="button" data-bs-dismiss="offcanvas" aria-label="Close"]
+					.theme-wizard.mb-5[data-theme-wizard="data-theme-wizard"]
+						.pt-4.pb-0
+							.row.justify-content-between
+								.col-md-3
+									h3#offcanvasMenuLabel.offcanvas-title
+										| Новая заявка
+									.scrollbar.mb-4
+										ul.nav.justify-content-between.flex-nowrap.nav-wizard.nav-wizard-vertical-md[role="tablist"]
+											li.nav-item[role="presentation"]
+												a.nav-link.active.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab1" data-bs-toggle="tab" data-wizard-step="1"	aria-selected="true" role="tab"]
+													.d-inline-block.d-md-flex.align-items-center.gap-3
+														span.nav-item-circle-parent
+															span.nav-item-circle
+																span.fa-solid.fa-file.nav-item-icon
+																span.fa-solid.fa-check.check-icon
+														span.nav-item-title.fs-9.fs-xl-8
+															font[vertical-align: inherit;]
+																| Регистрация
+											li.nav-item[role="presentation"]
+												a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab2" data-bs-toggle="tab" data-wizard-step="2"	aria-selected="false" role="tab"]
+													.d-inline-block.d-md-flex.align-items-center.gap-3
+														span.nav-item-circle-parent
+															span.nav-item-circle
+																span.fa-solid.fa-file.nav-item-icon
+																span.fa-solid.fa-check.check-icon
+														span.nav-item-title.fs-9.fs-xl-8
+															font[vertical-align: inherit;]
+																| Подтверждение оператором
+											li.nav-item[role="presentation"]
+												a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab3" data-bs-toggle="tab" data-wizard-step="3"	aria-selected="false" role="tab"]
+													.d-inline-block.d-md-flex.align-items-center.gap-3
+														span.nav-item-circle-parent
+															span.nav-item-circle
+																span.fa-solid.fa-file.nav-item-icon
+																span.fa-solid.fa-check.check-icon
+														span.nav-item-title.fs-9.fs-xl-8
+															font[vertical-align: inherit;]
+																| Приемка в работу
+											li.nav-item[role="presentation"]
+												a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab4" data-bs-toggle="tab" data-wizard-step="4"	aria-selected="false" role="tab"]
+													.d-inline-block.d-md-flex.align-items-center.gap-3
+														span.nav-item-circle-parent
+															span.nav-item-circle
+																span.fa-solid.fa-file.nav-item-icon
+																span.fa-solid.fa-check.check-icon
+														span.nav-item-title.fs-9.fs-xl-8
+															font[vertical-align: inherit;]
+																| В работе
+											li.nav-item[role="presentation"]
+												a.nav-link.py-0.py-md-3[href="#bootstrap-vertical-wizard-tab5" data-bs-toggle="tab" data-wizard-step="5"	aria-selected="false" role="tab"]
+													.d-inline-block.d-md-flex.align-items-center.gap-3
+														span.nav-item-circle-parent
+															span.nav-item-circle
+																span.fa-solid.fa-file.nav-item-icon
+																span.fa-solid.fa-check.check-icon
+														span.nav-item-title.fs-9.fs-xl-8
+															font[vertical-align: inherit;]
+																| Работы выполнены
+									.tab-content[data-wizard-form="1"]
+										.tab-pane.active[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab1"	id="bootstrap-vertical-wizard-tab1"]
+											
+										.tab-pane[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab2"	id="bootstrap-vertical-wizard-tab2"]
 										
-									.col-md-8
-										.tab-content
-											.tab-pane.active[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab1"	id="bootstrap-vertical-wizard-tab1"]	
-												form#wizardVerticalForm1[data-wizard-form="1"]
-													.row
-														.col-md-6
-															.form-floating.mb-2
-																select#client-wizard-validation.form-select[name="client" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																	option[value=""] 
-																		| Клиент
-																	option[value="6"]
-																		| ТД РОСХОЛОД-ЦЕНТР
-																	option[value="13"]
-																		| СЕРАВИНА Т. А. ИП
-																	option[value="9"]
-																		| МЕГА ФАРМ
-																	option[value="3"]
-																		| АПТЕКА- А.в.е
-																	option[value="2"]
-																		| Вилтан
-																	option[value="11"]
-																		| Ю Би Си Кул-Б
-																	option[value="10"]
-																		| Калинов Родник
-																	option[value="14"]
-																		| Коршикова А. В.
-																	option[value="7"]
-																		| РТ-ГРУПП
-																	option[value="4"]
-																		| ВкусВилл
-																	option[value="12"]
-																		| КОРАБЛИК-Р 
-																	option[value="15"]
-																		| АПТЕКА-А.В.Е-1 
-																	option[value="1"]
-																		| Байрос
-																	option[value="8"]
-																		| ПРОФАРМ
-																	option[value="18"]
-																		| ФАРМАСИ
-																	option[value="20"]
-																		| ВРЕМЯ ЕСТЬ 
-																	option[value="57"]
-																		| Хлебосол
-																	option[value="22"]
-																		| ГРАДИЕНТ
-																	option[value="26"]
-																		| Смартен
-																	option[value="24"]
-																		| ВИНТОРГ МО
-																	option[value="27"]
-																		| МРФК 
-																	option[value="28"]
-																		| АВАЛОНЖ
-																	option[value="29"]
-																		| АВЕСТ 
-																	option[value="30"]
-																		| КОПТЕВСКИЙ РЫНОК 
-																	option[value="45"]
-																		| ООО "Медицинский центр Елены Малышевой"
-																	option[value="31"]
-																		| ГК Траст Холод
-																	option[value="16"]
-																		| ПРОВИЗОР
-																	option[value="17"]
-																		| ФАРМАЦЕВТ 
-																	option[value="19"]
-																		| Мособлфармация
-																	option[value="25"]
-																		| Бремор
-																	option[value="21"]
-																		| АМ ВОРОНЕЖ
-																	option[value="32"]
-																		| АМ Регион
-																	option[value="33"]
-																		| АМ Тверь
-																	option[value="34"]
-																		| АМ ЯРОСЛАВЛЬ 
-																	option[value="56"]
-																		| Бо-Фарм
-																	option[value="35"]
-																		| АМ Владимир 
-																	option[value="36"]
-																		| АМ РОСТОВ-НА-ДОНУ
-																	option[value="37"]
-																		| АМ ЛИПЕЦК
-																	option[value="38"]
-																		| АМ НИЖНИЙ НОВГОРОД 
-																	option[value="39"]
-																		| АМ Калуга
-																	option[value="40"]
-																		| ИП Боженко А.А.
-																	option[value="41"]
-																		| Вариант 999
-																	option[value="42"]
-																		| Айдекс Лабораториз
-																	option[value="46"]
-																		| ООО "Ивоклар Вивадент"
-																	option[value="47"]
-																		| ООО «АПСЕЙЛ» (Рефро)
-																	option[value="48"]
-																		| ИП РОЗЕНТУЛ И. И.
-																	option[value="44"]
-																		| АО "Контакт"
-																	option[value="49"]
-																		| МЕГА ФАРМ КЛИНИКИ
-																	option[value="43"]
-																		| АРОМА МАРКЕТ
-																	option[value="50"]
-																		| ДА ЗДОРОВ
-																	option[value="51"]
-																		| ЛАВЕРНА XXI ВЕК
-																	option[value="52"]
-																		| СТАРАТЕЛИ 
-																	option[value="53"]
-																		| НСК 
-																	option[value="54"]
-																		| Фонд «Водный спорт» 
-																	option[value="55"]
-																		| БРИТАРЕВ МАНУФАКТУРА ООО
-																	option[value="58"]
-																		| АДАОР ПЛЮС
-																	option[value="59"]
-																		| ПРОМСИТ ООО
-																	option[value="60"]
-																		| ДЖАСТФОЮ
-																	option[value="61"]
-																		| Частное Лицо
-																	option[value="62"]
-																		| ООО "Фрут Лайф Джус"
-																	option[value="63"]
-																		| КОМПЛЕКС ГРУПП ООО
-																	option[value="64"]
-																		| ООО «еАптека»
-																	option[value="5"]
-																		| ТД ПОЛАИР
-																	option[value="65"]
-																		| ВФГБК
-																	option[value="66"]
-																		| ООО ТД НМ 
-																	option[value="67"]
-																		| ПарусИнвест
-																	option[value="68"]
-																		| ИП Цецерская СВ
-																	option[value="69"]
-																		| Перспектива
-																	option[value="70"] 
-																		| ООО «ИИ»
-																	option[value="71"]
-																		| АПТЕКА- А.в.е (склад)
-																	option[value="72"]
-																		| Кофе Моментс
-																	option[value="73"]
-																		| Дельта Дистрибьюшн
-																	option[value="74"]
-																		| Калина Фарм
-																	option[value="75"]
-																		| Крымские Дары
-																	option[value="76"]
-																		| ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"
-																	option[value="77"]
-																		| ООО "Норд Вил"
-																	option[value="78"]
-																		| Буховец Наталья Васильевна
-																	option[value="79"]
-																		| ООО «ЭВЕР Нейро Фарма»
-																	option[value="80"]
-																		| ООО "Бочкаревский пивоваренный завод"
-																	option[value="81"]
-																		| АМ "Иваново"
-																	option[value="82"]
-																		| ЭВЕР Нейро Фарма
-																	option[value="83"]
-																		| АМ Рязань
-																	option[value="84"]
-																		| ООО "ИБТ"
-																	option[value="85"]
-																		| МАЙ ФРУКТ ООО
-																	option[value="86"]
-																		| ФРОСТЭКО
-																	option[value="23"]
-																		| РЕМТОРГХОЛОД /select
-																.invalid-feedback
-																	| Обязательно к заполнению
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Клиентский номер" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Клиентский номер
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fa-solid.far.fa-id-card.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
-																	label.form-icon-label[for="repair_order_date"]
-																		| Дата заявки
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
-															.form-floating.mb-2
-																select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																	option[value=""] 
-																		| Оператор
-																	option[value="Печёнов Андрей"]
-																		| Печёнов Андрей
-																	option[value="Руковишников Антон"]
-																		| Руковишников Антон
-																	option[value="Груднов Ярослав"]
-																		| Груднов Ярослав
-																	option[value="Лисаков Андрей"]
-																		| Лисаков Андрей
-																	option[value="Гаврилов Владислав"]
-																		| Гаврилов Владислав
-																	option[value="Амплеев Владислав"]
-																		| Амплеев Владислав
-																	option[value="Самсонюк Михаил"]
-																		| Самсонюк Михаил
-																	option[value="Тихонов Максим"]
-																		| Тихонов Максим
-																	option[value="Поздняков Алексей"]
-																		| Поздняков Алексей
-																	option[value="Печенова Оксана"]
-																		| Печенова Оксана
-																	option[value="Алексей Карягин"]
-																		| Алексей Карягин
-																	option[value="Руслан Рокет"]
-																		| Руслан Рокет
-																	option[value="Бажанов Сергей"]
-																		| Бажанов Сергей
-																.invalid-feedback
-																	| Обязательно к заполнению
-																.form-floating.mb-2
-																	select#autor.form-select[name="autor"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																		option[value=""] 
-																			| Автор
-																.form-floating.mb-2
-																	select#chif.form-select[name="chif"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																		option[value=""] 
-																			| Руководитель
-																.form-floating.mb-2
-																	select#responsible.form-select[name="responsible"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																		option[value=""] 
-																			| Ответственный за эксплуатацию
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_address.form-icon-input.form-control.outline-none.border-0[type="text"  placeholder="Адрес" name="repair_address" readonly="readonly"	required="required" ]
-																	label.form-icon-label[for="repair_order_address"]
-																		| Адрес
-																	button.btn.btn-outline-info[type="button" data-bs-toggle="modal" data-bs-target="#addressForm"]
-																		| Выберите адрес
-																span.fa-solid.fab.fa-periscope.text-body.fs-9.form-icon	
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_address.form-icon-input.form-control.outline-none.border-0[type="text"  placeholder="Оборудование" name="repair_tools" readonly="readonly"	required="required" ]
-																	label.form-icon-label[for="repair_order_address"]
-																		| Оборудование
-																	button.btn.btn-outline-info[type="button" data-bs-toggle="modal" data-bs-target="#toolsForm"]
-																		| Выберите оборудование
-																span.fa-solid.fas.fa-tools.text-body.fs-9.form-icon	
-														.col-md-6
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_expected_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
-																	label.form-icon-label[for="repair_order_expected_date"]
-																		| Планируемая дата
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Наименование обьекта" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Наименование обьекта
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.far.fa-address-card.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Адрес" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Адрес
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fab.fa-periscope.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Оборудование" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Оборудование
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fa.fa-screwdriver-wrench.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Тип оборудования" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Тип оборудования
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.far.fa-list-alt.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Контактное лицо" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Контактное лицо
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fa.fa-user.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Телефон" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Телефон
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.fas.fa-phone.text-body.fs-9.form-icon
-															.form-icon-container
-																.form-floating.mb-2
-																	input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Обслуживающая компания" name="repair_order"	required="required" ]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Обслуживающая компания
-																	.invalid-feedback
-																		| Обязательно к заполнению
-																span.far.fa-star.text-body.fs-9.form-icon
-															.form-floating.mb-2
-																select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
-																	option[value="На адресе"]
-																	option[value="На складе"]
-														.col-12
-															.form-icon-container
-																.form-floating.mb-2
-																	textarea#repair_order_number.form-icon-input.form-control[placeholder="Обслуживающая компания" name="repair_order"]
-																	label.form-icon-label[for="repair_order_number"]
-																		| Дополнительная информация
-															
+										.tab-pane[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab3"	id="bootstrap-vertical-wizard-tab3"]
+											
+										.tab-pane[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab4"	id="bootstrap-vertical-wizard-tab4"]
+											
+										.tab-pane[role="tabpanel" aria-labelledby="bootstrap-vertical-wizard-tab5"	id="bootstrap-vertical-wizard-tab5"]
+									div.pt-4.pb-0[data-wizard-footer="data-wizard-footer"]
+										button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+											| Подсказка
+										button.btn.btn-danger.mb-2.me-2.d-none[data-wizard-prev-btn="data-wizard-prev-btn"]
+											| Отклонить
+										button.btn.btn-info.mb-2[data-wizard-next-btn="data-wizard-next-btn"]
+											| Сохранить	
+								
+								.col-md-8
+									.card	
+										form#wizardVerticalForm1[data-wizard-form="1"]
+											.row
+												.col-md-6
+													.form-floating.mb-2
+														select#client-wizard-validation.form-select[name="client" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+															option[value=""] 
+																| Клиент
+															option[value="6"]
+																| ТД РОСХОЛОД-ЦЕНТР
+															option[value="13"]
+																| СЕРАВИНА Т. А. ИП
+															option[value="9"]
+																| МЕГА ФАРМ
+															option[value="3"]
+																| АПТЕКА- А.в.е
+															option[value="2"]
+																| Вилтан
+															option[value="11"]
+																| Ю Би Си Кул-Б
+															option[value="10"]
+																| Калинов Родник
+															option[value="14"]
+																| Коршикова А. В.
+															option[value="7"]
+																| РТ-ГРУПП
+															option[value="4"]
+																| ВкусВилл
+															option[value="12"]
+																| КОРАБЛИК-Р 
+															option[value="15"]
+																| АПТЕКА-А.В.Е-1 
+															option[value="1"]
+																| Байрос
+															option[value="8"]
+																| ПРОФАРМ
+															option[value="18"]
+																| ФАРМАСИ
+															option[value="20"]
+																| ВРЕМЯ ЕСТЬ 
+															option[value="57"]
+																| Хлебосол
+															option[value="22"]
+																| ГРАДИЕНТ
+															option[value="26"]
+																| Смартен
+															option[value="24"]
+																| ВИНТОРГ МО
+															option[value="27"]
+																| МРФК 
+															option[value="28"]
+																| АВАЛОНЖ
+															option[value="29"]
+																| АВЕСТ 
+															option[value="30"]
+																| КОПТЕВСКИЙ РЫНОК 
+															option[value="45"]
+																| ООО "Медицинский центр Елены Малышевой"
+															option[value="31"]
+																| ГК Траст Холод
+															option[value="16"]
+																| ПРОВИЗОР
+															option[value="17"]
+																| ФАРМАЦЕВТ 
+															option[value="19"]
+																| Мособлфармация
+															option[value="25"]
+																| Бремор
+															option[value="21"]
+																| АМ ВОРОНЕЖ
+															option[value="32"]
+																| АМ Регион
+															option[value="33"]
+																| АМ Тверь
+															option[value="34"]
+																| АМ ЯРОСЛАВЛЬ 
+															option[value="56"]
+																| Бо-Фарм
+															option[value="35"]
+																| АМ Владимир 
+															option[value="36"]
+																| АМ РОСТОВ-НА-ДОНУ
+															option[value="37"]
+																| АМ ЛИПЕЦК
+															option[value="38"]
+																| АМ НИЖНИЙ НОВГОРОД 
+															option[value="39"]
+																| АМ Калуга
+															option[value="40"]
+																| ИП Боженко А.А.
+															option[value="41"]
+																| Вариант 999
+															option[value="42"]
+																| Айдекс Лабораториз
+															option[value="46"]
+																| ООО "Ивоклар Вивадент"
+															option[value="47"]
+																| ООО «АПСЕЙЛ» (Рефро)
+															option[value="48"]
+																| ИП РОЗЕНТУЛ И. И.
+															option[value="44"]
+																| АО "Контакт"
+															option[value="49"]
+																| МЕГА ФАРМ КЛИНИКИ
+															option[value="43"]
+																| АРОМА МАРКЕТ
+															option[value="50"]
+																| ДА ЗДОРОВ
+															option[value="51"]
+																| ЛАВЕРНА XXI ВЕК
+															option[value="52"]
+																| СТАРАТЕЛИ 
+															option[value="53"]
+																| НСК 
+															option[value="54"]
+																| Фонд «Водный спорт» 
+															option[value="55"]
+																| БРИТАРЕВ МАНУФАКТУРА ООО
+															option[value="58"]
+																| АДАОР ПЛЮС
+															option[value="59"]
+																| ПРОМСИТ ООО
+															option[value="60"]
+																| ДЖАСТФОЮ
+															option[value="61"]
+																| Частное Лицо
+															option[value="62"]
+																| ООО "Фрут Лайф Джус"
+															option[value="63"]
+																| КОМПЛЕКС ГРУПП ООО
+															option[value="64"]
+																| ООО «еАптека»
+															option[value="5"]
+																| ТД ПОЛАИР
+															option[value="65"]
+																| ВФГБК
+															option[value="66"]
+																| ООО ТД НМ 
+															option[value="67"]
+																| ПарусИнвест
+															option[value="68"]
+																| ИП Цецерская СВ
+															option[value="69"]
+																| Перспектива
+															option[value="70"] 
+																| ООО «ИИ»
+															option[value="71"]
+																| АПТЕКА- А.в.е (склад)
+															option[value="72"]
+																| Кофе Моментс
+															option[value="73"]
+																| Дельта Дистрибьюшн
+															option[value="74"]
+																| Калина Фарм
+															option[value="75"]
+																| Крымские Дары
+															option[value="76"]
+																| ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"
+															option[value="77"]
+																| ООО "Норд Вил"
+															option[value="78"]
+																| Буховец Наталья Васильевна
+															option[value="79"]
+																| ООО «ЭВЕР Нейро Фарма»
+															option[value="80"]
+																| ООО "Бочкаревский пивоваренный завод"
+															option[value="81"]
+																| АМ "Иваново"
+															option[value="82"]
+																| ЭВЕР Нейро Фарма
+															option[value="83"]
+																| АМ Рязань
+															option[value="84"]
+																| ООО "ИБТ"
+															option[value="85"]
+																| МАЙ ФРУКТ ООО
+															option[value="86"]
+																| ФРОСТЭКО
+															option[value="23"]
+																| РЕМТОРГХОЛОД /select
+														.invalid-feedback
+															| Обязательно к заполнению
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Клиентский номер" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Клиентский номер
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fa-solid.far.fa-id-card.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
+															label.form-icon-label[for="repair_order_date"]
+																| Дата заявки
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
+													.form-floating.mb-2
+														select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+															option[value=""] 
+																| Оператор
+															option[value="Печёнов Андрей"]
+																| Печёнов Андрей
+															option[value="Руковишников Антон"]
+																| Руковишников Антон
+															option[value="Груднов Ярослав"]
+																| Груднов Ярослав
+															option[value="Лисаков Андрей"]
+																| Лисаков Андрей
+															option[value="Гаврилов Владислав"]
+																| Гаврилов Владислав
+															option[value="Амплеев Владислав"]
+																| Амплеев Владислав
+															option[value="Самсонюк Михаил"]
+																| Самсонюк Михаил
+															option[value="Тихонов Максим"]
+																| Тихонов Максим
+															option[value="Поздняков Алексей"]
+																| Поздняков Алексей
+															option[value="Печенова Оксана"]
+																| Печенова Оксана
+															option[value="Алексей Карягин"]
+																| Алексей Карягин
+															option[value="Руслан Рокет"]
+																| Руслан Рокет
+															option[value="Бажанов Сергей"]
+																| Бажанов Сергей
+														.invalid-feedback
+															| Обязательно к заполнению
+														.form-floating.mb-2
+															select#autor.form-select[name="autor"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+																option[value=""] 
+																	| Автор
+														.form-floating.mb-2
+															select#chif.form-select[name="chif"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+																option[value=""] 
+																	| Руководитель
+														.form-floating.mb-2
+															select#responsible.form-select[name="responsible"  data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+																option[value=""] 
+																	| Ответственный за эксплуатацию
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_address.form-icon-input.form-control.outline-none.border-0[type="text"  placeholder="Адрес" name="repair_address" readonly="readonly"	required="required" ]
+															label.form-icon-label[for="repair_order_address"]
+																| Адрес
+															button.btn.btn-outline-info[type="button" data-bs-toggle="modal" data-bs-target="#addressForm"]
+																| Выберите адрес
+														span.fa-solid.fab.fa-periscope.text-body.fs-9.form-icon	
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_address.form-icon-input.form-control.outline-none.border-0[type="text"  placeholder="Оборудование" name="repair_tools" readonly="readonly"	required="required" ]
+															label.form-icon-label[for="repair_order_address"]
+																| Оборудование
+															button.btn.btn-outline-info[type="button" data-bs-toggle="modal" data-bs-target="#toolsForm"]
+																| Выберите оборудование
+														span.fa-solid.fas.fa-tools.text-body.fs-9.form-icon	
+												.col-md-6
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_expected_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
+															label.form-icon-label[for="repair_order_expected_date"]
+																| Планируемая дата
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Наименование обьекта" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Наименование обьекта
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.far.fa-address-card.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Адрес" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Адрес
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fab.fa-periscope.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Оборудование" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Оборудование
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fa.fa-screwdriver-wrench.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Тип оборудования" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Тип оборудования
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.far.fa-list-alt.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Контактное лицо" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Контактное лицо
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fa.fa-user.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Телефон" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Телефон
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.fas.fa-phone.text-body.fs-9.form-icon
+													.form-icon-container
+														.form-floating.mb-2
+															input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Обслуживающая компания" name="repair_order"	required="required" ]
+															label.form-icon-label[for="repair_order_number"]
+																| Обслуживающая компания
+															.invalid-feedback
+																| Обязательно к заполнению
+														span.far.fa-star.text-body.fs-9.form-icon
+													.form-floating.mb-2
+														select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+															option[value="На адресе"]
+															option[value="На складе"]
+												.col-12
+													.form-icon-container
+														.form-floating.mb-2
+															textarea#repair_order_number.form-icon-input.form-control[placeholder="Обслуживающая компания" name="repair_order"]
+															label.form-icon-label[for="repair_order_number"]
+																| Дополнительная информация
+												.col-12
+													.dz-message.dropzone-area.px-2.py-3[data-dz-message="data-dz-message"]
+														.text-center.text-body-emphasis
+															h5.mb-2
+																span.fa-solid.fa-upload.me-2
+																.mb-0.fs-9.text-body-tertiary.text-opacity-85.lh-sm
+																	| перенесите файлы для загрузки сюда
+												.col-12.mt-4
+													.files-container[data-files-container="data-files-container"]
+														.text-center
+															.file-box-wrapper.img-zoom-hover
+																input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+																label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+																.position-relative.h-100
+																	.file-box.overflow-hidden
+																		img.w-100.h-100.object-fit-cover[src="../images/files/9.png"]
+																.dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+																	button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+																		span.fas.fa-ellipsis-v
+																	.dropdown-menu.dropdown-menu-end
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Копировать
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Скачать
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Отправить
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Переименовать
+																		hr.dropdown-divider
+																		a.dropdown-item.fs-9.text-decoration-none.text-danger
+																			| Удалить
+																.d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+																	| Поломка.jpg
+																.mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+																	| 980 Kb
+														.text-center
+															.file-box-wrapper.img-zoom-hover
+																input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+																label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+																.position-relative.h-100
+																	.file-box.overflow-hidden
+																		img.w-100.h-100.object-fit-cover[src="../images/files/11.png"]
+																.dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+																	button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+																		span.fas.fa-ellipsis-v
+																	.dropdown-menu.dropdown-menu-end
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Копировать
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Скачать
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Отправить
+																		a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+																			| Переименовать
+																		hr.dropdown-divider
+																		a.dropdown-item.fs-9.text-decoration-none.text-danger
+																			| Удалить
+																.d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+																	| Поломка.jpg
+																.mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+																	| 980 Kb
+
+
+			div#fuq.modal.fade.modal[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Подсказка
+							button.btn.btn-close.p-1
+						.modal-body
+							ul.fs-9
+								li
+									p
+										| Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;
+								li
+									p
+										| Дата подачи заявки-присваивается автоматически текущая дата и время;
+								li
+									p
+										| Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их можно выбрать из списка;
+								li
+									p
+										| Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются к клиенту автоматически и после создания доступны к выбору.
+								li
+									p
+										| Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим серийный номер далее нажимаем сохранить.
+								li	
+									p
+										| Заявленный вид ремонта- выбираем необходимый вид ремонта.
+								li
+									p
+										| Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.
+								li
+									p
+										| Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.
 			div#addressForm.modal.fade.modal-xl[tabindex="-1" aria-hidden="true"]
 				.modal-dialog
 					.modal-content

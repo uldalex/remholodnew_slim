@@ -3456,8 +3456,263 @@
      <li aria-current="page" class="breadcrumb-item">Заявки на ремонт</li>
      <li aria-current="page" class="breadcrumb-item active">Заявки ремонт на адресе</li>
     </ol>
-   </nav><button aria-controls="offcanvasMenu" class="btn btn-primary" data-bs-target="#offcanvasMenu"
-    data-bs-toggle="offcanvas" type="button">Новая заявка</button>
+   </nav>
+   <div class="mt-4">
+    <div class="card border-0">
+     <div class="card-header p-4 border-0"><button aria-controls="offcanvasMenu" class="btn btn-primary"
+       data-bs-target="#offcanvasMenu" data-bs-toggle="offcanvas" type="button">Новая заявка</button></div>
+     <div class="card-body">
+      <div class="table-responsive table-reponsive-md d-none d-md-block rounded-2 scrollbar">
+       <table class="table table-hover table-bordered">
+        <thead class="fs-10 text-uppercase">
+         <tr>
+          <th class="text-info sort" scope="col" style="width:40px"><span class="fa-solid fa-circle text-danger"></span>
+          </th>
+          <th class="text-info-dark sort" scope="col">Номер</th>
+          <th class="text-info-dark sort" data-sort="num" scope="col">Клиентский номер</th>
+          <th class="text-info-dark sort" scope="col">Дата заявки</th>
+          <th class="text-info-dark sort" scope="col">Дата выполнения</th>
+          <th class="text-info-dark sort" data-sort="name" scope="col">Клиент</th>
+          <th class="text-info-dark sort" scope="col">Автор</th>
+          <th class="text-info-dark sort" scope="col">Адрес</th>
+          <th class="text-info-dark sort" scope="col">Оператор</th>
+          <th class="text-info-dark sort" scope="col">Исполнитель</th>
+          <th class="text-info-dark sort" scope="col">Оборудование</th>
+          <th class="text-info-dark sort" scope="col">Серийный номер</th>
+          <th class="text-info-dark sort" scope="col">Заявленная неисправность</th>
+          <th class="text-info-dark sort" scope="col">Статус</th>
+          <th class="text-info-dark sort" scope="col">Приоритет заявки</th>
+          <th class="text-info-dark sort" scope="col">Операции</th>
+         </tr>
+        </thead>
+        <tbody class="fs-9">
+         <tr>
+          <th class="fs-10" scope="row"><span class="fa-solid fa-circle text-danger"></span>
+          <td class="num">11239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Ю Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr>
+          <th scope="row">
+          <td class="num">01239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Ф Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-danger">
+          <th scope="row">
+          <td class="num">41239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td>А Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-success">
+          <th scope="row">
+          <td class="num">21239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-info">
+          <th scope="row">
+          <td class="num">11239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-dark">
+          <th scope="row">
+          <td class="num">31239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Ю Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-light">
+          <th scope="row">
+          <td class="num">5239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">1Ю Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-warning">
+          <th scope="row">
+          <td class="num">01239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">e Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr class="table-primary">
+          <th scope="row">
+          <td class="num">911239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">Ю Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr>
+          <th scope="row">
+          <td class="num">9</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">IБи Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки</td>
+          </th>
+         </tr>
+         <tr>
+          <th scope="row">
+          <td class="num">239</td>
+          <td>14256</td>
+          <td>04-12-2019 16:42</td>
+          <td></td>
+          <td class="name">K Би Си Кул-Б </td>
+          <td>Спивак Руслан</td>
+          <td>г.Москва г.Рошаль,ул.Советская д.36</td>
+          <td>Печенова Оксана</td>
+          <td></td>
+          <td>Фармацевтический холодильник -</td>
+          <td>0893719089</td>
+          <td>Не горит свет, Не охлаждает</td>
+          <td>Подтверждение оператором</td>
+          <td>Средний</td>
+          <td>иконки </td>
+          </th>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <div class="d-flex flex-between-center pt-3">
+       <div class="pagination d-none"></div>
+       <p class="mb-0 fs-9"><span class="d-none d-sm-inline-block" data-list-info="data-list-info"></span><span
+         class="d-none d-sm-inline-block">1 из &mdash; 1450&nbsp; </span><a class="fw-semibold" data-list-view="*"
+         href="#!">Показать все<span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span></a><a
+         class="fw-semibold d-none" data-list-view="less" href="#!">
+         <View>Less</View><span class="fas fa-angle-right ms-1" data-fa-transform="down-1"></span>
+        </a></p>
+       <div class="d-flex"><button class="btn btn-sm btn-primary" data-list-pagination="prev"
+         type="button"><span>Предыдущая</span></button><button class="btn btn-sm btn-primary px-4 ms-2"
+         data-list-pagination="next" type="button"><span>Следующая</span></button></div>
+      </div>
+     </div>
+    </div>
+   </div>
   </div>
   <div aria-modal="true" class="offcanvas offcanvas-start" id="offcanvasMenu" role="dialog" tabindex="-1">
    <div class="offcanvas-body"><button aria-label="Close" class="btn-close text-reset" data-bs-dismiss="offcanvas"

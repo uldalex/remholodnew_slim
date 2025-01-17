@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run serve",
     "serve": "node browser-sync.js",
-    "watch": "nodemon --watch 'src/**/*' --exec 'npm run preprocess'",
+    "watchpreprocess": "nodemon --watch 'src/**/*' --exec 'npm run preprocess'",
     "preprocess": "node preprocess.js",
     "build": "npm run preprocess && webpack --mode production",
     "dev": "webpack serve --mode development",

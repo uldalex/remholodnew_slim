@@ -1000,7 +1000,7 @@ blockquote {
 
 b,
 strong {
-    font-weight: 800
+    font-weight: 600
 }
 
 small,
@@ -1114,7 +1114,7 @@ caption {
 }
 
 th {
-    font-weight: 800;
+    font-weight: 600;
     text-align: inherit;
     text-align: -webkit-match-parent
 }
@@ -13503,7 +13503,7 @@ fieldset:disabled .table-list .page,
 }
 
 .fw-bolder {
-    font-weight: 800 !important
+    font-weight: 600 !important
 }
 
 .fw-black {

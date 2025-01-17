@@ -3375,8 +3375,422 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 						li.breadcrumb-item.active[aria-current="page"]
 								| Заявки ремонт на адресе
 	
-				button.btn.btn-primary[type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu"]
-					| Новая заявка
+				.mt-4
+					.card.border-0
+						.card-header.p-4.border-0
+							button.btn.btn-primary[type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu"]
+								| Новая заявка
+						.card-body
+							.table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+								table.table.table-hover.table-bordered
+									thead.fs-10.text-uppercase
+										tr
+											th.text-info.sort[scope="col" style="width:40px"]
+												span.fa-solid.fa-circle.text-danger
+											th.text-info-dark.sort[scope="col"]
+												| Номер
+											th.text-info-dark.sort[scope="col" data-sort="num"]
+												| Клиентский номер
+											th.text-info-dark.sort[scope="col"]
+												| Дата заявки
+											th.text-info-dark.sort[scope="col"]
+												| Дата выполнения
+											th.text-info-dark.sort[scope="col"  data-sort="name"]
+												| Клиент
+											th.text-info-dark.sort[scope="col"]
+												| Автор
+											th.text-info-dark.sort[scope="col"]
+												| Адрес
+											th.text-info-dark.sort[scope="col"]
+												| Оператор
+											th.text-info-dark.sort[scope="col"]
+												| Исполнитель
+											th.text-info-dark.sort[scope="col"]
+												| Оборудование
+											th.text-info-dark.sort[scope="col"]
+												| Серийный номер
+											th.text-info-dark.sort[scope="col"]
+												| Заявленная неисправность
+											th.text-info-dark.sort[scope="col"]
+												| Статус
+											th.text-info-dark.sort[scope="col"]
+												| Приоритет заявки
+											th.text-info-dark.sort[scope="col"]
+												| Операции
+
+									tbody.fs-9
+										tr
+											th.fs-10[scope="row"]
+												span.fa-solid.fa-circle.text-danger
+												td.num
+													| 11239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Ю Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr
+											th[scope="row"]
+												td.num
+													| 01239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Ф Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-danger
+											th[scope="row"]
+												td.num
+													| 41239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td
+													| А Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-success
+											th[scope="row"]
+												td.num
+													| 21239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-info
+											th[scope="row"]
+												td.num
+													| 11239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-dark
+											th[scope="row"]
+												td.num
+													| 31239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Ю Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-light
+											th[scope="row"]
+												td.num
+													| 5239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| 1Ю Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-warning
+											th[scope="row"]
+												td.num
+													| 01239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| e Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr.table-primary
+											th[scope="row"]
+												td.num
+													| 911239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| Ю Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr
+											th[scope="row"]
+												td.num
+													| 9
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| IБи Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки
+										tr
+											th[scope="row"]
+												td.num
+													| 239
+												td
+													| 14256
+												td
+													| 04-12-2019 16:42
+												td
+													| 
+												td.name
+													| K Би Си Кул-Б	
+												td
+													| Спивак Руслан
+												td
+													| г.Москва г.Рошаль,ул.Советская д.36
+												td
+													| Печенова Оксана
+												td
+													| 
+												td
+													| Фармацевтический холодильник -
+												td
+													| 0893719089
+												td
+													| Не горит свет, Не охлаждает
+												td
+													| Подтверждение оператором
+												td
+													| Средний
+												td
+													| иконки	
+							.d-flex.flex-between-center.pt-3
+								.pagination.d-none
+								p.mb-0.fs-9
+									span.d-none.d-sm-inline-block[data-list-info="data-list-info"]
+									span.d-none.d-sm-inline-block
+										| 1 из &mdash; 1450&nbsp; 
+									a.fw-semibold[href="#!" data-list-view="*"]
+										| Показать все
+										span.fas.fa-angle-right.ms-1[data-fa-transform="down-1"]
+									a.fw-semibold.d-none[href="#!" data-list-view="less"]
+										View Less
+										span.fas.fa-angle-right.ms-1[data-fa-transform="down-1"]
+								.d-flex
+									button.btn.btn-sm.btn-primary[type="button" data-list-pagination="prev"]
+										span
+											| Предыдущая
+									button.btn.btn-sm.btn-primary.px-4.ms-2[type="button" data-list-pagination="next"]
+										span
+											| Следующая
 			#offcanvasMenu.offcanvas.offcanvas-start[tabindex="-1" aria-modal="true" role="dialog"]
 				.offcanvas-body
 					button.btn-close.text-reset[type="button" data-bs-dismiss="offcanvas" aria-label="Close"]

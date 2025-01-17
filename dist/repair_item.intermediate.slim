@@ -3376,7 +3376,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 								| Заявки ремонт на адресе
 	
 				.mt-4
-					.card.border-0
+					.p-3
                         .theme-wizard.mb-5[data-theme-wizard="data-theme-wizard"]
                             .pt-4.pb-0
                                 .row.justify-content-between
@@ -3454,7 +3454,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                                                 | Сохранить	
                                     
                                     .col-md-8
-                                        .card	
+                                        div	
                                             form#wizardVerticalForm1[data-wizard-form="1"]
                                                 .row
                                                     .col-md-6
@@ -3848,3 +3848,413 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                                                                         | Поломка.jpg
                                                                     .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
                                                                         | 980 Kb
+            			div#fuq.modal.fade.modal[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Подсказка
+							button.btn.btn-close.p-1
+						.modal-body
+							ul.fs-9
+								li
+									p
+										| Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;
+								li
+									p
+										| Дата подачи заявки-присваивается автоматически текущая дата и время;
+								li
+									p
+										| Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их можно выбрать из списка;
+								li
+									p
+										| Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются к клиенту автоматически и после создания доступны к выбору.
+								li
+									p
+										| Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим серийный номер далее нажимаем сохранить.
+								li	
+									p
+										| Заявленный вид ремонта- выбираем необходимый вид ремонта.
+								li
+									p
+										| Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.
+								li
+									p
+										| Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.
+			div#addressForm.modal.fade.modal-xl[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Адрес
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+								i 
+									| Выберите адрес
+								.row
+									.col-md-10
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новый адрес
+								.row
+									.col-md-6
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Наименование" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Наименование
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.far.fa-edit.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Адрес" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Адрес
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fab.fa-periscope.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Контактное лицо" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Контактное лицо
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-user.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Клиентский номер" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Телефон
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-phone.text-body.fs-9.form-icon
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Обслуживающая компания"] 
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Филиал"] 
+
+									.col-md-6
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+			div#toolsForm.modal.fade[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Единица оборудования
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+
+								.row
+									.col-4
+										.form-check.form-switch
+											input.form-check-input[type="checkbox"]
+											.form-check-label
+												| По адресу
+									.col-md-8
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info.mb-2[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новую единицу оборудования
+								.form-floating.mb-2
+									select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+										option[value="Выберите оборудование"] 
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Серийный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Инвентарный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_expected_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
+										label.form-icon-label[for="repair_order_expected_date"]
+											| Дата производства
+										.invalid-feedback
+											| Обязательно к заполнению
+									span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
+
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+
+								
+
+												
+
+			div.support-chat-container
+				.container-fluid.support-chat	
+					.card.bg-body-emphasis
+						.card-header.d-flex.flex-between-center.px-4.py-3.border-bottom.border-translucent
+							h5.mb-0.d-flex.align-items-center.gap-2
+								| Чат с поддержкой
+								span.fa-solid.fa-circle.text-success.fs-11
+							.btn-reveal-trigger
+								button#support-chat-dropdown.btn.btn-link.p-0.dropdown-toggle.dropdown-caret-none.transition-none.d-flex[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+									span.fas.fa-ellipsis-h.text-body
+								.dropdown-menu.dropdown-menu-end.py-2[aria-labelledby="support-chat-dropdown"]
+									a.dropdown-item[href="#!"]
+										| Запросить обратный звонок
+									a.dropdown-item[href="#!"]
+										| Поиск в чате
+									a.dropdown-item[href="#!"]
+										| Показать историю
+									a.dropdown-item[href="#!"]
+										| Заявка в техподдержку
+									a.dropdown-item.btn-support-chat[href="#!"]
+										| Закрыть
+						.card-body.chat.p-0
+							.d-flex.flex-column-reverse.scrollbar.h-100.p-3
+								.text-end.mt-6
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужна помощь
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Я не могу найти нужный документ
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужно искать по номеру?
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Ответьте!
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+								.text-center.mt-auto
+									.avatar.avatar-3xl.status-online
+										img.rounded-circle[src="images/30.webp" alt=""]
+									h5.mt-2.mb-3
+										| Иван Иванов
+									p.text-center.text-body-emphasis.mb-0
+									  | Задайте нам любой вопрос — мы ответим вам здесь или по электронной почте в течение 24 часов.
+						.card-footer.d-flex.align-items-center.gap-2.border-top.border-translucent.ps-3.pe-4.py-3
+							.d-flex.align-items-center.flex-1.gap-3.border.border-translucent.rounded-pill.px-4
+								input.form-control.outline-none.border-0.flex-1.fs-9.px-0[ type="text" placeholder="Напишите сообщение"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatPhotos"]
+									span.fa-solid.fa-image
+								input#supportChatPhotos.d-none[type="file" accept="image/*"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatAttachment"]
+									span.fa-solid.fa-paperclip
+								input#supportChatAttachment.d-none[type="file"]
+							button.btn.p-0.border-0.send-btn
+								span.fa-solid.fa-paper-plane.fs-9
+
+				button.btn.p-0.border.border-translucent.btn-support-chat
+					span.fs-8.btn-text.text-primary.text-nowrap
+						| Чат
+					span.fa-solid.fa-circle.text-success.fs-9.ms-2
+					span.fa-solid.fa-chevron-down.text-primary.fs-7
+		#settings-offcanvas.offcanvas.offcanvas-end.settings-panel.border-0[tabindex="-1" aria-labelledby="settings-offcanvas"]
+				.offcanvas-header.align-items-start.border-bottom.flex-column.border-translucent
+					.pt-1.w-100.mb-6.d-flex.justify-content-between.align-items-start
+						div
+							h5.mb-2.me-2.lh-sm
+								span.fas.fa-palette.me-2.fs-8
+								| Настройки портала
+							p.mb-0.fs-9
+								| Настройте портал "под себя"
+						button.btn.p-1.fw-bolder[type="button" data-bs-dismiss="offcanvas" aria-label="Close"]
+							span.fas.fa-times.fs-8
+					button.btn.btn-phoenix-secondary.w-100[data-theme-control="reset"]
+						span.fas.fa-arrows-rotate.me-2.fs-10
+						| Сбросить настройки 
+				#themeController.offcanvas-body.scrollbar.px-card
+					.setting-panel-item.mt-0
+						h5.setting-panel-item-title
+							| Цвета темы:
+						.row.gx-2
+							.col-4
+								input#themeSwitcherLight.btn-check[name="theme-color" type="radio" value="light" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherLight"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/default-light.png" alt=""]
+									span.label-text
+									| Светлый
+							.col-4
+								input#themeSwitcherDark.btn-check[name="theme-color" type="radio" value="dark" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherDark"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/default-dark.png" alt=""]
+									span.label-text
+									| Темный
+							.col-4
+								input#themeSwitcherAuto.btn-check[name="theme-color" type="radio" value="auto" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherAuto"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/auto.png" alt=""]
+									span.label-text
+									| Авто
+					.border.border-translucent.rounded-3.p-4.setting-panel-item.bg-body-emphasis
+						.d-flex.justify-content-between.align-items-center
+							h5.setting-panel-item-title.mb-1
+								| Чат поддержки 
+							.form-check.form-switch.mb-0
+								input.form-check-input.ms-auto[type="checkbox" data-theme-control="phoenixSupportChat"]
+							p.mb-0.text-body-tertiary
+								| Показать\Скрыть чат
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Настройка рабочих панелей
+						.row.gx-2
+							.col-6
+								input#navbarPositionVertical.btn-check[name="navigation-type" type="radio" value="vertical" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionVertical"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/default-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/default-dark.png" alt=""]
+									span.label-text
+										| Вертикальная
+							.col-6
+								input#navbarPositionHorizontal.btn-check[name="navigation-type" type="radio" value="horizontal" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionHorizontal"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/top-default-dark.png" alt=""]
+									span.label-text
+										| Горизонтальная
+							.col-6
+								input#navbarPositionCombo.btn-check[name="navigation-type" type="radio" value="combo" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionCombo"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/nav-combo-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/nav-combo-dark.png" alt=""]
+									span.label-text
+										| Комбмнированная
+							.col-6
+								input#navbarPositionTopDouble.btn-check[name="navigation-type" type="radio" value="dual-nav" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionTopDouble"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/dual-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/dual-dark.png" alt=""]
+									span.label-text
+										| В две строки
+					.setting-panel-item
+							h5.setting-panel-item-title
+								| Настройка вертикального меню
+							.row.gx-2
+								.col-6
+									input#navbar-style-default.btn-check[type="radio" name="config.name" value="default" data-theme-control="phoenixNavbarVerticalStyle"]
+									label.btn.d-block.w-100.btn-navbar-style.fs-9[for="navbar-style-default"]
+										img.img-fluid.img-prototype.d-dark-none[src="images/default-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/default-dark.png" alt=""]
+										span.label-text.d-dark-none
+											|  По умолчанию
+										span.label-text.d-light-none
+											| По умолчанию
+								.col-6
+									input#navbar-style-dark.btn-check[type="radio" name="config.name" value="darker" data-theme-control="phoenixNavbarVerticalStyle"]
+									label.btn.d-block.w-100.btn-navbar-style.fs-9[for="navbar-style-dark"]
+										img.img-fluid.img-prototype.d-dark-none[src="images/vertical-darker.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/vertical-lighter.png" alt=""]
+										span.label-text.d-dark-none
+											| Темный
+										span.label-text.d-light-none
+											| Светлый
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Настройка горизонтального меню
+						.row.gx-2
+							.col-6
+								input#navbarShapeDefault.btn-check[name="navbar-shape" type="radio" value="default" data-theme-control="phoenixNavbarTopShape"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarShapeDefault"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-default-dark.png" alt=""]
+									span.label-text
+										| По умолчанию
+							.col-6
+								input#navbarShapeSlim.btn-check[name="navbar-shape" type="radio" value="slim" data-theme-control="phoenixNavbarTopShape"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarShapeSlim"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-slim.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-slim-dark.png" alt=""]
+									span.label-text
+										|  Узкое
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Цвет горизонтального меню
+						.row.gx-2
+							.col-6
+								input#navbarTopDefault.btn-check[name="navbar-top-style" type="radio" value="default" data-theme-control="phoenixNavbarTopStyle"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarTopDefault"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-style-darker.png" alt=""]
+									span.label-text
+										| По умолчанию
+							.col-6
+								input#navbarTopDarker.btn-check[name="navbar-top-style" type="radio" value="darker" data-theme-control="phoenixNavbarTopStyle"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarTopDarker"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/navbar-top-style-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-style-lighter.png" alt=""]
+									span.label-text.d-dark-none
+										| Темный
+									span.label-text.d-light-none
+										| Светлый    
+a.card.setting-toggle[href="#settings-offcanvas" data-bs-toggle="offcanvas"]
+	.card-body.d-flex.align-items-center.px-2.py-1
+		.position-relative.rounded-start[style="height:34px;width:28px"]
+			.settings-popover
+				span.ripple
+					span.fa-spin.position-absolute.all-0.d-flex.flex-center
+						span.icon-spin.position-absolute.all-0.d-flex.flex-center
+		small.text-uppercase.text-body-tertiary.fw-bold.py-2.pe-2.ps-1.rounded-end
+			| Настроить
+
+
+	
+	include ./src/components/modals/modal_search.slim
+javascript:
+	var navbarTopShape = window.config.config.phoenixNavbarTopShape; var navbarPosition = window.config.config.phoenixNavbarPosition; var body = document.querySelector('body'); var navbarDefault = document.querySelector('#navbarDefault'); var navbarTop = document.querySelector('#navbarTop'); var topNavSlim = document.querySelector('#topNavSlim'); var navbarTopSlim = document.querySelector('#navbarTopSlim'); var navbarCombo = document.querySelector('#navbarCombo'); var navbarComboSlim = document.querySelector('#navbarComboSlim'); var dualNav = document.querySelector('#dualNav'); var documentElement = document.documentElement; var navbarVertical = document.querySelector('.navbar-vertical'); if (navbarPosition === 'dual-nav') { topNavSlim.remove(); navbarTop.remove(); navbarVertical.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarDefault.remove(); dualNav.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'dual'); } else if (navbarTopShape === 'slim' && navbarPosition === 'vertical') { navbarDefault.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); dualNav.remove(); topNavSlim.style.display = 'block'; navbarVertical.style.display = 'inline-block'; document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'slim' && navbarPosition === 'horizontal') { navbarDefault.remove(); navbarVertical.remove(); navbarTop.remove(); topNavSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); dualNav.remove(); navbarTopSlim.removeAttribute('style'); document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'slim' && navbarPosition === 'combo') { navbarDefault.remove(); navbarTop.remove(); topNavSlim.remove(); navbarCombo.remove(); dualNav.remove(); navbarTopSlim.remove(); navbarComboSlim.removeAttribute('style'); navbarVertical.removeAttribute('style'); document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'default' && navbarPosition === 'horizontal') { navbarDefault.remove(); topNavSlim.remove(); navbarVertical.remove(); navbarTopSlim.remove(); dualNav.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarTop.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'horizontal'); } else if (navbarTopShape === 'default' && navbarPosition === 'combo') { topNavSlim.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarDefault.remove(); navbarComboSlim.remove(); dualNav.remove(); navbarCombo.removeAttribute('style'); navbarVertical.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'combo'); } else { topNavSlim.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarDefault.removeAttribute('style'); navbarVertical.removeAttribute('style'); } var navbarTopStyle = window.config.config.phoenixNavbarTopStyle; var navbarTop = document.querySelector('.navbar-top'); if (navbarTopStyle === 'darker') { navbarTop.setAttribute('data-navbar-appearance', 'darker'); } var navbarVerticalStyle = window.config.config.phoenixNavbarVerticalStyle; var navbarVertical = document.querySelector('.navbar-vertical'); if (navbarVerticalStyle === 'darker') { navbarVertical.setAttribute('data-navbar-appearance', 'darker'); }
+script[src="js/popper.min.js"]
+script[src="js/bootstrap.min.js"]
+script[src="js/anchor.min.js"]
+script[src="js/is.min.js"]
+script[src="js/all.min.js"]
+script[src="js/lodash.min.js"]
+script[src="js/list.min.js"]
+script[src="js/feather.min.js"]
+script[src="js/dayjs.min.js"]
+script[src="js/phoenix.js"]
+script[src="js/echarts.min.js"]
+script[src="js/leaflet.js"]
+script[src="js/leaflet.markercluster.js"]
+script[src="js/leaflet-tilelayer-colorfilter.min.js"]
+script[src="js/ecommerce-dashboard.js"]
+script[src="js/dropzone-min.js"]
+script[src="js/flatpickr.min.js"]
+script[src="js/prism.js"]
+script[src="js/choices.min.js"]                                                                    

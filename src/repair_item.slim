@@ -19,7 +19,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 				.text-body-tertiary.lead.mb-2
 				include ./components/breadcrump/breadcrump.slim	
 				.mt-4
-					.card.border-0
+					.p-3
                         .theme-wizard.mb-5[data-theme-wizard="data-theme-wizard"]
                             .pt-4.pb-0
                                 .row.justify-content-between
@@ -97,7 +97,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                                                 | Сохранить	
                                     
                                     .col-md-8
-                                        .card	
+                                        div	
                                             form#wizardVerticalForm1[data-wizard-form="1"]
                                                 .row
                                                     .col-md-6
@@ -491,3 +491,171 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                                                                         | Поломка.jpg
                                                                     .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
                                                                         | 980 Kb
+            			div#fuq.modal.fade.modal[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Подсказка
+							button.btn.btn-close.p-1
+						.modal-body
+							ul.fs-9
+								li
+									p
+										| Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;
+								li
+									p
+										| Дата подачи заявки-присваивается автоматически текущая дата и время;
+								li
+									p
+										| Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их можно выбрать из списка;
+								li
+									p
+										| Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются к клиенту автоматически и после создания доступны к выбору.
+								li
+									p
+										| Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим серийный номер далее нажимаем сохранить.
+								li	
+									p
+										| Заявленный вид ремонта- выбираем необходимый вид ремонта.
+								li
+									p
+										| Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.
+								li
+									p
+										| Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.
+			div#addressForm.modal.fade.modal-xl[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Адрес
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+								i 
+									| Выберите адрес
+								.row
+									.col-md-10
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новый адрес
+								.row
+									.col-md-6
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Наименование" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Наименование
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.far.fa-edit.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Адрес" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Адрес
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fab.fa-periscope.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Контактное лицо" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Контактное лицо
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-user.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Клиентский номер" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Телефон
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-phone.text-body.fs-9.form-icon
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Обслуживающая компания"] 
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Филиал"] 
+
+									.col-md-6
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+			div#toolsForm.modal.fade[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Единица оборудования
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+
+								.row
+									.col-4
+										.form-check.form-switch
+											input.form-check-input[type="checkbox"]
+											.form-check-label
+												| По адресу
+									.col-md-8
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info.mb-2[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новую единицу оборудования
+								.form-floating.mb-2
+									select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+										option[value="Выберите оборудование"] 
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Серийный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Инвентарный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_expected_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
+										label.form-icon-label[for="repair_order_expected_date"]
+											| Дата производства
+										.invalid-feedback
+											| Обязательно к заполнению
+									span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
+
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+
+								
+
+												
+
+			include ./components/supportChatContainer/supportChatContainer.slim
+		include ./components/supportTheam/supportTheam.slim
+	
+	include ./components/footer/footer.slim                                                                    

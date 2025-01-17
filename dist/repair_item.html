@@ -3458,7 +3458,7 @@
     </ol>
    </nav>
    <div class="mt-4">
-    <div class="card border-0">
+    <div class="p-3">
      <div class="theme-wizard mb-5" data-theme-wizard="data-theme-wizard">
       <div class="pt-4 pb-0">
        <div class="row justify-content-between">
@@ -3526,7 +3526,7 @@
            class="btn btn-info mb-2" data-wizard-next-btn="data-wizard-next-btn">Сохранить </button></div>
         </div>
         <div class="col-md-8">
-         <div class="card">
+         <div>
           <form data-wizard-form="1" id="wizardVerticalForm1">
            <div class="row">
             <div class="col-md-6">
@@ -3834,10 +3834,602 @@
        </div>
       </div>
      </div>
+     <div aria-hidden="true" class="modal fade modal" id="fuq" tabindex="-1"></div>
+    </div>
+   </div>
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Подсказка</h5><button class="btn btn-close p-1"></button>
+     </div>
+     <div class="modal-body">
+      <ul class="fs-9">
+       <li>
+        <p>Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;</p>
+       </li>
+       <li>
+        <p>Дата подачи заявки-присваивается автоматически текущая дата и время;</p>
+       </li>
+       <li>
+        <p>Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их
+         можно выбрать из списка;</p>
+       </li>
+       <li>
+        <p>Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если
+         необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются
+         к клиенту автоматически и после создания доступны к выбору.</p>
+       </li>
+       <li>
+        <p>Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем
+         выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим
+         серийный номер далее нажимаем сохранить.</p>
+       </li>
+       <li>
+        <p>Заявленный вид ремонта- выбираем необходимый вид ремонта.</p>
+       </li>
+       <li>
+        <p>Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем
+         «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.</p>
+       </li>
+       <li>
+        <p>Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.</p>
+       </li>
+      </ul>
+     </div>
     </div>
    </div>
   </div>
+  <div aria-hidden="true" class="modal fade modal-xl" id="addressForm" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Адрес</h5><button class="btn btn-close p-1"></button>
+     </div>
+     <div class="modal-body">
+      <form data-wizard-form="2" id="wizardVerticalForm2"><i>Выберите адрес</i>
+       <div class="row">
+        <div class="col-md-10">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value=""></option>
+          </select></div>
+        </div>
+        <div class="col-md-2"><button class="btn btn-info" data-bs-dismiss="modal" type="submit">Выбрать</button></div>
+       </div>
+      </form>
+      <form data-wizard-form="3" id="wizardVerticalForm3"><i>Или создайте новый адрес</i>
+       <div class="row">
+        <div class="col-md-6">
+         <div class="form-icon-container">
+          <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+            name="repair_order" placeholder="Наименование" required="required" type="text" /><label
+            class="form-icon-label" for="repair_order_number">Наименование</label>
+           <div class="invalid-feedback">Обязательно к заполнению</div>
+          </div><span class="far fa-edit text-body fs-9 form-icon"></span>
+         </div>
+         <div class="form-icon-container">
+          <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+            name="repair_order" placeholder="Адрес" required="required" type="text" /><label class="form-icon-label"
+            for="repair_order_number">Адрес</label>
+           <div class="invalid-feedback">Обязательно к заполнению</div>
+          </div><span class="fab fa-periscope text-body fs-9 form-icon"></span>
+         </div>
+         <div class="form-icon-container">
+          <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+            name="repair_order" placeholder="Контактное лицо" required="required" type="text" /><label
+            class="form-icon-label" for="repair_order_number">Контактное лицо</label>
+           <div class="invalid-feedback">Обязательно к заполнению</div>
+          </div><span class="fas fa-user text-body fs-9 form-icon"></span>
+         </div>
+         <div class="form-icon-container">
+          <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+            name="repair_order" placeholder="Клиентский номер" required="required" type="text" /><label
+            class="form-icon-label" for="repair_order_number">Телефон</label>
+           <div class="invalid-feedback">Обязательно к заполнению</div>
+          </div><span class="fas fa-phone text-body fs-9 form-icon"></span>
+         </div>
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="Обслуживающая компания"></option>
+          </select></div>
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="Филиал"></option>
+          </select></div>
+        </div>
+        <div class="col-md-6"></div>
+       </div>
+      </form>
+     </div>
+     <div class="modal-footer"><button class="btn btn-info mb-1" data-bs-dismiss="modal"
+       type="submit">Сохранить</button><button class="btn btn-phoenix-secondary me-1 mb-1"
+       data-bs-dismiss="modal">Отмена</button></div>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" class="modal fade" id="toolsForm" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Единица оборудования</h5><button class="btn btn-close p-1"></button>
+     </div>
+     <div class="modal-body">
+      <form data-wizard-form="2" id="wizardVerticalForm2">
+       <div class="row">
+        <div class="col-4">
+         <div class="form-check form-switch"><input class="form-check-input" type="checkbox" />
+          <div class="form-check-label">По адресу</div>
+         </div>
+        </div>
+        <div class="col-md-8">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value=""></option>
+          </select></div>
+        </div>
+        <div class="col-md-2"><button class="btn btn-info mb-2" data-bs-dismiss="modal" type="submit">Выбрать</button>
+        </div>
+       </div>
+      </form>
+      <form data-wizard-form="3" id="wizardVerticalForm3"><i>Или создайте новую единицу оборудования</i>
+       <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+         data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+         name="operator" required="required">
+         <option value="Выберите оборудование"></option>
+        </select></div>
+       <div class="form-icon-container">
+        <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+          name="repair_order" placeholder="Серийный номер" required="required" type="text" /><label
+          class="form-icon-label" for="repair_order_number">Серийный номер</label>
+         <div class="invalid-feedback">Обязательно к заполнению</div>
+        </div>
+       </div>
+       <div class="form-icon-container">
+        <div class="form-floating mb-2"><input class="form-icon-input form-control" id="repair_order_number"
+          name="repair_order" placeholder="Серийный номер" required="required" type="text" /><label
+          class="form-icon-label" for="repair_order_number">Инвентарный номер</label>
+         <div class="invalid-feedback">Обязательно к заполнению</div>
+        </div>
+       </div>
+       <div class="form-icon-container">
+        <div class="form-floating mb-2"><input class="form-icon-input form-control datetimepicker flatpickr-input"
+          data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
+          id="repair_order_expected_date" placeholder="д.м.гг" readonly="readonly" required="required"
+          type="text" /><label class="form-icon-label" for="repair_order_expected_date">Дата производства</label>
+         <div class="invalid-feedback">Обязательно к заполнению</div>
+        </div><span class="fa-solid far fa-calendar-alt text-body fs-9 form-icon"></span>
+       </div>
+      </form>
+     </div>
+     <div class="modal-footer"><button class="btn btn-info mb-1" data-bs-dismiss="modal"
+       type="submit">Сохранить</button><button class="btn btn-phoenix-secondary me-1 mb-1"
+       data-bs-dismiss="modal">Отмена</button></div>
+    </div>
+   </div>
+  </div>
+  <div class="support-chat-container">
+   <div class="container-fluid support-chat">
+    <div class="card bg-body-emphasis">
+     <div class="card-header d-flex flex-between-center px-4 py-3 border-bottom border-translucent">
+      <h5 class="mb-0 d-flex align-items-center gap-2">Чат с поддержкой<span
+        class="fa-solid fa-circle text-success fs-11"></span></h5>
+      <div class="btn-reveal-trigger"><button aria-expanded="false" aria-haspopup="true"
+        class="btn btn-link p-0 dropdown-toggle dropdown-caret-none transition-none d-flex" data-boundary="window"
+        data-bs-reference="parent" data-bs-toggle="dropdown" id="support-chat-dropdown" type="button"><span
+         class="fas fa-ellipsis-h text-body"></span></button>
+       <div aria-labelledby="support-chat-dropdown" class="dropdown-menu dropdown-menu-end py-2"><a
+         class="dropdown-item" href="#!">Запросить обратный звонок</a><a class="dropdown-item" href="#!">Поиск в
+         чате</a><a class="dropdown-item" href="#!">Показать историю</a><a class="dropdown-item" href="#!">Заявка в
+         техподдержку</a><a class="dropdown-item btn-support-chat" href="#!">Закрыть</a></div>
+      </div>
+     </div>
+     <div class="card-body chat p-0">
+      <div class="d-flex flex-column-reverse scrollbar h-100 p-3">
+       <div class="text-end mt-6"><a
+         class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
+         href="#!">
+         <p class="mb-0 fw-semibold fs-9">Нужна помощь</p><span
+          class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+        </a><a
+         class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
+         href="#!">
+         <p class="mb-0 fw-semibold fs-9">Я не могу найти нужный документ</p><span
+          class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+        </a><a
+         class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
+         href="#!">
+         <p class="mb-0 fw-semibold fs-9">Нужно искать по номеру?</p><span
+          class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+        </a><a
+         class="mb-2 d-inline-flex align-items-center text-decoration-none text-body-emphasis bg-body-hover rounded-pill border border-primary py-2 ps-4 pe-3"
+         href="#!">
+         <p class="mb-0 fw-semibold fs-9">Ответьте!</p><span
+          class="fa-solid fa-paper-plane text-primary fs-9 ms-3"></span>
+        </a></div>
+       <div class="text-center mt-auto">
+        <div class="avatar avatar-3xl status-online"><img alt="" class="rounded-circle" src="images/30.webp" /></div>
+        <h5 class="mt-2 mb-3">Иван Иванов</h5>
+        <p class="text-center text-body-emphasis mb-0">Задайте нам любой вопрос — мы ответим вам здесь или по
+         электронной почте в течение 24 часов.</p>
+       </div>
+      </div>
+     </div>
+     <div class="card-footer d-flex align-items-center gap-2 border-top border-translucent ps-3 pe-4 py-3">
+      <div class="d-flex align-items-center flex-1 gap-3 border border-translucent rounded-pill px-4"><input
+        class="form-control outline-none border-0 flex-1 fs-9 px-0" placeholder="Напишите сообщение"
+        type="text" /><label class="btn btn-link d-flex p-0 text-body-quaternary fs-9 border-0"
+        for="supportChatPhotos"><span class="fa-solid fa-image"></span></label><input accept="image/*" class="d-none"
+        id="supportChatPhotos" type="file" /><label class="btn btn-link d-flex p-0 text-body-quaternary fs-9 border-0"
+        for="supportChatAttachment"><span class="fa-solid fa-paperclip"></span></label><input class="d-none"
+        id="supportChatAttachment" type="file" /></div><button class="btn p-0 border-0 send-btn"><span
+        class="fa-solid fa-paper-plane fs-9"></span></button>
+     </div>
+    </div>
+   </div><button class="btn p-0 border border-translucent btn-support-chat"><span
+     class="fs-8 btn-text text-primary text-nowrap">Чат</span><span
+     class="fa-solid fa-circle text-success fs-9 ms-2"></span><span
+     class="fa-solid fa-chevron-down text-primary fs-7"></span></button>
+  </div>
  </main>
+ <div aria-labelledby="settings-offcanvas" class="offcanvas offcanvas-end settings-panel border-0"
+  id="settings-offcanvas" tabindex="-1">
+  <div class="offcanvas-header align-items-start border-bottom flex-column border-translucent">
+   <div class="pt-1 w-100 mb-6 d-flex justify-content-between align-items-start">
+    <div>
+     <h5 class="mb-2 me-2 lh-sm"><span class="fas fa-palette me-2 fs-8"></span>Настройки портала</h5>
+     <p class="mb-0 fs-9">Настройте портал "под себя"</p>
+    </div><button aria-label="Close" class="btn p-1 fw-bolder" data-bs-dismiss="offcanvas" type="button"><span
+      class="fas fa-times fs-8"></span></button>
+   </div><button class="btn btn-phoenix-secondary w-100" data-theme-control="reset"><span
+     class="fas fa-arrows-rotate me-2 fs-10"></span>Сбросить настройки </button>
+  </div>
+  <div class="offcanvas-body scrollbar px-card" id="themeController">
+   <div class="setting-panel-item mt-0">
+    <h5 class="setting-panel-item-title">Цвета темы:</h5>
+    <div class="row gx-2">
+     <div class="col-4"><input class="btn-check" data-theme-control="phoenixTheme" id="themeSwitcherLight"
+       name="theme-color" type="radio" value="light" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="themeSwitcherLight"><span class="mb-2 rounded d-block"></span><img alt=""
+        class="img-fluid img-prototype mb-0" src="images/default-light.png" /><span
+        class="label-text"></span>Светлый</label></div>
+     <div class="col-4"><input class="btn-check" data-theme-control="phoenixTheme" id="themeSwitcherDark"
+       name="theme-color" type="radio" value="dark" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="themeSwitcherDark"><span class="mb-2 rounded d-block"></span><img alt=""
+        class="img-fluid img-prototype mb-0" src="images/default-dark.png" /><span
+        class="label-text"></span>Темный</label></div>
+     <div class="col-4"><input class="btn-check" data-theme-control="phoenixTheme" id="themeSwitcherAuto"
+       name="theme-color" type="radio" value="auto" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="themeSwitcherAuto"><span class="mb-2 rounded d-block"></span><img alt=""
+        class="img-fluid img-prototype mb-0" src="images/auto.png" /><span class="label-text"></span>Авто</label></div>
+    </div>
+   </div>
+   <div class="border border-translucent rounded-3 p-4 setting-panel-item bg-body-emphasis">
+    <div class="d-flex justify-content-between align-items-center">
+     <h5 class="setting-panel-item-title mb-1">Чат поддержки </h5>
+     <div class="form-check form-switch mb-0"><input class="form-check-input ms-auto"
+       data-theme-control="phoenixSupportChat" type="checkbox" /></div>
+     <p class="mb-0 text-body-tertiary">Показать\Скрыть чат</p>
+    </div>
+   </div>
+   <div class="setting-panel-item">
+    <h5 class="setting-panel-item-title">Настройка рабочих панелей</h5>
+    <div class="row gx-2">
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarPosition" id="navbarPositionVertical"
+       name="navigation-type" type="radio" value="vertical" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarPositionVertical"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none" src="images/default-light.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none" src="images/default-dark.png" /></span><span
+        class="label-text">Вертикальная</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarPosition"
+       id="navbarPositionHorizontal" name="navigation-type" type="radio" value="horizontal" /><label
+       class="btn d-inline-block btn-navbar-style fs-9" for="navbarPositionHorizontal"><span
+        class="mb-2 rounded d-block"><img alt="" class="img-fluid img-prototype d-dark-none"
+         src="images/top-default.png" /><img alt="" class="img-fluid img-prototype d-light-none"
+         src="images/top-default-dark.png" /></span><span class="label-text">Горизонтальная</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarPosition" id="navbarPositionCombo"
+       name="navigation-type" type="radio" value="combo" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarPositionCombo"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none" src="images/nav-combo-light.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none" src="images/nav-combo-dark.png" /></span><span
+        class="label-text">Комбмнированная</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarPosition" id="navbarPositionTopDouble"
+       name="navigation-type" type="radio" value="dual-nav" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarPositionTopDouble"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none" src="images/dual-light.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none" src="images/dual-dark.png" /></span><span class="label-text">В две
+        строки</span></label></div>
+    </div>
+   </div>
+   <div class="setting-panel-item">
+    <h5 class="setting-panel-item-title">Настройка вертикального меню</h5>
+    <div class="row gx-2">
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarVerticalStyle"
+       id="navbar-style-default" name="config.name" type="radio" value="default" /><label
+       class="btn d-block w-100 btn-navbar-style fs-9" for="navbar-style-default"><img alt=""
+        class="img-fluid img-prototype d-dark-none" src="images/default-light.png" /><img alt=""
+        class="img-fluid img-prototype d-light-none" src="images/default-dark.png" /><span
+        class="label-text d-dark-none"> По умолчанию</span><span class="label-text d-light-none">По
+        умолчанию</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarVerticalStyle" id="navbar-style-dark"
+       name="config.name" type="radio" value="darker" /><label class="btn d-block w-100 btn-navbar-style fs-9"
+       for="navbar-style-dark"><img alt="" class="img-fluid img-prototype d-dark-none"
+        src="images/vertical-darker.png" /><img alt="" class="img-fluid img-prototype d-light-none"
+        src="images/vertical-lighter.png" /><span class="label-text d-dark-none">Темный</span><span
+        class="label-text d-light-none">Светлый</span></label></div>
+    </div>
+   </div>
+   <div class="setting-panel-item">
+    <h5 class="setting-panel-item-title">Настройка горизонтального меню</h5>
+    <div class="row gx-2">
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarTopShape" id="navbarShapeDefault"
+       name="navbar-shape" type="radio" value="default" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarShapeDefault"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none mb-0" src="images/top-default.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none mb-0" src="images/top-default-dark.png" /></span><span
+        class="label-text">По умолчанию</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarTopShape" id="navbarShapeSlim"
+       name="navbar-shape" type="radio" value="slim" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarShapeSlim"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none mb-0" src="images/top-slim.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none mb-0" src="images/top-slim-dark.png" /></span><span
+        class="label-text"> Узкое</span></label></div>
+    </div>
+   </div>
+   <div class="setting-panel-item">
+    <h5 class="setting-panel-item-title">Цвет горизонтального меню</h5>
+    <div class="row gx-2">
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarTopStyle" id="navbarTopDefault"
+       name="navbar-top-style" type="radio" value="default" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarTopDefault"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none mb-0" src="images/top-default.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none mb-0" src="images/top-style-darker.png" /></span><span
+        class="label-text">По умолчанию</span></label></div>
+     <div class="col-6"><input class="btn-check" data-theme-control="phoenixNavbarTopStyle" id="navbarTopDarker"
+       name="navbar-top-style" type="radio" value="darker" /><label class="btn d-inline-block btn-navbar-style fs-9"
+       for="navbarTopDarker"><span class="mb-2 rounded d-block"><img alt=""
+         class="img-fluid img-prototype d-dark-none mb-0" src="images/navbar-top-style-light.png" /><img alt=""
+         class="img-fluid img-prototype d-light-none mb-0" src="images/top-style-lighter.png" /></span><span
+        class="label-text d-dark-none">Темный</span><span class="label-text d-light-none">Светлый </span></label></div>
+    </div>
+   </div>
+  </div>
+ </div>
 </body>
 
-</html>
+</html><a class="card setting-toggle" data-bs-toggle="offcanvas" href="#settings-offcanvas">
+ <div class="card-body d-flex align-items-center px-2 py-1">
+  <div class="position-relative rounded-start" style="height:34px;width:28px">
+   <div class="settings-popover"><span class="ripple"><span
+      class="fa-spin position-absolute all-0 d-flex flex-center"><span
+       class="icon-spin position-absolute all-0 d-flex flex-center"></span></span></span></div>
+  </div><small class="text-uppercase text-body-tertiary fw-bold py-2 pe-2 ps-1 rounded-end">Настроить</small>
+ </div>
+ <div aria-hidden="true" class="modal fade" data-bs-backdrop="true" data-phoenix-modal="data-phoenix-modal"
+  id="searchBoxModal" style="--phoenix-backdrop-opacity: 1;" tabindex="-1">
+  <div class="modal-dialog">
+   <div class="modal-content mt-15 rounded-pill">
+    <div class="modal-body p-0">
+     <div class="search-box navbar-top-search-box" data-list="{\&quot;valueNames\&quot;:[\&quot;title\&quot;]}"
+      style="width: auto;">
+      <form class="position-relative" data-bs-display="static" data-bs-toggle="search"><input aria-label="Поиск"
+        class="form-control search-input fuzzy-search rounded-pill form-control-lg" placeholder="Найти..."
+        type="search" /><span class="fas fa-search search-box-icon"></span></form>
+      <div class="btn-close position-absolute end-0 top-50 translate-middle cursor-pointer shadow-none"
+       data-bs-dismiss="search"><button aria-label="Close" class="btn btn-link p-0"></button></div>
+      <div class="dropdown-menu border start-0 py-0 overflow-hidden w-100">
+       <div class="scrollbar-overlay" style="max-height: 30rem;">
+        <div class="list pb-3">
+         <h6 class="dropdown-header text-body-highlight fs-10 py-2">24 <span
+           class="text-body-quaternary">результата</span></h6>
+         <hr class="my-0" />
+         <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Вы искали </h6>
+         <div class="py-2"><a class="dropdown-item" href="">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+              data-fa-transform="shrink-2"></span> Заявка № 15171</div>
+           </div>
+          </a><a class="dropdown-item" href="users.html">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-clock-rotate-left"
+              data-fa-transform="shrink-2"></span> Компания "РемТоргХолод"</div>
+           </div>
+          </a></div>
+         <hr class="my-0" />
+         <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Документы</h6>
+         <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="">
+           <div class="flex-1">
+            <h6 class="mb-0 text-body-highlight title">Заявка № 15171</h6>
+            <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+              class="fw-medium text-body-tertiary text-opactity-85">г. Химки, ул. Совхозная, д. 9</span></p>
+           </div>
+          </a><a class="dropdown-item py-2 d-flex align-items-center" href="">
+           <div class="flex-1">
+            <h6 class="mb-0 text-body-highlight title">Заявка № 151</h6>
+            <p class="fs-10 mb-0 d-flex text-body-tertiary"><span
+              class="fw-medium text-body-tertiary text-opactity-85 ms-2">Московская область Щелковский м.р.Огуднево
+              д.Центральная ул.25</span></p>
+           </div>
+          </a></div>
+         <hr class="my-0" />
+         <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Карты</h6>
+         <div class="py-2"><a class="dropdown-item" href="maps.html">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-link text-body"
+              data-fa-transform="shrink-2"></span> г. Химки, ул. Совхозная, д. 9</div>
+           </div>
+          </a></div>
+         <hr class="my-0" />
+         <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Файлы</h6>
+         <div class="py-2"><a class="dropdown-item" href="files.html">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-file-zipper text-body me-2"
+              data-fa-transform="shrink-2"></span>Накладная № 15171.pdf</div>
+           </div>
+          </a><a class="dropdown-item" href="">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-file-lines text-body me-2"
+              data-fa-transform="shrink-2"></span>Заявка № 15171.pdf</div>
+           </div>
+          </a><a class="dropdown-item" href="">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-solid fa-image text-body me-2"
+              data-fa-transform="shrink-2"></span>Заявка № 151.png</div>
+           </div>
+          </a></div>
+         <hr class="my-0" />
+         <h6 class="dropdown-header fs-9 text-success border-bottom border-translucent py-2 lh-sm">Пользователи</h6>
+         <div class="py-2"><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
+           <div class="avatar avatar-l status-online me-2 text-body"><img alt="" class="rounded-circle"
+             src="images/10.webp" /></div>
+           <div class="flex-1">
+            <h6 class="mb-0 text-body-highlight title">Журавлева Анна</h6>
+            <p class="fs-10 mb-0 d-flex text-body-tertiary">anna@service.galievr.ru</p>
+           </div>
+          </a><a class="dropdown-item py-2 d-flex align-items-center" href="pages/members.html">
+           <div class="avatar avatar-l me-2 text-body"><img alt="" class="rounded-circle" src="images/12.webp" /></div>
+           <div class="flex-1">
+            <h6 class="mb-0 text-body-highlight title">Жуков Иван</h6>
+            <p class="fs-10 mb-0 d-flex text-body-tertiary">ivan@service.galievr.ru</p>
+           </div>
+          </a></div>
+         <hr class="my-0" />
+         <h6 class="dropdown-header text-success fs-9 border-bottom border-translucent py-2 lh-sm">Похожее:</h6>
+         <div class="py-2"><a class="dropdown-item" href="">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-brands fa-firefox-browser text-body"
+              data-fa-transform="shrink-2"></span> Заявка № 18789</div>
+           </div>
+          </a><a class="dropdown-item" href="">
+           <div class="d-flex align-items-center">
+            <div class="fw-normal text-body-highlight title"><span class="fa-brands fa-chrome text-body"
+              data-fa-transform="shrink-2"></span> г. Химки, ул.Мира</div>
+           </div>
+          </a></div>
+        </div>
+        <div class="text-center">
+         <p class="fallback fw-bold fs-7 d-none">Ничего не найдено</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</a>
+<script>
+ var navbarTopShape = window.config.config.phoenixNavbarTopShape;
+ var navbarPosition = window.config.config.phoenixNavbarPosition;
+ var body = document.querySelector('body');
+ var navbarDefault = document.querySelector('#navbarDefault');
+ var navbarTop = document.querySelector('#navbarTop');
+ var topNavSlim = document.querySelector('#topNavSlim');
+ var navbarTopSlim = document.querySelector('#navbarTopSlim');
+ var navbarCombo = document.querySelector('#navbarCombo');
+ var navbarComboSlim = document.querySelector('#navbarComboSlim');
+ var dualNav = document.querySelector('#dualNav');
+ var documentElement = document.documentElement;
+ var navbarVertical = document.querySelector('.navbar-vertical');
+ if (navbarPosition === 'dual-nav') {
+  topNavSlim.remove();
+  navbarTop.remove();
+  navbarVertical.remove();
+  navbarTopSlim.remove();
+  navbarCombo.remove();
+  navbarComboSlim.remove();
+  navbarDefault.remove();
+  dualNav.removeAttribute('style');
+  document.documentElement.setAttribute('data-navigation-type', 'dual');
+ } else if (navbarTopShape === 'slim' && navbarPosition === 'vertical') {
+  navbarDefault.remove();
+  navbarTop.remove();
+  navbarTopSlim.remove();
+  navbarCombo.remove();
+  navbarComboSlim.remove();
+  dualNav.remove();
+  topNavSlim.style.display = 'block';
+  navbarVertical.style.display = 'inline-block';
+  document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim');
+ } else if (navbarTopShape === 'slim' && navbarPosition === 'horizontal') {
+  navbarDefault.remove();
+  navbarVertical.remove();
+  navbarTop.remove();
+  topNavSlim.remove();
+  navbarCombo.remove();
+  navbarComboSlim.remove();
+  dualNav.remove();
+  navbarTopSlim.removeAttribute('style');
+  document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim');
+ } else if (navbarTopShape === 'slim' && navbarPosition === 'combo') {
+  navbarDefault.remove();
+  navbarTop.remove();
+  topNavSlim.remove();
+  navbarCombo.remove();
+  dualNav.remove();
+  navbarTopSlim.remove();
+  navbarComboSlim.removeAttribute('style');
+  navbarVertical.removeAttribute('style');
+  document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim');
+ } else if (navbarTopShape === 'default' && navbarPosition === 'horizontal') {
+  navbarDefault.remove();
+  topNavSlim.remove();
+  navbarVertical.remove();
+  navbarTopSlim.remove();
+  dualNav.remove();
+  navbarCombo.remove();
+  navbarComboSlim.remove();
+  navbarTop.removeAttribute('style');
+  document.documentElement.setAttribute('data-navigation-type', 'horizontal');
+ } else if (navbarTopShape === 'default' && navbarPosition === 'combo') {
+  topNavSlim.remove();
+  navbarTop.remove();
+  navbarTopSlim.remove();
+  navbarDefault.remove();
+  navbarComboSlim.remove();
+  dualNav.remove();
+  navbarCombo.removeAttribute('style');
+  navbarVertical.removeAttribute('style');
+  document.documentElement.setAttribute('data-navigation-type', 'combo');
+ } else {
+  topNavSlim.remove();
+  navbarTop.remove();
+  navbarTopSlim.remove();
+  navbarCombo.remove();
+  navbarComboSlim.remove();
+  navbarDefault.removeAttribute('style');
+  navbarVertical.removeAttribute('style');
+ }
+ var navbarTopStyle = window.config.config.phoenixNavbarTopStyle;
+ var navbarTop = document.querySelector('.navbar-top');
+ if (navbarTopStyle === 'darker') {
+  navbarTop.setAttribute('data-navbar-appearance', 'darker');
+ }
+ var navbarVerticalStyle = window.config.config.phoenixNavbarVerticalStyle;
+ var navbarVertical = document.querySelector('.navbar-vertical');
+ if (navbarVerticalStyle === 'darker') {
+  navbarVertical.setAttribute('data-navbar-appearance', 'darker');
+ }
+</script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/anchor.min.js"></script>
+<script src="js/is.min.js"></script>
+<script src="js/all.min.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="js/list.min.js"></script>
+<script src="js/feather.min.js"></script>
+<script src="js/dayjs.min.js"></script>
+<script src="js/phoenix.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/leaflet.js"></script>
+<script src="js/leaflet.markercluster.js"></script>
+<script src="js/leaflet-tilelayer-colorfilter.min.js"></script>
+<script src="js/ecommerce-dashboard.js"></script>
+<script src="js/dropzone-min.js"></script>
+<script src="js/flatpickr.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/choices.min.js"></script>

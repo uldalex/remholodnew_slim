@@ -39393,7 +39393,7 @@ html:not(.navbar-vertical-collapsed) .navbar-vertical .firefox .navbar-vibrant .
     height: 2px;
     width: 100%;
     position: absolute;
-    left: 3%;
+    left: 15%;
     top: 48%;
     background: rgba(var(--phoenix-quaternary-bg-rgb), 0.8)
 }

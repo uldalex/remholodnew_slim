@@ -3364,7 +3364,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 				h2.mb-2.lh-sm
 					= local_data[:title]
 				.text-body-tertiary.lead.mb-2
-				nav.breadcrumb[aria-label="breadcrumb"]
+				.d-md-block.d-none
+					nav.breadcrumb[aria-label="breadcrumb"]
 					ol.breadcrumb
 						li.breadcrumb-item
 								a[href="#"]
@@ -3377,9 +3378,9 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 								| Заявки ремонт на адресе
 	
 				.mt-4
-					.card.border-0
+					.card.border-0.d-md-block.d-none
 						.card-header.p-4.border-0
-							button.btn.btn-primary[type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu"]
+							a.btn.btn-primary[href="repair_item.html"]
 								| Новая заявка
 						.card-body
 							.table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
@@ -3392,15 +3393,15 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												| Номер
 											th.text-info-dark.sort[scope="col" data-sort="num"]
 												| Клиентский номер
-											th.text-info-dark.sort[scope="col"]
+											th.text-info-dark.sort.w-10[scope="col" data-sort="data"]
 												| Дата заявки
-											th.text-info-dark.sort[scope="col"]
+											th.text-info-dark.sort.w-10[scope="col"]
 												| Дата выполнения
-											th.text-info-dark.sort[scope="col"  data-sort="name"]
+											th.text-info-dark.sort.w-10[scope="col"  data-sort="name"]
 												| Клиент
-											th.text-info-dark.sort[scope="col"]
+											th.text-info-dark.sort[scope="col" data-sort="adress"]
 												| Автор
-											th.text-info-dark.sort[scope="col"]
+											th.text-info-dark.sort[scope="col" ]
 												| Адрес
 											th.text-info-dark.sort[scope="col"]
 												| Оператор
@@ -3412,7 +3413,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												| Серийный номер
 											th.text-info-dark.sort[scope="col"]
 												| Заявленная неисправность
-											th.text-info-dark.sort[scope="col"]
+											th.text-info-dark.sort[scope="col" data-sort="status"]
 												| Статус
 											th.text-info-dark.sort[scope="col"]
 												| Приоритет заявки
@@ -3450,7 +3451,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-info
+														| Средний
+													.badge.text-bg-info
+														|   Средний
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-info
+														span.badge-label
+															|  Средний
+														span.ms-1[data-feather="info" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3469,6 +3477,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr
 											th[scope="row"]
+												.span.fa-solid.fa-circle.text-success
 												td.num
 													| 01239
 												td
@@ -3496,7 +3505,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-danger
+														| Высокий
+													.badge.text-bg-danger
+														|  Высокий
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-danger
+														span.badge-label
+															| Высокий
+														span.ms-1[data-feather="x" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3515,6 +3531,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr.table-danger
 											th[scope="row"]
+												.span.fa-solid.fa-circle.text-info
 												td.num
 													| 41239
 												td
@@ -3542,7 +3559,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-success
+														| Низкий
+													.badge.text-bg-success
+														| Низкий
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-success
+														span.badge-label
+															| Низкий
+														span.ms-1[data-feather="check" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3561,6 +3585,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr.table-success
 											th[scope="row"]
+												.span.fa-solid.fa-circle.text-warning
 												td.num
 													| 21239
 												td
@@ -3588,7 +3613,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-primary
+														| Бейдж
+													.badge.text-bg-primary
+														|   Бейдж
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-primary
+														span.badge-label
+															|  Бейдж
+														span.ms-1[data-feather="plus" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3607,6 +3639,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr.table-info
 											th[scope="row"]
+												span.fa-solid.fa-circle.text-primary
 												td.num
 													| 11239
 												td
@@ -3634,7 +3667,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-warning
+														| Бейдж
+													.badge.text-bg-warning
+														|   Бейдж
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-warning
+														span.badge-label
+															|  Бейдж
+														span.ms-1[data-feather="edit-2" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3653,6 +3693,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr.table-dark
 											th[scope="row"]
+												span.fa-solid.fa-circle.text-white
 												td.num
 													| 31239
 												td
@@ -3680,7 +3721,14 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-secondary
+														| Бейдж
+													.badge.text-bg-secondary
+														|   Бейдж
+													.mt-1.badge.badge-phoenix.fs-10.badge-phoenix-secondary
+														span.badge-label
+															|  Бейдж
+														span.ms-1[data-feather="edit" style="height:12.8px;width:12.8px;"]
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3699,6 +3747,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 																| Удалить
 										tr.table-light
 											th[scope="row"]
+												span.fa-solid.fa-circle.text-secondary
 												td.num
 													| 5239
 												td
@@ -3726,7 +3775,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-info
+														| Средний
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3772,7 +3822,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-danger
+														| Высокий
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3818,7 +3869,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-success
+														| Низкий
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3864,7 +3916,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-success
+														| Низкий
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3910,7 +3963,8 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 												td
 													| Подтверждение оператором
 												td
-													| Средний
+													.badge.badge-phoenix.badge-phoenix-success
+														| Низкий
 												td
 													.dropdown.lh-1.mt-2.me-2
 														button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
@@ -3927,31 +3981,522 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
 															hr.dropdown-divider
 															a.dropdown-item.fs-9.text-decoration-none.text-danger
 																| Удалить	
-					.pagination.mt-5
-						nav[aria-label="Пагинация"]
-					ul.pagination.mb-0
-						li.page-item
-							a.page-link.border[href="#"]
-								span.fas.fa-chevron-left
-						li.page-item.active
-							a.page-link.border[href="#"]
-								| 1
-						li.page-item
-							a.page-link.border[href="#"]
-								| 2
-						li.page-item
-							a.page-link.border[href="#"]
-								| 3
-						li.page-item
-							a.page-link.border[href="#"]
-								| 4
-						li.page-item
-							a.page-link.border[href="#"]
-								| 5
-						li.page-item
-							a.page-link.border[href="#"]
-								span.fas.fa-chevron-right
+					.kanban-deals-content.d-block.d-md-none
+						.d-flex.align-items-center.justify-content-between.position-sticky.top-0.z-1.bg-body.mb-3.px-3
+							div
+								a.btn.btn-sm.btn-info.me-4[href="repair-item.html"]
+									.fas.fa-plus
+								a.btn.btn-sm.btn-outline-info[href=""]
+									.fa-solid.fa-filter.text-info
+							a.btn.btn-link.text-body.px-0[href=""]
+								.fa-solid.fa-file-export.fs-9.me-2
+								| Экспорт в exel
+							
+						.scrollbar
+							.deals.w-auto.p-3
+								.deals-items-container
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-success
+													.badge.badge-phoenix.badge-phoenix-success.fs-10
+														| Низкий
+													div.fs-9.mt-2.fw-bold
+															| Подтверждено оператором	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-1" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-1"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| Ю Би Си Кул-Б
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 11239
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-1.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.opacity-50.me-2
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-danger
+													.badge.badge-phoenix.badge-phoenix-danger.fs-10
+														| Высокий
+													div.fs-9.mt-2.fw-bold
+															| В работе	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-2" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-2"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| АМ ЯРОСЛАВЛЬ
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 10839	
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.fs-10.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-2.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.fs-10.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.fs-10.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.fs-10.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.fs-10.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.fs-10.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.fs-10.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.fs-10.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-info
+													.badge.badge-phoenix.badge-phoenix-info.fs-10
+														| Средний
+													div.fs-9.mt-2.fw-bold
+															| Приемка в работу	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-3" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-3"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| АМ ЯРОСЛАВЛЬ
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 10839	
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.fs-10.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-3.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.fs-10.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.fs-10.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.fs-10.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.fs-10.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.fs-10.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.fs-10.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.fs-10.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-danger
+													.badge.badge-phoenix.badge-phoenix-danger.fs-10
+														| Высокий
+													div.fs-9.mt-2.fw-bold
+															| В работе	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-4" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-4"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| АМ ЯРОСЛАВЛЬ
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 10839	
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.fs-10.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-4.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.fs-10.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.fs-10.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.fs-10.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.fs-10.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.fs-10.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.fs-10.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.fs-10.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-danger
+													.badge.badge-phoenix.badge-phoenix-danger.fs-10
+														| Высокий
+													div.fs-9.mt-2.fw-bold
+															| В работе	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-5" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-5"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| АМ ЯРОСЛАВЛЬ
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 10839	
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.fs-10.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-5.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.fs-10.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.fs-10.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.fs-10.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.fs-10.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.fs-10.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.fs-10.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.fs-10.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
+									.card.d-block.d-md-none.mb-3
+										.card-header.p-3
+											.d-flex.justify-content-between
+												div
+													span.fa-solid.fa-circle.fs-9.me-2.text-danger
+													.badge.badge-phoenix.badge-phoenix-danger.fs-10
+														| Высокий
+													div.fs-9.mt-2.fw-bold
+															| В работе	
+												.dropdown.lh-1
+													button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+														span.fas.fa-ellipsis-v
+													.dropdown-menu.dropdown-menu-end
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Копировать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Скачать
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Отправить
+														a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+															| Переименовать
+														hr.dropdown-divider
+														a.dropdown-item.fs-9.text-decoration-none.text-danger
+															| Удалить
+										.card-body.p-3.position-relative
+											a.dropdown-indicator-icon.position-absolute.text-body-tertiary[href="#card_detal-6" role="button" data-bs-toggle="collapse" aria-expanded="false" aria-controls="card_detal-6"]
+												span.fa-solid.fa-angle-down
+											.deals-items-head.d-flex.align-items-center.mb-2
+												.d-flex.w-100.justify-content-between.me-4
+													a.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| АМ ЯРОСЛАВЛЬ
+													div.text-primary.fw-bold.line-clamp-1.mb-0.fs-8
+														| № 10839	
+											.d-flex.align-items-center.justify-content-between.mb-3
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Дата заявки:
+														div.mb-2
+															| 04-12-2019 16:42
+														.fs-10.opacity-50
+															| Дата выполнения:
+														div
+															| 04-12-2019 16:42
+											#card_detal-6.collapse
+												.d-flex
+													.mb-0.fs-9.fw-semibold.text-body-tertiary.date
+														.fs-10.opacity-50
+															| Клиентский №:
+														div.mb-2
+															| 14256
+														.fs-10.opacity-50
+															| Автор:
+														div
+															| Спивак Руслан
+														.fs-10.opacity-50
+															| Адрес:
+														div
+															| г.Москва г.Рошаль,ул.Советская д.36
+														.fs-10.opacity-50
+															| Оператор:
+														div
+															| Печенова Оксана
+														.fs-10.opacity-50
+															| Исполнитель:
+														div
+															| -
+														.fs-10.opacity-50
+															| Оборудование:
+														div
+															| Фармацевтический холодильник
+														.fs-10.opacity-50
+															| Серийный номер:
+														div
+															|  0893719089
+														.fs-10.opacity-50
+															| Заявленная неисправность:
+														div
+															|  Не горит свет, Не охлаждает
 
+						
+					.pagination.mt-5.d-md-block.d-none
+						nav[aria-label="Пагинация"]
+						ul.pagination.mb-0
+							li.page-item
+								a.page-link.border[href="#"]
+									span.fas.fa-chevron-left
+							li.page-item.active
+								a.page-link.border[href="#"]
+									| 1
+							li.page-item
+								a.page-link.border[href="#"]
+									| 2
+							li.page-item
+								a.page-link.border[href="#"]
+									| 3
+							li.page-item
+								a.page-link.border[href="#"]
+									| 4
+							li.page-item
+								a.page-link.border[href="#"]
+									| 5
+							li.page-item
+								a.page-link.border[href="#"]
+									span.fas.fa-chevron-right
+
+				
 								
 			#offcanvasMenu.offcanvas.offcanvas-start[tabindex="-1" aria-modal="true" role="dialog"]
 				.offcanvas-body

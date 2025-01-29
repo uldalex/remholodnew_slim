@@ -3460,7 +3460,376 @@
    </div>
    <div class="mt-4">
     <div class="card border-0 d-md-block d-none">
-     <div class="card-header p-4 border-0"><a class="btn btn-primary" href="repair_item.html">Новая заявка</a></div>
+     <div class="card-header bg-body p-4 border-0"><a class="btn btn-info me-2" href="repair_item.html"><span
+        class="fa fa-plus pe-2"></span>Новая заявка</a><a aria-controls="table-filter" aria-expanded="false"
+       class="btn btn-outline-info" data-bs-toggle="collapse" href="#table-filter" role="button"><span
+        class="fa fa-filter pe-2"></span>фильтр</a>
+      <div class="collapse" id="table-filter">
+       <div class="my-2">
+        <form id="filterForm1">
+         <div class="row">
+          <div class="col-md-2 mb-2"><label class="form-label" for="start_date_order">Дата заявки "от"</label><input
+            class="form-control datetimepicker"
+            data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}"
+            id="start_date_order" placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="end_date_order">Дата заявки "до"</label><input
+            class="form-control datetimepicker"
+            data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="end_date_order"
+            placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="start_date">Дата выполнения "с"</label><input
+            class="form-control datetimepicker"
+            data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="start_date"
+            placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="end_date">Дата выполнения "до"</label><input
+            class="form-control datetimepicker"
+            data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="end_date"
+            placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="num_order">Номер заявки</label><input
+            class="form-control" id="num_order" placeholder="Номер заявки" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="num_client">Клиентский</label><input
+            class="form-control" id="num_client" placeholder="Клиентский номер" type="text" /></div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="client-validation"
+             name="client" required="required">
+             <option value="">Клиент</option>
+             <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
+             <option value="13">СЕРАВИНА Т. А. ИП</option>
+             <option value="9">МЕГА ФАРМ</option>
+             <option value="3">АПТЕКА- А.в.е</option>
+             <option value="2">Вилтан</option>
+             <option value="11">Ю Би Си Кул-Б</option>
+             <option value="10">Калинов Родник</option>
+             <option value="14">Коршикова А. В.</option>
+             <option value="7">РТ-ГРУПП</option>
+             <option value="4">ВкусВилл</option>
+             <option value="12">КОРАБЛИК-Р </option>
+             <option value="15">АПТЕКА-А.В.Е-1 </option>
+             <option value="1">Байрос</option>
+             <option value="8">ПРОФАРМ</option>
+             <option value="18">ФАРМАСИ</option>
+             <option value="20">ВРЕМЯ ЕСТЬ </option>
+             <option value="57">Хлебосол</option>
+             <option value="22">ГРАДИЕНТ</option>
+             <option value="26">Смартен</option>
+             <option value="24">ВИНТОРГ МО</option>
+             <option value="27">МРФК </option>
+             <option value="28">АВАЛОНЖ</option>
+             <option value="29">АВЕСТ </option>
+             <option value="30">КОПТЕВСКИЙ РЫНОК </option>
+             <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
+             <option value="31">ГК Траст Холод</option>
+             <option value="16">ПРОВИЗОР</option>
+             <option value="17">ФАРМАЦЕВТ </option>
+             <option value="19">Мособлфармация</option>
+             <option value="25">Бремор</option>
+             <option value="21">АМ ВОРОНЕЖ</option>
+             <option value="32">АМ Регион</option>
+             <option value="33">АМ Тверь</option>
+             <option value="34">АМ ЯРОСЛАВЛЬ </option>
+             <option value="56">Бо-Фарм</option>
+             <option value="35">АМ Владимир </option>
+             <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
+             <option value="37">АМ ЛИПЕЦК</option>
+             <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
+             <option value="39">АМ Калуга</option>
+             <option value="40">ИП Боженко А.А.</option>
+             <option value="41">Вариант 999</option>
+             <option value="42">Айдекс Лабораториз</option>
+             <option value="46">ООО "Ивоклар Вивадент"</option>
+             <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
+             <option value="48">ИП РОЗЕНТУЛ И. И.</option>
+             <option value="44">АО "Контакт"</option>
+             <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
+             <option value="43">АРОМА МАРКЕТ</option>
+             <option value="50">ДА ЗДОРОВ</option>
+             <option value="51">ЛАВЕРНА XXI ВЕК</option>
+             <option value="52">СТАРАТЕЛИ </option>
+             <option value="53">НСК </option>
+             <option value="54">Фонд «Водный спорт» </option>
+             <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
+             <option value="58">АДАОР ПЛЮС</option>
+             <option value="59">ПРОМСИТ ООО</option>
+             <option value="60">ДЖАСТФОЮ</option>
+             <option value="61">Частное Лицо</option>
+             <option value="62">ООО "Фрут Лайф Джус"</option>
+             <option value="63">КОМПЛЕКС ГРУПП ООО</option>
+             <option value="64">ООО «еАптека»</option>
+             <option value="5">ТД ПОЛАИР</option>
+             <option value="65">ВФГБК</option>
+             <option value="66">ООО ТД НМ </option>
+             <option value="67">ПарусИнвест</option>
+             <option value="68">ИП Цецерская СВ</option>
+             <option value="69">Перспектива</option>
+             <option value="70">ООО «ИИ»</option>
+             <option value="71">АПТЕКА- А.в.е (склад)</option>
+             <option value="72">Кофе Моментс</option>
+             <option value="73">Дельта Дистрибьюшн</option>
+             <option value="74">Калина Фарм</option>
+             <option value="75">Крымские Дары</option>
+             <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
+             <option value="77">ООО "Норд Вил"</option>
+             <option value="78">Буховец Наталья Васильевна</option>
+             <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
+             <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
+             <option value="81">АМ "Иваново"</option>
+             <option value="82">ЭВЕР Нейро Фарма</option>
+             <option value="83">АМ Рязань</option>
+             <option value="84">ООО "ИБТ"</option>
+             <option value="85">МАЙ ФРУКТ ООО</option>
+             <option value="86">ФРОСТЭКО</option>
+             <option value="23">РЕМТОРГХОЛОД /select</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Автор</option>
+             <option value="Печёнов Андрей">Печёнов Андрей</option>
+             <option value="Руковишников Антон">Руковишников Антон</option>
+             <option value="Груднов Ярослав">Груднов Ярослав</option>
+             <option value="Лисаков Андрей">Лисаков Андрей</option>
+             <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+             <option value="Амплеев Владислав">Амплеев Владислав</option>
+             <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+             <option value="Тихонов Максим">Тихонов Максим</option>
+             <option value="Поздняков Алексей">Поздняков Алексей</option>
+             <option value="Печенова Оксана">Печенова Оксана</option>
+             <option value="Алексей Карягин">Алексей Карягин</option>
+             <option value="Руслан Рокет">Руслан Рокет</option>
+             <option value="Бажанов Сергей">Бажанов Сергей</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Оператор</option>
+             <option value="Печёнов Андрей">Печёнов Андрей</option>
+             <option value="Руковишников Антон">Руковишников Антон</option>
+             <option value="Груднов Ярослав">Груднов Ярослав</option>
+             <option value="Лисаков Андрей">Лисаков Андрей</option>
+             <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+             <option value="Амплеев Владислав">Амплеев Владислав</option>
+             <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+             <option value="Тихонов Максим">Тихонов Максим</option>
+             <option value="Поздняков Алексей">Поздняков Алексей</option>
+             <option value="Печенова Оксана">Печенова Оксана</option>
+             <option value="Алексей Карягин">Алексей Карягин</option>
+             <option value="Руслан Рокет">Руслан Рокет</option>
+             <option value="Бажанов Сергей">Бажанов Сергей</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Исполнитель</option>
+             <option value="Печёнов Андрей">Печёнов Андрей</option>
+             <option value="Руковишников Антон">Руковишников Антон</option>
+             <option value="Груднов Ярослав">Груднов Ярослав</option>
+             <option value="Лисаков Андрей">Лисаков Андрей</option>
+             <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+             <option value="Амплеев Владислав">Амплеев Владислав</option>
+             <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+             <option value="Тихонов Максим">Тихонов Максим</option>
+             <option value="Поздняков Алексей">Поздняков Алексей</option>
+             <option value="Печенова Оксана">Печенова Оксана</option>
+             <option value="Алексей Карягин">Алексей Карягин</option>
+             <option value="Руслан Рокет">Руслан Рокет</option>
+             <option value="Бажанов Сергей">Бажанов Сергей</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Подрядчик</option>
+             <option value="Печёнов Андрей">Печёнов Андрей</option>
+             <option value="Руковишников Антон">Руковишников Антон</option>
+             <option value="Груднов Ярослав">Груднов Ярослав</option>
+             <option value="Лисаков Андрей">Лисаков Андрей</option>
+             <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+             <option value="Амплеев Владислав">Амплеев Владислав</option>
+             <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+             <option value="Тихонов Максим">Тихонов Максим</option>
+             <option value="Поздняков Алексей">Поздняков Алексей</option>
+             <option value="Печенова Оксана">Печенова Оксана</option>
+             <option value="Алексей Карягин">Алексей Карягин</option>
+             <option value="Руслан Рокет">Руслан Рокет</option>
+             <option value="Бажанов Сергей">Бажанов Сергей</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Руководитель</option>
+             <option value="Печёнов Андрей">Печёнов Андрей</option>
+             <option value="Руковишников Антон">Руковишников Антон</option>
+             <option value="Груднов Ярослав">Груднов Ярослав</option>
+             <option value="Лисаков Андрей">Лисаков Андрей</option>
+             <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+             <option value="Амплеев Владислав">Амплеев Владислав</option>
+             <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+             <option value="Тихонов Максим">Тихонов Максим</option>
+             <option value="Поздняков Алексей">Поздняков Алексей</option>
+             <option value="Печенова Оксана">Печенова Оксана</option>
+             <option value="Алексей Карягин">Алексей Карягин</option>
+             <option value="Руслан Рокет">Руслан Рокет</option>
+             <option value="Бажанов Сергей">Бажанов Сергей</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Статус</option>
+             <option value="Подтверждение оператором">Подтверждение оператором</option>
+             <option value="В работе">В работе</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Приоритет</option>
+             <option value="Низкий">Низкий</option>
+             <option value="Средний">Средний</option>
+             <option value="Высокий">Высокий</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="client-validation"
+             name="client" required="required">
+             <option value="">Подрядчик</option>
+             <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
+             <option value="13">СЕРАВИНА Т. А. ИП</option>
+             <option value="9">МЕГА ФАРМ</option>
+             <option value="3">АПТЕКА- А.в.е</option>
+             <option value="2">Вилтан</option>
+             <option value="11">Ю Би Си Кул-Б</option>
+             <option value="10">Калинов Родник</option>
+             <option value="14">Коршикова А. В.</option>
+             <option value="7">РТ-ГРУПП</option>
+             <option value="4">ВкусВилл</option>
+             <option value="12">КОРАБЛИК-Р </option>
+             <option value="15">АПТЕКА-А.В.Е-1 </option>
+             <option value="1">Байрос</option>
+             <option value="8">ПРОФАРМ</option>
+             <option value="18">ФАРМАСИ</option>
+             <option value="20">ВРЕМЯ ЕСТЬ </option>
+             <option value="57">Хлебосол</option>
+             <option value="22">ГРАДИЕНТ</option>
+             <option value="26">Смартен</option>
+             <option value="24">ВИНТОРГ МО</option>
+             <option value="27">МРФК </option>
+             <option value="28">АВАЛОНЖ</option>
+             <option value="29">АВЕСТ </option>
+             <option value="30">КОПТЕВСКИЙ РЫНОК </option>
+             <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
+             <option value="31">ГК Траст Холод</option>
+             <option value="16">ПРОВИЗОР</option>
+             <option value="17">ФАРМАЦЕВТ </option>
+             <option value="19">Мособлфармация</option>
+             <option value="25">Бремор</option>
+             <option value="21">АМ ВОРОНЕЖ</option>
+             <option value="32">АМ Регион</option>
+             <option value="33">АМ Тверь</option>
+             <option value="34">АМ ЯРОСЛАВЛЬ </option>
+             <option value="56">Бо-Фарм</option>
+             <option value="35">АМ Владимир </option>
+             <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
+             <option value="37">АМ ЛИПЕЦК</option>
+             <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
+             <option value="39">АМ Калуга</option>
+             <option value="40">ИП Боженко А.А.</option>
+             <option value="41">Вариант 999</option>
+             <option value="42">Айдекс Лабораториз</option>
+             <option value="46">ООО "Ивоклар Вивадент"</option>
+             <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
+             <option value="48">ИП РОЗЕНТУЛ И. И.</option>
+             <option value="44">АО "Контакт"</option>
+             <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
+             <option value="43">АРОМА МАРКЕТ</option>
+             <option value="50">ДА ЗДОРОВ</option>
+             <option value="51">ЛАВЕРНА XXI ВЕК</option>
+             <option value="52">СТАРАТЕЛИ </option>
+             <option value="53">НСК </option>
+             <option value="54">Фонд «Водный спорт» </option>
+             <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
+             <option value="58">АДАОР ПЛЮС</option>
+             <option value="59">ПРОМСИТ ООО</option>
+             <option value="60">ДЖАСТФОЮ</option>
+             <option value="61">Частное Лицо</option>
+             <option value="62">ООО "Фрут Лайф Джус"</option>
+             <option value="63">КОМПЛЕКС ГРУПП ООО</option>
+             <option value="64">ООО «еАптека»</option>
+             <option value="5">ТД ПОЛАИР</option>
+             <option value="65">ВФГБК</option>
+             <option value="66">ООО ТД НМ </option>
+             <option value="67">ПарусИнвест</option>
+             <option value="68">ИП Цецерская СВ</option>
+             <option value="69">Перспектива</option>
+             <option value="70">ООО «ИИ»</option>
+             <option value="71">АПТЕКА- А.в.е (склад)</option>
+             <option value="72">Кофе Моментс</option>
+             <option value="73">Дельта Дистрибьюшн</option>
+             <option value="74">Калина Фарм</option>
+             <option value="75">Крымские Дары</option>
+             <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
+             <option value="77">ООО "Норд Вил"</option>
+             <option value="78">Буховец Наталья Васильевна</option>
+             <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
+             <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
+             <option value="81">АМ "Иваново"</option>
+             <option value="82">ЭВЕР Нейро Фарма</option>
+             <option value="83">АМ Рязань</option>
+             <option value="84">ООО "ИБТ"</option>
+             <option value="85">МАЙ ФРУКТ ООО</option>
+             <option value="86">ФРОСТЭКО</option>
+             <option value="23">РЕМТОРГХОЛОД /select</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Заявленная неисправность</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+             data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+             name="operator" required="required">
+             <option value="">Заявленный вид ремонта</option>
+            </select></div>
+          </div>
+          <div class="col-md-2 mb-2">
+           <div class="form-check form-switch"><input class="form-check-input" type="checkbox" />
+            <div class="form-check-label">Ожидание запчастей</div>
+           </div>
+          </div>
+          <div class="col-md-4 mb-2"><label class="form-label" for="adress">Адрес</label><input class="form-control"
+            id="adress" placeholder="Адрес" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="s_num">Серийный номер</label><input
+            class="form-control" id="s_num" placeholder="Серийный номер" type="text" /></div>
+          <div class="col-md-2 mb-2"><label class="form-label" for="n_num">Инвентарный номер</label><input
+            class="form-control" id="n_num" placeholder="Инвентарный номер" type="text" /></div>
+          <div class="col-md-4 mb-2 d-flex align-items-end"><button
+            class="btn btn-phoenix-secondary bg-info text-white rounded-pill me-1 mb-1" type="submit"
+            value="Найти"><span class="fa fa-search me-2" data-fa-transform="shrink-3"></span>Найти</button><button
+            aria-controls="table-filter" aria-expanded="false"
+            class="btn btn-phoenix-secondary bg-danger text-white rounded-pill me-1 mb-1" data-bs-toggle="collapse"
+            href="#table-filter" role="button"><span class="me-2" data-fa-transform="shrink-3"
+             data-feather="x"></span>Отменить </button></div>
+         </div>
+        </form>
+       </div>
+      </div>
+     </div>
      <div class="card-body">
       <div class="table-responsive table-reponsive-md d-none d-md-block rounded-2 scrollbar">
        <table class="table table-hover table-bordered">
@@ -3482,7 +3851,7 @@
           <th class="text-info-dark sort" scope="col">Заявленная неисправность</th>
           <th class="text-info-dark sort" data-sort="status" scope="col">Статус</th>
           <th class="text-info-dark sort" scope="col">Приоритет заявки</th>
-          <th class="text-info-dark sort" scope="col">Операции</th>
+          <th class="text-info-dark sort pe-2" scope="col">Операции</th>
          </tr>
         </thead>
         <tbody class="fs-9">
@@ -3892,9 +4261,9 @@
      <div class="d-flex align-items-center justify-content-between position-sticky top-0 z-1 bg-body mb-3 px-3">
       <div><a class="btn btn-sm btn-info me-4" href="repair-item.html">
         <div class="fas fa-plus"></div>
-       </a><a class="btn btn-sm btn-outline-info" href="">
+       </a><a class="btn btn-sm btn-outline-info" data-bs-target="#mobileFilter" data-bs-toggle="modal">
         <div class="fa-solid fa-filter text-info"></div>
-       </a></div><a class="btn btn-link text-body px-0" href="">
+       </a></div><a class="btn btn-link text-body px-0">
        <div class="fa-solid fa-file-export fs-9 me-2"></div>Экспорт в exel
       </a>
      </div>
@@ -4300,6 +4669,378 @@
       <li class="page-item"><a class="page-link border" href="#">5</a></li>
       <li class="page-item"><a class="page-link border" href="#"><span class="fas fa-chevron-right"></span></a></li>
      </ul>
+    </div>
+   </div>
+  </div>
+  <div aria-hidden="true" class="modal fade" id="mobileFilter" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="modal-header">
+      <h5 class="modal-title">Фильтр</h5><button class="btn btn-close p-1"></button>
+     </div>
+     <div class="modal-body">
+      <form id="filterForm1">
+       <div class="row">
+        <div class="col-md-2 mb-2"><label class="form-label" for="start_date_order">Дата заявки "от"</label><input
+          class="form-control datetimepicker"
+          data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="start_date_order"
+          placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="end_date_order">Дата заявки "до"</label><input
+          class="form-control datetimepicker"
+          data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="end_date_order"
+          placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="start_date">Дата выполнения "с"</label><input
+          class="form-control datetimepicker"
+          data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="start_date"
+          placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="end_date">Дата выполнения "до"</label><input
+          class="form-control datetimepicker"
+          data-options="{&quot;dateFormat&quot;:&quot;d.m.Y&quot;,&quot;disableMobile&quot;:true}" id="end_date"
+          placeholder="д.м.гг" readonly="readonly" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="num_order">Номер заявки</label><input
+          class="form-control" id="num_order" placeholder="Номер заявки" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="num_client">Клиентский</label><input
+          class="form-control" id="num_client" placeholder="Клиентский номер" type="text" /></div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="client-validation"
+           name="client" required="required">
+           <option value="">Клиент</option>
+           <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
+           <option value="13">СЕРАВИНА Т. А. ИП</option>
+           <option value="9">МЕГА ФАРМ</option>
+           <option value="3">АПТЕКА- А.в.е</option>
+           <option value="2">Вилтан</option>
+           <option value="11">Ю Би Си Кул-Б</option>
+           <option value="10">Калинов Родник</option>
+           <option value="14">Коршикова А. В.</option>
+           <option value="7">РТ-ГРУПП</option>
+           <option value="4">ВкусВилл</option>
+           <option value="12">КОРАБЛИК-Р </option>
+           <option value="15">АПТЕКА-А.В.Е-1 </option>
+           <option value="1">Байрос</option>
+           <option value="8">ПРОФАРМ</option>
+           <option value="18">ФАРМАСИ</option>
+           <option value="20">ВРЕМЯ ЕСТЬ </option>
+           <option value="57">Хлебосол</option>
+           <option value="22">ГРАДИЕНТ</option>
+           <option value="26">Смартен</option>
+           <option value="24">ВИНТОРГ МО</option>
+           <option value="27">МРФК </option>
+           <option value="28">АВАЛОНЖ</option>
+           <option value="29">АВЕСТ </option>
+           <option value="30">КОПТЕВСКИЙ РЫНОК </option>
+           <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
+           <option value="31">ГК Траст Холод</option>
+           <option value="16">ПРОВИЗОР</option>
+           <option value="17">ФАРМАЦЕВТ </option>
+           <option value="19">Мособлфармация</option>
+           <option value="25">Бремор</option>
+           <option value="21">АМ ВОРОНЕЖ</option>
+           <option value="32">АМ Регион</option>
+           <option value="33">АМ Тверь</option>
+           <option value="34">АМ ЯРОСЛАВЛЬ </option>
+           <option value="56">Бо-Фарм</option>
+           <option value="35">АМ Владимир </option>
+           <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
+           <option value="37">АМ ЛИПЕЦК</option>
+           <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
+           <option value="39">АМ Калуга</option>
+           <option value="40">ИП Боженко А.А.</option>
+           <option value="41">Вариант 999</option>
+           <option value="42">Айдекс Лабораториз</option>
+           <option value="46">ООО "Ивоклар Вивадент"</option>
+           <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
+           <option value="48">ИП РОЗЕНТУЛ И. И.</option>
+           <option value="44">АО "Контакт"</option>
+           <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
+           <option value="43">АРОМА МАРКЕТ</option>
+           <option value="50">ДА ЗДОРОВ</option>
+           <option value="51">ЛАВЕРНА XXI ВЕК</option>
+           <option value="52">СТАРАТЕЛИ </option>
+           <option value="53">НСК </option>
+           <option value="54">Фонд «Водный спорт» </option>
+           <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
+           <option value="58">АДАОР ПЛЮС</option>
+           <option value="59">ПРОМСИТ ООО</option>
+           <option value="60">ДЖАСТФОЮ</option>
+           <option value="61">Частное Лицо</option>
+           <option value="62">ООО "Фрут Лайф Джус"</option>
+           <option value="63">КОМПЛЕКС ГРУПП ООО</option>
+           <option value="64">ООО «еАптека»</option>
+           <option value="5">ТД ПОЛАИР</option>
+           <option value="65">ВФГБК</option>
+           <option value="66">ООО ТД НМ </option>
+           <option value="67">ПарусИнвест</option>
+           <option value="68">ИП Цецерская СВ</option>
+           <option value="69">Перспектива</option>
+           <option value="70">ООО «ИИ»</option>
+           <option value="71">АПТЕКА- А.в.е (склад)</option>
+           <option value="72">Кофе Моментс</option>
+           <option value="73">Дельта Дистрибьюшн</option>
+           <option value="74">Калина Фарм</option>
+           <option value="75">Крымские Дары</option>
+           <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
+           <option value="77">ООО "Норд Вил"</option>
+           <option value="78">Буховец Наталья Васильевна</option>
+           <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
+           <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
+           <option value="81">АМ "Иваново"</option>
+           <option value="82">ЭВЕР Нейро Фарма</option>
+           <option value="83">АМ Рязань</option>
+           <option value="84">ООО "ИБТ"</option>
+           <option value="85">МАЙ ФРУКТ ООО</option>
+           <option value="86">ФРОСТЭКО</option>
+           <option value="23">РЕМТОРГХОЛОД /select</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Автор</option>
+           <option value="Печёнов Андрей">Печёнов Андрей</option>
+           <option value="Руковишников Антон">Руковишников Антон</option>
+           <option value="Груднов Ярослав">Груднов Ярослав</option>
+           <option value="Лисаков Андрей">Лисаков Андрей</option>
+           <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+           <option value="Амплеев Владислав">Амплеев Владислав</option>
+           <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+           <option value="Тихонов Максим">Тихонов Максим</option>
+           <option value="Поздняков Алексей">Поздняков Алексей</option>
+           <option value="Печенова Оксана">Печенова Оксана</option>
+           <option value="Алексей Карягин">Алексей Карягин</option>
+           <option value="Руслан Рокет">Руслан Рокет</option>
+           <option value="Бажанов Сергей">Бажанов Сергей</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Оператор</option>
+           <option value="Печёнов Андрей">Печёнов Андрей</option>
+           <option value="Руковишников Антон">Руковишников Антон</option>
+           <option value="Груднов Ярослав">Груднов Ярослав</option>
+           <option value="Лисаков Андрей">Лисаков Андрей</option>
+           <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+           <option value="Амплеев Владислав">Амплеев Владислав</option>
+           <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+           <option value="Тихонов Максим">Тихонов Максим</option>
+           <option value="Поздняков Алексей">Поздняков Алексей</option>
+           <option value="Печенова Оксана">Печенова Оксана</option>
+           <option value="Алексей Карягин">Алексей Карягин</option>
+           <option value="Руслан Рокет">Руслан Рокет</option>
+           <option value="Бажанов Сергей">Бажанов Сергей</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Исполнитель</option>
+           <option value="Печёнов Андрей">Печёнов Андрей</option>
+           <option value="Руковишников Антон">Руковишников Антон</option>
+           <option value="Груднов Ярослав">Груднов Ярослав</option>
+           <option value="Лисаков Андрей">Лисаков Андрей</option>
+           <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+           <option value="Амплеев Владислав">Амплеев Владислав</option>
+           <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+           <option value="Тихонов Максим">Тихонов Максим</option>
+           <option value="Поздняков Алексей">Поздняков Алексей</option>
+           <option value="Печенова Оксана">Печенова Оксана</option>
+           <option value="Алексей Карягин">Алексей Карягин</option>
+           <option value="Руслан Рокет">Руслан Рокет</option>
+           <option value="Бажанов Сергей">Бажанов Сергей</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Подрядчик</option>
+           <option value="Печёнов Андрей">Печёнов Андрей</option>
+           <option value="Руковишников Антон">Руковишников Антон</option>
+           <option value="Груднов Ярослав">Груднов Ярослав</option>
+           <option value="Лисаков Андрей">Лисаков Андрей</option>
+           <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+           <option value="Амплеев Владислав">Амплеев Владислав</option>
+           <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+           <option value="Тихонов Максим">Тихонов Максим</option>
+           <option value="Поздняков Алексей">Поздняков Алексей</option>
+           <option value="Печенова Оксана">Печенова Оксана</option>
+           <option value="Алексей Карягин">Алексей Карягин</option>
+           <option value="Руслан Рокет">Руслан Рокет</option>
+           <option value="Бажанов Сергей">Бажанов Сергей</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Руководитель</option>
+           <option value="Печёнов Андрей">Печёнов Андрей</option>
+           <option value="Руковишников Антон">Руковишников Антон</option>
+           <option value="Груднов Ярослав">Груднов Ярослав</option>
+           <option value="Лисаков Андрей">Лисаков Андрей</option>
+           <option value="Гаврилов Владислав">Гаврилов Владислав</option>
+           <option value="Амплеев Владислав">Амплеев Владислав</option>
+           <option value="Самсонюк Михаил">Самсонюк Михаил</option>
+           <option value="Тихонов Максим">Тихонов Максим</option>
+           <option value="Поздняков Алексей">Поздняков Алексей</option>
+           <option value="Печенова Оксана">Печенова Оксана</option>
+           <option value="Алексей Карягин">Алексей Карягин</option>
+           <option value="Руслан Рокет">Руслан Рокет</option>
+           <option value="Бажанов Сергей">Бажанов Сергей</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Статус</option>
+           <option value="Подтверждение оператором">Подтверждение оператором</option>
+           <option value="В работе">В работе</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Приоритет</option>
+           <option value="Низкий">Низкий</option>
+           <option value="Средний">Средний</option>
+           <option value="Высокий">Высокий</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="client-validation"
+           name="client" required="required">
+           <option value="">Подрядчик</option>
+           <option value="6">ТД РОСХОЛОД-ЦЕНТР</option>
+           <option value="13">СЕРАВИНА Т. А. ИП</option>
+           <option value="9">МЕГА ФАРМ</option>
+           <option value="3">АПТЕКА- А.в.е</option>
+           <option value="2">Вилтан</option>
+           <option value="11">Ю Би Си Кул-Б</option>
+           <option value="10">Калинов Родник</option>
+           <option value="14">Коршикова А. В.</option>
+           <option value="7">РТ-ГРУПП</option>
+           <option value="4">ВкусВилл</option>
+           <option value="12">КОРАБЛИК-Р </option>
+           <option value="15">АПТЕКА-А.В.Е-1 </option>
+           <option value="1">Байрос</option>
+           <option value="8">ПРОФАРМ</option>
+           <option value="18">ФАРМАСИ</option>
+           <option value="20">ВРЕМЯ ЕСТЬ </option>
+           <option value="57">Хлебосол</option>
+           <option value="22">ГРАДИЕНТ</option>
+           <option value="26">Смартен</option>
+           <option value="24">ВИНТОРГ МО</option>
+           <option value="27">МРФК </option>
+           <option value="28">АВАЛОНЖ</option>
+           <option value="29">АВЕСТ </option>
+           <option value="30">КОПТЕВСКИЙ РЫНОК </option>
+           <option value="45">ООО "Медицинский центр Елены Малышевой"</option>
+           <option value="31">ГК Траст Холод</option>
+           <option value="16">ПРОВИЗОР</option>
+           <option value="17">ФАРМАЦЕВТ </option>
+           <option value="19">Мособлфармация</option>
+           <option value="25">Бремор</option>
+           <option value="21">АМ ВОРОНЕЖ</option>
+           <option value="32">АМ Регион</option>
+           <option value="33">АМ Тверь</option>
+           <option value="34">АМ ЯРОСЛАВЛЬ </option>
+           <option value="56">Бо-Фарм</option>
+           <option value="35">АМ Владимир </option>
+           <option value="36">АМ РОСТОВ-НА-ДОНУ</option>
+           <option value="37">АМ ЛИПЕЦК</option>
+           <option value="38">АМ НИЖНИЙ НОВГОРОД </option>
+           <option value="39">АМ Калуга</option>
+           <option value="40">ИП Боженко А.А.</option>
+           <option value="41">Вариант 999</option>
+           <option value="42">Айдекс Лабораториз</option>
+           <option value="46">ООО "Ивоклар Вивадент"</option>
+           <option value="47">ООО «АПСЕЙЛ» (Рефро)</option>
+           <option value="48">ИП РОЗЕНТУЛ И. И.</option>
+           <option value="44">АО "Контакт"</option>
+           <option value="49">МЕГА ФАРМ КЛИНИКИ</option>
+           <option value="43">АРОМА МАРКЕТ</option>
+           <option value="50">ДА ЗДОРОВ</option>
+           <option value="51">ЛАВЕРНА XXI ВЕК</option>
+           <option value="52">СТАРАТЕЛИ </option>
+           <option value="53">НСК </option>
+           <option value="54">Фонд «Водный спорт» </option>
+           <option value="55">БРИТАРЕВ МАНУФАКТУРА ООО</option>
+           <option value="58">АДАОР ПЛЮС</option>
+           <option value="59">ПРОМСИТ ООО</option>
+           <option value="60">ДЖАСТФОЮ</option>
+           <option value="61">Частное Лицо</option>
+           <option value="62">ООО "Фрут Лайф Джус"</option>
+           <option value="63">КОМПЛЕКС ГРУПП ООО</option>
+           <option value="64">ООО «еАптека»</option>
+           <option value="5">ТД ПОЛАИР</option>
+           <option value="65">ВФГБК</option>
+           <option value="66">ООО ТД НМ </option>
+           <option value="67">ПарусИнвест</option>
+           <option value="68">ИП Цецерская СВ</option>
+           <option value="69">Перспектива</option>
+           <option value="70">ООО «ИИ»</option>
+           <option value="71">АПТЕКА- А.в.е (склад)</option>
+           <option value="72">Кофе Моментс</option>
+           <option value="73">Дельта Дистрибьюшн</option>
+           <option value="74">Калина Фарм</option>
+           <option value="75">Крымские Дары</option>
+           <option value="76">ООО "СОВРЕМЕННОЕ ПРОФЕССИОНАЛЬНОЕ ОБОРУДОВАНИЕ"</option>
+           <option value="77">ООО "Норд Вил"</option>
+           <option value="78">Буховец Наталья Васильевна</option>
+           <option value="79">ООО «ЭВЕР Нейро Фарма»</option>
+           <option value="80">ООО "Бочкаревский пивоваренный завод"</option>
+           <option value="81">АМ "Иваново"</option>
+           <option value="82">ЭВЕР Нейро Фарма</option>
+           <option value="83">АМ Рязань</option>
+           <option value="84">ООО "ИБТ"</option>
+           <option value="85">МАЙ ФРУКТ ООО</option>
+           <option value="86">ФРОСТЭКО</option>
+           <option value="23">РЕМТОРГХОЛОД /select</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Заявленная неисправность</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-floating mb-2"><select class="form-select" data-choices="data-choices"
+           data-options="{&quot;removeItemButton&quot;:true,&quot;placeholder&quot;:true}" id="s2id_autogen3_search"
+           name="operator" required="required">
+           <option value="">Заявленный вид ремонта</option>
+          </select></div>
+        </div>
+        <div class="col-md-2 mb-2">
+         <div class="form-check form-switch"><input class="form-check-input" type="checkbox" />
+          <div class="form-check-label">Ожидание запчастей</div>
+         </div>
+        </div>
+        <div class="col-md-4 mb-2"><label class="form-label" for="adress">Адрес</label><input class="form-control"
+          id="adress" placeholder="Адрес" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="s_num">Серийный номер</label><input
+          class="form-control" id="s_num" placeholder="Серийный номер" type="text" /></div>
+        <div class="col-md-2 mb-2"><label class="form-label" for="n_num">Инвентарный номер</label><input
+          class="form-control" id="n_num" placeholder="Инвентарный номер" type="text" /></div>
+        <div class="col-md-4 mb-2 d-flex align-items-end"><button
+          class="btn btn-phoenix-secondary bg-info text-white rounded-pill me-1 mb-1" type="submit" value="Найти"><span
+           class="fa fa-search me-2" data-fa-transform="shrink-3"></span>Найти</button><button
+          aria-controls="table-filter" aria-expanded="false"
+          class="btn btn-phoenix-secondary bg-danger text-white rounded-pill me-1 mb-1" data-bs-toggle="collapse"
+          href="#table-filter" role="button"><span class="me-2" data-fa-transform="shrink-3"
+           data-feather="x"></span>Отменить </button></div>
+       </div>
+      </form>
+     </div>
     </div>
    </div>
   </div>

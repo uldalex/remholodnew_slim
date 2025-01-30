@@ -1,0 +1,892 @@
+- require 'slim/include'
+- local_data = { "title": "Заявка ремонт на адресе", "subtitle": "Подзаголовок страницы если есть" }
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	include ./components/head/head.slim
+	body
+		main#top.main
+			include ./components/navbar/navbar.slim
+			include ./components/navbarDefault/navbarDefault.slim
+			include ./components/topNavSlim/topNavSlim.slim
+			include ./components/navbarTop/navbarTop.slim
+			include ./components/navbarTopSlim/navbarTopSlim.slim
+			include ./components/navbarComboSlim/navbarComboSlim.slim
+			include ./components/navbarCombo/navbarCombo.slim
+			/include ./components/dualNav/dualNav.slim
+			.content
+				h2.mb-2.lh-sm
+					= local_data[:title]
+				.text-body-tertiary.lead.mb-2
+                .d-none.d-md-block
+				    include ./components/breadcrump/breadcrump.slim	
+				.mt-4
+					.p-0
+                        .mb-5[data-theme-wizard="data-theme-wizard"]
+                            .pb-0
+                                .row.justify-content-between
+                                    ul#formTab.nav.nav-underline.nav-mobile.fs-9.p-md-3[role="tablist"]
+                                        li.nav-item
+                                            a.nav-link.active[href="#tab1" data-bs-toggle="tab" aria-selected="true" role="tab"]
+                                                | Заявка ремонт на адресе
+                                        li.nav-item
+                                            a.nav-link[href="#tab2" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Фото неисправностей
+                                        li.nav-item
+                                            a.nav-link[href="#tab3" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Результат диагностики
+                                        li.nav-item
+                                            a.nav-link[href="#tab4" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Работы
+                                        li.nav-item
+                                            a.nav-link[href="#tab5" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Запчасти
+                                        li.nav-item
+                                            a.nav-link[href="#tab6" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Транспортные расходы
+                                        li.nav-item
+                                            a.nav-link[href="#tab7" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Фото-отчет
+                                        li.nav-item
+                                            a.nav-link[href="#tab8" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Чат
+                                        li.nav-item
+                                            a.nav-link[href="#tab9" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Работы подрядчика
+                                        li.nav-item
+                                            a.nav-link[href="#tab10" data-bs-toggle="tab" aria-selected="false" role="tab"]
+                                                | Запчасти подрядчика
+                                    .tab-content.mt-2.mt-xl-0[data-wizard-form="1"]
+                                        .tab-pane.active[role="tabpanel" aria-labelledby="tab1" id="tab1"]
+                                            div	
+                                                form#wizardVerticalForm1[data-wizard-form="1"]
+                                                    .row
+                                                        .col-lg-6
+                                                            .row
+                                                                .col-12
+                                                                   .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                                | Место проведения ремонта
+                                                                            .badge.badge-phoenix.badge-phoenix-success
+                                                                                | На адресе 
+                                                                .col-xl-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Клиент
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | КОМПЛЕКС ГРУПП ООО
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Наименование обьекта
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | ООО "Альбион-2002"с 8 до 22 
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Обслуживающая компания
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                |   РемХолод      
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Контактное лицо
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | Иванов Ива Иванович
+                                                                .col-xl-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Клиентский номер
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | 12589
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Адрес
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | г.Электросталь,пр-кт Ленина д.23А
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Ответственный за эксплуатацию
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | Петров Петр Петрович
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Телефон
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | +7 900 123 45 67
+                                                                
+                                                        .col-xl-3.col-lg-6
+                                                            .row
+                                                                .col-md-6.mb-4
+                                                                    .form-icon-container
+                                                                            .form-floating.mb-2.pt-3
+                                                                                span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                                    | Статус
+                                                                                .badge.badge-phoenix.badge-phoenix-warning
+                                                                                    | Приемка в работу
+                                                                .col-md-6.mb-4
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                                | Приоритет
+                                                                            .badge.badge-phoenix.badge-phoenix-info
+                                                                                | Средний
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Дата заявки
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | 15.10.2025
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Планируемая дата
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | 15.10.2025
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Дата выполнения
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | 15.10.2025
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Норм.час
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | 0
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-3
+                                                                            label.form-icon-label.p-0.ps-2
+                                                                                | Исполнитель
+                                                                            .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                                | Иванов И.И.
+                                                                .col-md-6
+                                                                    .form-icon-container
+                                                                        .form-floating.mb-2.pt-4
+                                                                            span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                                | Работы выполнены
+                                                                            .badge.badge.text-bg-danger
+                                                                                | Нет
+                                                        .col-xl-3.col-lg-6       
+                                                            .row
+                                                                .form-icon-container.col-6
+                                                                    .form-floating.mb-2
+                                                                        span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                            | Заявленный вид ремонта
+                                                                        .badge.badge-phoenix.badge-phoenix-secondary
+                                                                            | По гарантии
+                                                                .form-icon-container.col-6
+                                                                    .form-floating.mb-2
+                                                                        span.form-icon-label.fs-10.text-uppercase.fw-bold.p-0.me-3
+                                                                            | Выявленный вид ремонта
+                                                                        .badge.badge-phoenix.badge-phoenix-warning
+                                                                            | По гарантии
+                                                            .form-icon-container
+                                                                .form-floating.mb-2.pt-3
+                                                                    label.form-icon-label.p-0.ps-2
+                                                                        | Оборудование
+                                                                    .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                        | Холодильный шкаф ICE STREAM VEGA UBC
+                                                            .form-icon-container
+                                                                .form-floating.mb-2.pt-3
+                                                                    label.form-icon-label.p-0.ps-2
+                                                                        | Серийные номер
+                                                                    .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                        | 0307071036031243816720416249
+                                                            .form-icon-container
+                                                                .form-floating.mb-2.pt-3
+                                                                    label.form-icon-label.p-0.ps-2
+                                                                        | Заявленная неисправность
+                                                                    .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                        | Не охлаждает, не горит свет
+                                                            .form-icon-container
+                                                                .form-floating.mb-2.pt-3
+                                                                    label.form-icon-label.p-0.ps-2
+                                                                        | Дополнительная информация
+                                                                    .text-primary.bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                        | нет
+                                            .mt-3
+                                                button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-arrow-left.me-2
+                                                    | Назад
+                                                button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-print.me-2
+                                                    | Распечатать заказ-наряд
+                                                button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-list-ul.me-2
+                                                    | Чек-лист
+                                                button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-qrcode.me-2
+                                                    | QR-код
+                                                button.btn.btn-subtle-info.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-history.me-2
+                                                    | История изменения статуса
+                                                button.btn.btn-subtle-success.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-edit.me-2
+                                                    | Редактирование
+                                                button.btn.btn-subtle-warning.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-share.me-2
+                                                    | Поделиться
+                                                button.btn.btn-subtle-warning.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.fas.fa-copy.me-2
+                                                    | Скопировать ссылку
+                                                button.btn.btn-danger.mb-2.me-2[type="button" data-bs-toggle="modal" data-bs-target="#fuq"]
+                                                    span.far.fa-trash-alt.me-2
+                                                    | Удалить
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab2" id="tab2"]
+                                            div
+                                                .files-container[data-files-container="data-files-container"]
+                                                    .text-center
+                                                        .file-box-wrapper.img-zoom-hover
+                                                            input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+                                                            label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+                                                            .position-relative.h-100
+                                                                .file-box.overflow-hidden
+                                                                    img.w-100.h-100.object-fit-cover[src="../images/files/9.png"]
+                                                            .dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+                                                                button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+                                                                    span.fas.fa-ellipsis-v
+                                                                .dropdown-menu.dropdown-menu-end
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Копировать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Скачать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Отправить
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Переименовать
+                                                                    hr.dropdown-divider
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-danger
+                                                                        | Удалить
+                                                            .d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+                                                                | Поломка.jpg
+                                                            .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+                                                                | 980 Kb
+                                                    .text-center
+                                                        .file-box-wrapper.img-zoom-hover
+                                                            input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+                                                            label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+                                                            .position-relative.h-100
+                                                                .file-box.overflow-hidden
+                                                                    img.w-100.h-100.object-fit-cover[src="../images/files/11.png"]
+                                                            .dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+                                                                button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+                                                                    span.fas.fa-ellipsis-v
+                                                                .dropdown-menu.dropdown-menu-end
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Копировать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Скачать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Отправить
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Переименовать
+                                                                    hr.dropdown-divider
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-danger
+                                                                        | Удалить
+                                                            .d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+                                                                | Поломка.jpg
+                                                            .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+                                                                | 980 Kb   
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab3" id="tab3"]
+                                            .row
+                                                .col-lg-9
+                                                    .row
+                                                        .col-xl-6
+                                                            .form-icon-container
+                                                                .form-floating.mb-3.pt-3
+                                                                    label.form-icon-label.p-0
+                                                                        | Выявленные неисправности
+                                                                    .bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-2.ps-2
+                                                                        | Выявлено
+                                                        .col-xl-6
+                                                            .form-icon-container
+                                                                .form-floating.mb-3.pt-3
+                                                                    label.form-icon-label.p-0
+                                                                        | Неисправности
+                                                                    .bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-2.ps-2
+                                                                        | Не выявлено
+                                                        .col-12
+                                                            .form-icon-container
+                                                                .form-floating.mb-2.pt-3
+                                                                    label.form-icon-label.p-0
+                                                                        | Комментарий
+                                                                    .bg-body-secondary.form-icon-input.rounded.fs-9.fw-bold.p-3.ps-2
+                                                                        | Нет комментария
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab4" id="tab4"]
+                                            .card-body.row
+                                                .col-lg-9
+                                                    .table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+                                                        table.table.table-hover.table-bordered
+                                                            thead.fs-10.text-uppercase
+                                                                tr
+                                                                    th.text-info.sort[scope="col" ]
+                                                                        | Категории работ
+                                                                    th.text-info-dark.sort[scope="col"]
+                                                                        | Работа
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Единица измерения
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Количество
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Цена с НДС
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Итого с НДС
+                                                                    
+
+                                                            tbody.fs-9
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                    .fs-7.text-primary.fw-bold
+                                                        | Общая стоимость с НДС 164 895 руб
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab5" id="tab5"]
+                                            .card-body.row
+                                                .col-lg-9
+                                                    .table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+                                                        table.table.table-hover.table-bordered
+                                                            thead.fs-10.text-uppercase
+                                                                tr
+                                                                    th.text-info.sort[scope="col" ]
+                                                                        | Запчасть
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Единица измерения
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Тип цены
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Количество
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Цена с НДС
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Итого с НДС
+                                                                    
+
+                                                            tbody.fs-9
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                    .fs-7.text-primary.fw-bold
+                                                        | Общая стоимость с НДС 28 895 руб
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab6" id="tab6"]
+                                            .card-body.row
+                                                .col-xl-4.col-lg-6
+                                                    .table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+                                                        table.table.table-hover.table-bordered
+                                                            thead.fs-10.text-uppercase
+                                                                tr
+                                                                    th.text-info.sort[scope="col" ]
+                                                                        | Дистанция (км)
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Стоимость
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Сумма
+                                                            tbody.fs-9
+                                                                tr
+                                                                    td.ps-2
+                                                                        | 100
+                                                                    td
+                                                                        | 350
+                                                                    td
+                                                                        | 35 000    
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab7" id="tab7"]
+                                            div
+                                                .files-container[data-files-container="data-files-container"]
+                                                    .text-center
+                                                        .file-box-wrapper.img-zoom-hover
+                                                            input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+                                                            label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+                                                            .position-relative.h-100
+                                                                .file-box.overflow-hidden
+                                                                    img.w-100.h-100.object-fit-cover[src="../images/files/9.png"]
+                                                            .dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+                                                                button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+                                                                    span.fas.fa-ellipsis-v
+                                                                .dropdown-menu.dropdown-menu-end
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Копировать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Скачать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Отправить
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Переименовать
+                                                                    hr.dropdown-divider
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-danger
+                                                                        | Удалить
+                                                            .d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+                                                                | Поломка.jpg
+                                                            .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+                                                                | 980 Kb
+                                                    .text-center
+                                                        .file-box-wrapper.img-zoom-hover
+                                                            input.form-check-input.form-check-input-transparent.position-absolute.top-0.start-0.mt-3.ms-3.z-1[type="checkbox" name="fileManagerFiles" data-bulk-select-row="data-bulk-select-row" data-file="2"]
+                                                            label.stretched-link.position-absolute.top-0.start-0.w-100.h-100
+                                                            .position-relative.h-100
+                                                                .file-box.overflow-hidden
+                                                                    img.w-100.h-100.object-fit-cover[src="../images/files/11.png"]
+                                                            .dropdown.lh-1.position-absolute.top-0.end-0.mt-2.me-2
+                                                                button.btn.btn-square-sm.text-secondary.position-relative.z-1[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+                                                                    span.fas.fa-ellipsis-v
+                                                                .dropdown-menu.dropdown-menu-end
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Копировать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Скачать
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Отправить
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-gray-600[href="#"]
+                                                                        | Переименовать
+                                                                    hr.dropdown-divider
+                                                                    a.dropdown-item.fs-9.text-decoration-none.text-danger
+                                                                        | Удалить
+                                                            .d-block.fw-bold.text-body-highlight.mt-2.text-nowrap.text-truncate.fs-9.fs-sm-8
+                                                                | Поломка.jpg
+                                                            .mb-0.fw-semibold.text-body-tertiary.fs-10.fs-sm-9
+                                                                | 980 Kb  
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab8" id="tab8"] 
+                                            .tab-content.flex-1.phoenix-offcanvas-container
+                                                    #tab-thread-1.tab-pane.h-100.fade.active.show[role="tabpanel" aria-labelledby="tab-thread-1"]
+                                                        .d-flex.flex-column.h-100
+                                                            .card-body.p-3.p-sm-4.scrollbar.chat-content-body-0
+                                                                .d-flex.chat-message
+                                                                    .d-flex.mb-2.flex-1
+                                                                        .w-100.w-xxl-75
+                                                                            .row.hover-actions-trigger.mb-3
+                                                                                .col-md-2
+                                                                                    h5
+                                                                                        | Иван Иванов
+                                                                                    span.text-body-tertiary.fs-9
+                                                                                        | Инженер
+                                                                                    p.mb-0.fs-10.text-body-tertiary.text-opacity-85.fw-semibold
+                                                                                        | 01.01.2025 10-51
+                                                                                .col-md-8.chat-message-content.received
+                                                                                    .mb-1.received-message-content.border.rounded-2.p-3.bg-white
+                                                                                        p.mb-0
+                                                                                            | Текст сообщения
+                                                                                .col-md-2.d-none.d-sm-flex
+                                                                                    .hover-actions.position-relative.align-self-center.me-2
+                                                                                        button.btn.p-2.fs-10
+                                                                                            span.fa-solid.fa-reply
+                                                                                        button.btn.p-2.fs-10
+                                                                                            span.fa-solid.fa-trash
+                                                                                .d-sm-none.hover-actions.align-self-center.me-2.end-0
+                                                                                    .bg-body-emphasis.rounded-pill.d-flex.align-items-center.px-2.actions
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-reply.text-primary
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-trash.text-primary
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-share.text-primary
+                                                                            .row.hover-actions-trigger.mb-3
+                                                                                .col-md-2
+                                                                                    h5
+                                                                                        | Иван Иванов
+                                                                                    span.text-body-tertiary.fs-9
+                                                                                        | Инженер
+                                                                                    p.mb-0.fs-10.text-body-tertiary.text-opacity-85.fw-semibold
+                                                                                        | 01.01.2025 10-51
+                                                                                .col-md-8.chat-message-content.received
+                                                                                    .mb-1.received-message-content.border.rounded-2.p-3.bg-white
+                                                                                        p.mb-0
+                                                                                            | Текст сообщения
+                                                                                .col-md-2.d-none.d-sm-flex
+                                                                                    .hover-actions.position-relative.align-self-center.me-2
+                                                                                        button.btn.p-2.fs-10
+                                                                                            span.fa-solid.fa-reply
+                                                                                        button.btn.p-2.fs-10
+                                                                                            span.fa-solid.fa-trash
+                                                                                .d-sm-none.hover-actions.align-self-center.me-2.end-0
+                                                                                    .bg-body-emphasis.rounded-pill.d-flex.align-items-center.px-2.actions
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-reply.text-primary
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-trash.text-primary
+                                                                                        button.btn.p-2[type="button"]
+                                                                                            span.fa-solid.fa-share.text-primary   
+                                                                            .row             
+                                                                                .col-md-10.mt-5
+                                                                                    .chat-textarea.received-message-content.border.rounded-2.outline-none.scrollbar.p-3.mb-1.bg-white[contenteditable="true" placeholder="Введите ваше сообщение..."]
+                                                                                    .d-flex.justify-content-between.align-items-end
+                                                                                        div
+                                                                                            label.btn.btn-link.py-0.px-2.text-body.fs-9[for="chatPhotos-0"]
+                                                                                                span.fa-solid.fa-image
+                                                                                            input#chatPhotos-0.d-none[type="file" accept="image/*"]
+                                                                                            label.btn.btn-link.py-0.px-2.text-body.fs-9[for="chatAttachment-0"]
+                                                                                                span.fa-solid.fa-paperclip
+                                                                                            input#chatAttachment-0.d-none[type="file" ]
+                                                                                        div
+                                                                                            .btn.btn-primary.fs-9[type="button"]
+                                                                                                | Отправить
+                                                                                                span.fa-solid.fa-paper-plane.ms-1
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab9" id="tab9"]
+                                            .card-body.row
+                                                .col-lg-9
+                                                    .table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+                                                        table.table.table-hover.table-bordered
+                                                            thead.fs-10.text-uppercase
+                                                                tr
+                                                                    th.text-info.sort[scope="col" ]
+                                                                        | Категории работ
+                                                                    th.text-info-dark.sort[scope="col"]
+                                                                        | Работа
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Единица измерения
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Количество
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Цена с НДС
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Итого с НДС
+                                                                    
+
+                                                            tbody.fs-9
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                                tr
+                                                                    td
+                                                                        | Категория: Ремонт
+                                                                    td
+                                                                        | Работа: Ремонт
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | 12
+                                                                    td
+                                                                        | 12 500
+                                                                    td
+                                                                        | 12 500
+                                                    .fs-7.text-primary.fw-bold
+                                                        | Общая стоимость с НДС 164 895 руб
+                                        .tab-pane[role="tabpanel" aria-labelledby="tab10" id="tab10"]
+                                            .card-body.row
+                                                .col-lg-9
+                                                    .table-responsive.table-reponsive-md.d-none.d-md-block.rounded-2.scrollbar
+                                                        table.table.table-hover.table-bordered
+                                                            thead.fs-10.text-uppercase
+                                                                tr
+                                                                    th.text-info.sort[scope="col" ]
+                                                                        | Запчасть
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Единица измерения
+                                                                    th.text-info-dark.sort[scope="col" style="width:150px"]
+                                                                        | Тип цены
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Количество
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Цена с НДС
+                                                                    th.text-info-dark.sort.w-10[scope="col" style="width:150px"]
+                                                                        | Итого с НДС
+                                                                    
+
+                                                            tbody.fs-9
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                                tr
+                                                                    td
+                                                                        | Запчасть
+                                                                    td
+                                                                        | Штука
+                                                                    td
+                                                                        | Розница
+                                                                    td
+                                                                        | 33
+                                                                    td
+                                                                        | 100
+                                                                    td
+                                                                        | 17 000
+                                                    .fs-7.text-primary.fw-bold
+                                                        | Общая стоимость с НДС 28 895 руб
+            div#fuq.modal.fade.modal[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Подсказка
+							button.btn.btn-close.p-1
+						.modal-body
+							ul.fs-9
+								li
+									p
+										| Клиентский номер – присваивается автоматически, но может быть изменен на любой другой;
+								li
+									p
+										| Дата подачи заявки-присваивается автоматически текущая дата и время;
+								li
+									p
+										| Клиент – выбираем из списка юр. название Вашей компании, если к договору привязаны несколько компаний их можно выбрать из списка;
+								li
+									p
+										| Адрес – выбираем из списка уже имеющихся адресов, которые привязаны к клиенту и нажимаем выбрать. Если необходимо создать новый адрес вносим все данные и нажимаем сохранить. Все вновь созданные адреса привязываются к клиенту автоматически и после создания доступны к выбору.
+								li
+									p
+										| Единица оборудования – из списка мы можем выбрать оборудование привязанное к данному адресу и нажимаем выбрать, если оборудование не привязано создаем новое - выбираем модель оборудования из списка и вносим серийный номер далее нажимаем сохранить.
+								li	
+									p
+										| Заявленный вид ремонта- выбираем необходимый вид ремонта.
+								li
+									p
+										| Заявленная неисправность- выбираем из имеющегося списка, если необходимого вида работ нет в списке выбираем «Прочие работы» и в графе дополнительно указываем необходимый вид работ и прочую информацию.
+								li
+									p
+										| Все остальные графы заполняются автоматически, некоторые из них доступны для редактирования.
+			div#addressForm.modal.fade.modal-xl[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Адрес
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+								i 
+									| Выберите адрес
+								.row
+									.col-md-10
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новый адрес
+								.row
+									.col-md-6
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Наименование" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Наименование
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.far.fa-edit.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Адрес" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Адрес
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fab.fa-periscope.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Контактное лицо" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Контактное лицо
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-user.text-body.fs-9.form-icon
+										.form-icon-container
+											.form-floating.mb-2
+												input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Клиентский номер" name="repair_order"	required="required" ]
+												label.form-icon-label[for="repair_order_number"]
+													| Телефон
+												.invalid-feedback
+													| Обязательно к заполнению
+											span.fas.fa-phone.text-body.fs-9.form-icon
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Обслуживающая компания"] 
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value="Филиал"] 
+
+									.col-md-6
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+			div#toolsForm.modal.fade[tabindex="-1" aria-hidden="true"]
+				.modal-dialog
+					.modal-content
+						.modal-header
+							h5.modal-title
+								| Единица оборудования
+							button.btn.btn-close.p-1
+						.modal-body
+							form#wizardVerticalForm2[data-wizard-form="2"]
+
+								.row
+									.col-4
+										.form-check.form-switch
+											input.form-check-input[type="checkbox"]
+											.form-check-label
+												| По адресу
+									.col-md-8
+										.form-floating.mb-2
+											select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+												option[value=""] 
+									.col-md-2
+										button.btn.btn-info.mb-2[data-bs-dismiss="modal" type="submit"]
+											| Выбрать
+							form#wizardVerticalForm3[data-wizard-form="3"]
+								i
+									| Или создайте новую единицу оборудования
+								.form-floating.mb-2
+									select#s2id_autogen3_search.form-select[name="operator" required="required" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}']
+										option[value="Выберите оборудование"] 
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Серийный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_number.form-icon-input.form-control[type="text" placeholder="Серийный номер" name="repair_order"	required="required" ]
+										label.form-icon-label[for="repair_order_number"]
+											| Инвентарный номер
+										.invalid-feedback
+											| Обязательно к заполнению
+								.form-icon-container
+									.form-floating.mb-2
+										input#repair_order_expected_date.form-icon-input.form-control.datetimepicker.flatpickr-input[type="text" placeholder="д.м.гг"	data-options="{"dateFormat":"d.m.Y","disableMobile":true}" required="required" readonly="readonly"]
+										label.form-icon-label[for="repair_order_expected_date"]
+											| Дата производства
+										.invalid-feedback
+											| Обязательно к заполнению
+									span.fa-solid.far.fa-calendar-alt.text-body.fs-9.form-icon
+
+						.modal-footer
+							button.btn.btn-info.mb-1[data-bs-dismiss="modal" type="submit"]
+								| Сохранить
+							button.btn.btn-phoenix-secondary.me-1.mb-1[data-bs-dismiss="modal"]
+								| Отмена
+			include ./components/supportChatContainer/supportChatContainer.slim
+		include ./components/supportTheam/supportTheam.slim
+	
+	include ./components/footer/footer.slim                                                                    

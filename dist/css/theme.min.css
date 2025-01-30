@@ -6666,6 +6666,19 @@ fieldset:disabled .table-list .page,
     margin-bottom: 0;
     list-style: none
 }
+.nav-wrap{
+    max-width:10%;
+    overflow: hidden;
+}
+@media(max-width: 1300px){
+    .nav.nav-mobile{
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-x: scroll;
+       
+    }
+}
 
 .nav-link {
     display: block;

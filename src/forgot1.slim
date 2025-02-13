@@ -1,0 +1,40 @@
+- require 'slim/include'
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	include ./components/head/head.slim
+	body
+        main#top.main
+            .container
+                .row.flex-center.min-vh-100.py-5
+                    .col-sm-10.col-md-8.col-lg-5.col-xxl-4
+                        a.d-flex.flex-center.text-decoration-none.mb-6[ href="/"]
+                            .d-flex.align-items-center.fw-bolder.fs-3.d-inline-block
+                                img[src="images/logo.svg" width="280"]
+                        .text-center.mb-7
+                            h4.text-body-highlight
+                                | Забыли пароль?
+                            p.text-body-tertiary.mb-5.fs-9
+                                | Введите логин или адрес электронной почты, и мы пришлем ссылку для сброса пароля
+                        form.d-flex.align-items-center.mb-5
+                            input#email.form-control.flex-1[type="email" placeholder="Email"]
+                            button.btn.btn-primary.ms-2
+                                | Отправить
+                                span.fas.fa-chevron-right.ms-2
+                        .text-center
+                            a.fs-9.fw-bold[href="#"]
+                                | Инструкция по разблокировке
+
+			include ./components/supportChatContainer/supportChatContainer.slim
+		include ./components/supportTheam/supportTheam.slim
+	include ./components/footer/footer.slim
+                                
+
+
+
+                                
+
+
+
+                            
+                            
+

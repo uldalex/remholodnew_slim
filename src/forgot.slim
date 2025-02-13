@@ -1,0 +1,45 @@
+- require 'slim/include'
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	include ./components/head/head.slim
+	body
+        main#top.main
+            .row.vh-100.g-0
+                .col-lg-6.position-relative.d-none.d-lg-block
+                    .bg-holder.bg-holder1
+                .col-lg-6
+                    .row.flex-center.h-100.g-0.px-4.px-sm-0
+                        .col.col-sm-6.col-lg-7.col-xl-6
+                            a.d-flex.flex-center.text-decoration-none.mb-4[ href="/"]
+                                .d-flex.align-items-center.fw-bolder.fs-3.d-inline-block
+                                    img[src="images/logo.svg" width="250"]
+                            .text-center.mb-7
+                                h4.text-body-highlight
+                                    | Забыли пароль?
+                                p.text-body-tertiary
+                                    | Введите логин или адрес электронной почты, и мы пришлем ссылку для сброса пароля
+                            form.d-flex.align-items-center.mb-5
+                                input#email.form-control.flex-1[type="email" placeholder="Email"]
+                                button.btn.btn-primary.ms-2
+                                    | Отправить
+                                    span.fas.fa-chevron-right.ms-2
+                            a.fs-9.fw-bold.text-center[href="#"]
+                                | Инструкция по разблокировке
+
+            javascript:
+                document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelector("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
+            include ./components/supportChatContainer/supportChatContainer.slim
+	    include ./components/supportTheam/supportTheam.slim
+    include ./components/footer/footer.slim   
+
+                                    
+
+
+
+                                    
+
+
+
+                                
+                                
+

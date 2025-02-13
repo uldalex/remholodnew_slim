@@ -50,12 +50,9 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                     .text-center
                         a.fs-9.fw-bold[href="/"]
                             | Инструкция по разблокировке
-
-javascript:
-    document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelectorS("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
-
-
-                                
+			include ./components/supportChatContainer/supportChatContainer.slim
+		include ./components/supportTheam/supportTheam.slim
+	include ./components/footer/footer.slim                          
 
 
 

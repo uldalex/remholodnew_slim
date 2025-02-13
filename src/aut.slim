@@ -6,7 +6,7 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
         main#top.main
             .row.vh-100.g-0
                 .col-lg-6.position-relative.d-none.d-lg-block
-                    .bg-holder[style="background-image:url(images/aut_bg.webp);"]
+                    .bg-holder.bg-holder1
                 .col-lg-6
                     .row.flex-center.h-100.g-0.px-4.px-sm-0
                         .col.col-sm-6.col-lg-7.col-xl-6
@@ -55,9 +55,11 @@ html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data
                                 a.fs-9.fw-bold[href="/"]
                                     | Инструкция по разблокировке
 
-        javascript:
-            document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelector("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
-
+            javascript:
+                document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelector("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
+            include ./components/supportChatContainer/supportChatContainer.slim
+	    include ./components/supportTheam/supportTheam.slim
+    include ./components/footer/footer.slim   
 
                                     
 

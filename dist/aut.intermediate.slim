@@ -1,0 +1,104 @@
+- require 'slim/include'
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	head
+	meta[charset="utf-8"]
+	meta[http-equiv="X-UA-Compatible" content="IE=edge"]
+ 	meta[name="viewport" content="width=device-width, initial-scale=1"]
+ 	title 
+		| РемТоргХолод
+	link[rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"]
+	link[rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"]
+	link[rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"]
+	link[rel="shortcut icon" type="image/x-icon" href="images/favicon.png"]
+	link[rel="manifest" href="images/manifest.json"]
+	meta[name="msapplication-TileImage" content="images/mstile-150x150.png"]
+	meta[name="theme-color" content="#ffffff"]
+	script[src="js/imagesloaded.pkgd.min.js"]
+	script[src="js/simplebar.min.js"]
+	script[src="js/config.js"]
+	link[rel="preconnect" href="https://fonts.googleapis.com"]
+	link[rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""]
+	link[rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"]
+	link[href="css/simplebar.min.css" rel="stylesheet"]
+	link[href="css/flatpickr.min.css" rel="stylesheet"]
+    link[href="css/dropzone.css" rel="stylesheet"]
+	link[href="css/line.css" type="text/css" rel="stylesheet"]
+	link[href="css/choices.min.css" type="text/css" rel="stylesheet"]
+	link#style-rtl[href="css/theme-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#style-default[href="css/theme.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-rtl[href="css/user-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-default[href="css/user.min.css" type="text/css" rel="stylesheet"]
+	javascript:
+		var phoenixIsRTL = window.config.config.phoenixIsRTL; if (phoenixIsRTL) { var linkDefault = document.getElementById('style-default'); var userLinkDefault = document.getElementById('user-style-default'); linkDefault.setAttribute('disabled', true); userLinkDefault.setAttribute('disabled', true); document.querySelector('html').setAttribute('dir', 'rtl'); } else { var linkRTL = document.getElementById('style-rtl'); var userLinkRTL = document.getElementById('user-style-rtl'); linkRTL.setAttribute('disabled', true); userLinkRTL.setAttribute('disabled', true); } 
+	link[href="css/leaflet.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.Default.css" rel="stylesheet"]
+	body
+        main#top.main
+            .row.vh-100.g-0
+                .col-lg-6.position-relative.d-none.d-lg-block
+                    .bg-holder[style="background-image:url(images/aut_bg.webp);"]
+                .col-lg-6
+                    .row.flex-center.h-100.g-0.px-4.px-sm-0
+                        .col.col-sm-6.col-lg-7.col-xl-6
+                            a.d-flex.flex-center.text-decoration-none.mb-4[ href="/"]
+                                .d-flex.align-items-center.fw-bolder.fs-3.d-inline-block
+                                    img[src="images/logo.svg" width="250"]
+                            .text-center.mb-7
+                                h3.text-body-highlight
+                                    | Войти
+                                p.text-body-tertiary
+                                    | Войдите в свой аккаунт
+                            button.btn.btn-phoenix-secondary.w-100.mb-3
+                                span.fabfa-google.text-danger.me-2.fs-9
+                                | Войти с аккаунтом Google
+                            .position-relative
+                                .bg-body-secondary.mt-5.mb-4
+                                    .divider-content-center
+                                        | или используйте email
+                            .mb-3.text-start
+                                label.form-label[for="email"]
+                                    | Ваш e-mail
+                                .form-icon-container
+                                    input#email.form-control.form-icon-input[type="email" placeholder="name@remtorgholod.ru"]
+                                    span.fas.fa-user.text-body.fs-9.form-icon
+                            .mb-3.text-start
+                                label.form-label[for="password"]
+                                    | Пароль
+                                .form-icon-container
+                                    input#password.form-control.form-icon-input[type="password" placeholder="******" data-password-input="data-password-input"]
+                                    span.fa.fa-key.text-body.fs-9.form-icon
+                                    button.btn.px-3.py-0.h-100.position-absolute.top-0.end-0.fs-7.text-body-tertiary[data-password-toggle="data-password-toggle"]
+                                        span.uil.uil-eye.show
+                                        cpan.uil.uil-eye-slash.hide
+                            .row.flex-between-center.mb-7
+                                .col-auto
+                                    .form-check.mb-0
+                                        input#basic-checkbox.form-check-input[type="checkbox" checked="checked"]
+                                        label.form-check-label.mb-0[for="basic-checkbox"]
+                                            | Запомнить меня
+                                .col-auto
+                                    a.fs-9.fw-semibold[href="forgot-password.html"]
+                                        | Забыли пароль?
+                            button.btn.btn-primary.w-100.mb-3
+                                | Войти
+                            .text-center
+                                a.fs-9.fw-bold[href="/"]
+                                    | Инструкция по разблокировке
+
+        javascript:
+            document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelector("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
+
+
+                                    
+
+
+
+                                    
+
+
+
+                                
+                                
+

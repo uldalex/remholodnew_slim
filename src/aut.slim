@@ -1,0 +1,72 @@
+- require 'slim/include'
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	include ./components/head/head.slim
+	body
+        main#top.main
+            .row.vh-100.g-0
+                .col-lg-6.position-relative.d-none.d-lg-block
+                    .bg-holder[style="background-image:url(images/aut_bg.webp);"]
+                .col-lg-6
+                    .row.flex-center.h-100.g-0.px-4.px-sm-0
+                        .col.col-sm-6.col-lg-7.col-xl-6
+                            a.d-flex.flex-center.text-decoration-none.mb-4[ href="/"]
+                                .d-flex.align-items-center.fw-bolder.fs-3.d-inline-block
+                                    img[src="images/logo.svg" width="250"]
+                            .text-center.mb-7
+                                h3.text-body-highlight
+                                    | Войти
+                                p.text-body-tertiary
+                                    | Войдите в свой аккаунт
+                            button.btn.btn-phoenix-secondary.w-100.mb-3
+                                span.fabfa-google.text-danger.me-2.fs-9
+                                | Войти с аккаунтом Google
+                            .position-relative
+                                .bg-body-secondary.mt-5.mb-4
+                                    .divider-content-center
+                                        | или используйте email
+                            .mb-3.text-start
+                                label.form-label[for="email"]
+                                    | Ваш e-mail
+                                .form-icon-container
+                                    input#email.form-control.form-icon-input[type="email" placeholder="name@remtorgholod.ru"]
+                                    span.fas.fa-user.text-body.fs-9.form-icon
+                            .mb-3.text-start
+                                label.form-label[for="password"]
+                                    | Пароль
+                                .form-icon-container
+                                    input#password.form-control.form-icon-input[type="password" placeholder="******" data-password-input="data-password-input"]
+                                    span.fa.fa-key.text-body.fs-9.form-icon
+                                    button.btn.px-3.py-0.h-100.position-absolute.top-0.end-0.fs-7.text-body-tertiary[data-password-toggle="data-password-toggle"]
+                                        span.uil.uil-eye.show
+                                        cpan.uil.uil-eye-slash.hide
+                            .row.flex-between-center.mb-7
+                                .col-auto
+                                    .form-check.mb-0
+                                        input#basic-checkbox.form-check-input[type="checkbox" checked="checked"]
+                                        label.form-check-label.mb-0[for="basic-checkbox"]
+                                            | Запомнить меня
+                                .col-auto
+                                    a.fs-9.fw-semibold[href="forgot-password.html"]
+                                        | Забыли пароль?
+                            button.btn.btn-primary.w-100.mb-3
+                                | Войти
+                            .text-center
+                                a.fs-9.fw-bold[href="/"]
+                                    | Инструкция по разблокировке
+
+        javascript:
+            document.addEventListener("DOMContentLoaded", function() {let passwordInput = document.querySelector("[data-password-input]");  let toggleButton = document.querySelector("[data-password-toggle]"); if (passwordInput && toggleButton) { toggleButton.addEventListener("click", function() { if (passwordInput.type === "password") { passwordInput.type = "text";  toggleButton.classList.add("show-password"); } else {passwordInput.type = "password"; toggleButton.classList.remove("show-password"); } });  }  });
+
+
+                                    
+
+
+
+                                    
+
+
+
+                                
+                                
+

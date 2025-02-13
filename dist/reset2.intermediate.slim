@@ -1,0 +1,358 @@
+- require 'slim/include'
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	head
+	meta[charset="utf-8"]
+	meta[http-equiv="X-UA-Compatible" content="IE=edge"]
+ 	meta[name="viewport" content="width=device-width, initial-scale=1"]
+ 	title 
+		| РемТоргХолод
+	link[rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png"]
+	link[rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"]
+	link[rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png"]
+	link[rel="shortcut icon" type="image/x-icon" href="images/favicon.png"]
+	link[rel="manifest" href="images/manifest.json"]
+	meta[name="msapplication-TileImage" content="images/mstile-150x150.png"]
+	meta[name="theme-color" content="#ffffff"]
+	script[src="js/imagesloaded.pkgd.min.js"]
+	script[src="js/simplebar.min.js"]
+	script[src="js/config.js"]
+	link[rel="preconnect" href="https://fonts.googleapis.com"]
+	link[rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""]
+	link[rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&amp;display=swap"]
+	link[href="css/simplebar.min.css" rel="stylesheet"]
+	link[href="css/flatpickr.min.css" rel="stylesheet"]
+    link[href="css/dropzone.css" rel="stylesheet"]
+	link[href="css/line.css" type="text/css" rel="stylesheet"]
+	link[href="css/choices.min.css" type="text/css" rel="stylesheet"]
+	link#style-rtl[href="css/theme-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#style-default[href="css/theme.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-rtl[href="css/user-rtl.min.css" type="text/css" rel="stylesheet"]
+	link#user-style-default[href="css/user.min.css" type="text/css" rel="stylesheet"]
+	javascript:
+		var phoenixIsRTL = window.config.config.phoenixIsRTL; if (phoenixIsRTL) { var linkDefault = document.getElementById('style-default'); var userLinkDefault = document.getElementById('user-style-default'); linkDefault.setAttribute('disabled', true); userLinkDefault.setAttribute('disabled', true); document.querySelector('html').setAttribute('dir', 'rtl'); } else { var linkRTL = document.getElementById('style-rtl'); var userLinkRTL = document.getElementById('user-style-rtl'); linkRTL.setAttribute('disabled', true); userLinkRTL.setAttribute('disabled', true); } 
+	link[href="css/leaflet.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.css" rel="stylesheet"]
+	link[href="css/MarkerCluster.Default.css" rel="stylesheet"]
+	body
+        main#top.main
+            .container-fluid.bg-body-tertiary.dark__bg-gray-1200
+                .bg-holder.bg-holder2.bg-auth-card-overlay
+                .row.flex-center.position-relative.min-vh-100.g-0.py-5
+                    .col-11.col-sm-10.col-xl-8
+                        .card.border.border-translucent.auth-card
+                            .card-body.pe-md-0
+                                .row.align-items-center.gx-0.gy-7
+                                    .col-auto.bg-body-highlight.dark__bg-gray-1100.rounded-3.position-relative.overflow-hidden.auth-title-box
+                                        .bg-holder.bg-holder3
+                                        .position-relative.px-4.px-lg-7.pt-7.pb-7.pb-sm-5.text-center.text-md-start.pb-lg-7.pb-md-7
+                                            h3.mb-3.text-body-emphasis.fs-7
+                                                | РемТехХолод
+                                            p.text-body-tertiary
+                                                | Ваш инструмент для контроля, учета и удобного управления. Цифровой помощник для работы без хаоса.
+                                            ul.list-unstyled.mb-0.w-max-content.w-md-auto
+                                                li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Контроль
+                                                li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Учет
+                                                li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Мониторинг
+                                                li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Анализ
+                                                li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Оптимизация, управление.
+                                                        li.d-flex.align-items-center
+                                                    span.uil.uil-check-circle.text-success.me-2
+                                                    span.text-body-tertiary.fw-semibold
+                                                        | Управление.
+                                        .position-relative.z-n1.mb-6.d-none.d-md-block.text-center.mt-md-15
+                                            img.w-100[src="images/holod.svg"]
+                                    .col.mx-auto
+                                        .auth-form-box
+                                            .text-center.mb-7
+                                                a.d-flex.flex-center.text-decoration-none.mb-4[ href="/"]
+                                                    .d-flex.align-items-center.fw-bolder.fs-3.d-inline-block
+                                                        img[src="images/logo.svg" width="250"]
+                                                .text-center.mb-7
+                                                    h3.text-body-highlight
+                                                        | Сброс пароля
+                                                    p.text-body-tertiary
+                                                        | Создайте новый пароль
+                                                form.mt-5
+                                                    .position-relative.mb-2 [data-password="data-password"]
+                                                        input#password.form-control.form-icon-input.pe-6[type="password" placeholder="Придумайте новый пароль" data-password-input="data-password-input"]
+                                                        button.btn.px-3.py-0.h-100.position-absolute.top-0.end-0.fs-7.text-body-tertiary[data-password-toggle="data-password-toggle"]
+                                                            span.uil.uil-eye.show
+                                                            span.uil.uil-eye-slash.hide"
+                                                    .position-relative.mb-4[data-password="data-password"]
+                                                        input#confirmPassword.form-control.form-icon-input.pe-6[type="password" placeholder="Подтвердите новый пароль" data-password-input="data-password-input"]
+                                                            button.btn.px-3.py-0.h-100.position-absolute.top-0.end-0.fs-7.text-body-tertiary[data-password-toggle="data-password-toggle"]
+                                                                span.uil.uil-eye.show
+                                                                span.uil.uil-eye-slash.hide"
+        
+			div.support-chat-container
+				.container-fluid.support-chat	
+					.card.bg-body-emphasis
+						.card-header.d-flex.flex-between-center.px-4.py-3.border-bottom.border-translucent
+							h5.mb-0.d-flex.align-items-center.gap-2
+								| Чат с поддержкой
+								span.fa-solid.fa-circle.text-success.fs-11
+							.btn-reveal-trigger
+								button#support-chat-dropdown.btn.btn-link.p-0.dropdown-toggle.dropdown-caret-none.transition-none.d-flex[type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]
+									span.fas.fa-ellipsis-h.text-body
+								.dropdown-menu.dropdown-menu-end.py-2[aria-labelledby="support-chat-dropdown"]
+									a.dropdown-item[href="#!"]
+										| Запросить обратный звонок
+									a.dropdown-item[href="#!"]
+										| Поиск в чате
+									a.dropdown-item[href="#!"]
+										| Показать историю
+									a.dropdown-item[href="#!"]
+										| Заявка в техподдержку
+									a.dropdown-item.btn-support-chat[href="#!"]
+										| Закрыть
+						.card-body.chat.p-0
+							.d-flex.flex-column-reverse.scrollbar.h-100.p-3
+								.text-end.mt-6
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужна помощь
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Я не могу найти нужный документ
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Нужно искать по номеру?
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+									a.mb-2.d-inline-flex.align-items-center.text-decoration-none.text-body-emphasis.bg-body-hover.rounded-pill.border.border-primary.py-2.ps-4.pe-3[href="#!"]
+										p.mb-0.fw-semibold.fs-9
+											| Ответьте!
+										span.fa-solid.fa-paper-plane.text-primary.fs-9.ms-3
+								.text-center.mt-auto
+									.avatar.avatar-3xl.status-online
+										img.rounded-circle[src="images/30.webp" alt=""]
+									h5.mt-2.mb-3
+										| Иван Иванов
+									p.text-center.text-body-emphasis.mb-0
+									  | Задайте нам любой вопрос — мы ответим вам здесь или по электронной почте в течение 24 часов.
+						.card-footer.d-flex.align-items-center.gap-2.border-top.border-translucent.ps-3.pe-4.py-3
+							.d-flex.align-items-center.flex-1.gap-3.border.border-translucent.rounded-pill.px-4
+								input.form-control.outline-none.border-0.flex-1.fs-9.px-0[ type="text" placeholder="Напишите сообщение"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatPhotos"]
+									span.fa-solid.fa-image
+								input#supportChatPhotos.d-none[type="file" accept="image/*"]
+								label.btn.btn-link.d-flex.p-0.text-body-quaternary.fs-9.border-0[for="supportChatAttachment"]
+									span.fa-solid.fa-paperclip
+								input#supportChatAttachment.d-none[type="file"]
+							button.btn.p-0.border-0.send-btn
+								span.fa-solid.fa-paper-plane.fs-9
+
+				button.btn.p-0.border.border-translucent.btn-support-chat
+					span.fs-8.btn-text.text-primary.text-nowrap
+						| Чат
+					span.fa-solid.fa-circle.text-success.fs-9.ms-2
+					span.fa-solid.fa-chevron-down.text-primary.fs-7
+		#settings-offcanvas.offcanvas.offcanvas-end.settings-panel.border-0[tabindex="-1" aria-labelledby="settings-offcanvas"]
+				.offcanvas-header.align-items-start.border-bottom.flex-column.border-translucent
+					.pt-1.w-100.mb-6.d-flex.justify-content-between.align-items-start
+						div
+							h5.mb-2.me-2.lh-sm
+								span.fas.fa-palette.me-2.fs-8
+								| Настройки портала
+							p.mb-0.fs-9
+								| Настройте портал "под себя"
+						button.btn.p-1.fw-bolder[type="button" data-bs-dismiss="offcanvas" aria-label="Close"]
+							span.fas.fa-times.fs-8
+					button.btn.btn-phoenix-secondary.w-100[data-theme-control="reset"]
+						span.fas.fa-arrows-rotate.me-2.fs-10
+						| Сбросить настройки 
+				#themeController.offcanvas-body.scrollbar.px-card
+					.setting-panel-item.mt-0
+						h5.setting-panel-item-title
+							| Цвета темы:
+						.row.gx-2
+							.col-4
+								input#themeSwitcherLight.btn-check[name="theme-color" type="radio" value="light" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherLight"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/default-light.png" alt=""]
+									span.label-text
+									| Светлый
+							.col-4
+								input#themeSwitcherDark.btn-check[name="theme-color" type="radio" value="dark" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherDark"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/default-dark.png" alt=""]
+									span.label-text
+									| Темный
+							.col-4
+								input#themeSwitcherAuto.btn-check[name="theme-color" type="radio" value="auto" data-theme-control="phoenixTheme"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="themeSwitcherAuto"]
+									span.mb-2.rounded.d-block
+									img.img-fluid.img-prototype.mb-0[src="images/auto.png" alt=""]
+									span.label-text
+									| Авто
+					.border.border-translucent.rounded-3.p-4.setting-panel-item.bg-body-emphasis
+						.d-flex.justify-content-between.align-items-center
+							h5.setting-panel-item-title.mb-1
+								| Чат поддержки 
+							.form-check.form-switch.mb-0
+								input.form-check-input.ms-auto[type="checkbox" data-theme-control="phoenixSupportChat"]
+							p.mb-0.text-body-tertiary
+								| Показать\Скрыть чат
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Настройка рабочих панелей
+						.row.gx-2
+							.col-6
+								input#navbarPositionVertical.btn-check[name="navigation-type" type="radio" value="vertical" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionVertical"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/default-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/default-dark.png" alt=""]
+									span.label-text
+										| Вертикальная
+							.col-6
+								input#navbarPositionHorizontal.btn-check[name="navigation-type" type="radio" value="horizontal" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionHorizontal"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/top-default-dark.png" alt=""]
+									span.label-text
+										| Горизонтальная
+							.col-6
+								input#navbarPositionCombo.btn-check[name="navigation-type" type="radio" value="combo" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionCombo"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/nav-combo-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/nav-combo-dark.png" alt=""]
+									span.label-text
+										| Комбмнированная
+							.col-6
+								input#navbarPositionTopDouble.btn-check[name="navigation-type" type="radio" value="dual-nav" data-theme-control="phoenixNavbarPosition"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarPositionTopDouble"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none[src="images/dual-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/dual-dark.png" alt=""]
+									span.label-text
+										| В две строки
+					.setting-panel-item
+							h5.setting-panel-item-title
+								| Настройка вертикального меню
+							.row.gx-2
+								.col-6
+									input#navbar-style-default.btn-check[type="radio" name="config.name" value="default" data-theme-control="phoenixNavbarVerticalStyle"]
+									label.btn.d-block.w-100.btn-navbar-style.fs-9[for="navbar-style-default"]
+										img.img-fluid.img-prototype.d-dark-none[src="images/default-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/default-dark.png" alt=""]
+										span.label-text.d-dark-none
+											|  По умолчанию
+										span.label-text.d-light-none
+											| По умолчанию
+								.col-6
+									input#navbar-style-dark.btn-check[type="radio" name="config.name" value="darker" data-theme-control="phoenixNavbarVerticalStyle"]
+									label.btn.d-block.w-100.btn-navbar-style.fs-9[for="navbar-style-dark"]
+										img.img-fluid.img-prototype.d-dark-none[src="images/vertical-darker.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none[src="images/vertical-lighter.png" alt=""]
+										span.label-text.d-dark-none
+											| Темный
+										span.label-text.d-light-none
+											| Светлый
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Настройка горизонтального меню
+						.row.gx-2
+							.col-6
+								input#navbarShapeDefault.btn-check[name="navbar-shape" type="radio" value="default" data-theme-control="phoenixNavbarTopShape"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarShapeDefault"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-default-dark.png" alt=""]
+									span.label-text
+										| По умолчанию
+							.col-6
+								input#navbarShapeSlim.btn-check[name="navbar-shape" type="radio" value="slim" data-theme-control="phoenixNavbarTopShape"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarShapeSlim"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-slim.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-slim-dark.png" alt=""]
+									span.label-text
+										|  Узкое
+					.setting-panel-item
+						h5.setting-panel-item-title
+							| Цвет горизонтального меню
+						.row.gx-2
+							.col-6
+								input#navbarTopDefault.btn-check[name="navbar-top-style" type="radio" value="default" data-theme-control="phoenixNavbarTopStyle"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarTopDefault"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/top-default.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-style-darker.png" alt=""]
+									span.label-text
+										| По умолчанию
+							.col-6
+								input#navbarTopDarker.btn-check[name="navbar-top-style" type="radio" value="darker" data-theme-control="phoenixNavbarTopStyle"]
+								label.btn.d-inline-block.btn-navbar-style.fs-9[for="navbarTopDarker"]
+									span.mb-2.rounded.d-block
+										img.img-fluid.img-prototype.d-dark-none.mb-0[src="images/navbar-top-style-light.png" alt=""]
+										img.img-fluid.img-prototype.d-light-none.mb-0[src="images/top-style-lighter.png" alt=""]
+									span.label-text.d-dark-none
+										| Темный
+									span.label-text.d-light-none
+										| Светлый    
+a.card.setting-toggle[href="#settings-offcanvas" data-bs-toggle="offcanvas"]
+	.card-body.d-flex.align-items-center.px-2.py-1
+		.position-relative.rounded-start[style="height:34px;width:28px"]
+			.settings-popover
+				span.ripple
+					span.fa-spin.position-absolute.all-0.d-flex.flex-center
+						span.icon-spin.position-absolute.all-0.d-flex.flex-center
+		small.text-uppercase.text-body-tertiary.fw-bold.py-2.pe-2.ps-1.rounded-end
+			| Настроить
+
+
+	include ./src/components/modals/modal_search.slim
+javascript:
+	var navbarTopShape = window.config.config.phoenixNavbarTopShape; var navbarPosition = window.config.config.phoenixNavbarPosition; var body = document.querySelector('body'); var navbarDefault = document.querySelector('#navbarDefault'); var navbarTop = document.querySelector('#navbarTop'); var topNavSlim = document.querySelector('#topNavSlim'); var navbarTopSlim = document.querySelector('#navbarTopSlim'); var navbarCombo = document.querySelector('#navbarCombo'); var navbarComboSlim = document.querySelector('#navbarComboSlim'); var dualNav = document.querySelector('#dualNav'); var documentElement = document.documentElement; var navbarVertical = document.querySelector('.navbar-vertical'); if (navbarPosition === 'dual-nav') { topNavSlim.remove(); navbarTop.remove(); navbarVertical.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarDefault.remove(); dualNav.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'dual'); } else if (navbarTopShape === 'slim' && navbarPosition === 'vertical') { navbarDefault.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); dualNav.remove(); topNavSlim.style.display = 'block'; navbarVertical.style.display = 'inline-block'; document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'slim' && navbarPosition === 'horizontal') { navbarDefault.remove(); navbarVertical.remove(); navbarTop.remove(); topNavSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); dualNav.remove(); navbarTopSlim.removeAttribute('style'); document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'slim' && navbarPosition === 'combo') { navbarDefault.remove(); navbarTop.remove(); topNavSlim.remove(); navbarCombo.remove(); dualNav.remove(); navbarTopSlim.remove(); navbarComboSlim.removeAttribute('style'); navbarVertical.removeAttribute('style'); document.documentElement.setAttribute('data-navbar-horizontal-shape', 'slim'); } else if (navbarTopShape === 'default' && navbarPosition === 'horizontal') { navbarDefault.remove(); topNavSlim.remove(); navbarVertical.remove(); navbarTopSlim.remove(); dualNav.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarTop.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'horizontal'); } else if (navbarTopShape === 'default' && navbarPosition === 'combo') { topNavSlim.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarDefault.remove(); navbarComboSlim.remove(); dualNav.remove(); navbarCombo.removeAttribute('style'); navbarVertical.removeAttribute('style'); document.documentElement.setAttribute('data-navigation-type', 'combo'); } else { topNavSlim.remove(); navbarTop.remove(); navbarTopSlim.remove(); navbarCombo.remove(); navbarComboSlim.remove(); navbarDefault.removeAttribute('style'); navbarVertical.removeAttribute('style'); } var navbarTopStyle = window.config.config.phoenixNavbarTopStyle; var navbarTop = document.querySelector('.navbar-top'); if (navbarTopStyle === 'darker') { navbarTop.setAttribute('data-navbar-appearance', 'darker'); } var navbarVerticalStyle = window.config.config.phoenixNavbarVerticalStyle; var navbarVertical = document.querySelector('.navbar-vertical'); if (navbarVerticalStyle === 'darker') { navbarVertical.setAttribute('data-navbar-appearance', 'darker'); }
+script[src="js/popper.min.js"]
+script[src="js/bootstrap.min.js"]
+script[src="js/anchor.min.js"]
+script[src="js/is.min.js"]
+script[src="js/all.min.js"]
+script[src="js/lodash.min.js"]
+script[src="js/list.min.js"]
+script[src="js/feather.min.js"]
+script[src="js/dayjs.min.js"]
+script[src="js/phoenix.js"]
+script[src="js/echarts.min.js"]
+script[src="js/leaflet.js"]
+script[src="js/leaflet.markercluster.js"]
+script[src="js/leaflet-tilelayer-colorfilter.min.js"]
+script[src="js/ecommerce-dashboard.js"]
+script[src="js/dropzone-min.js"]
+script[src="js/flatpickr.min.js"]
+script[src="js/prism.js"]
+script[src="js/choices.min.js"]
+                                
+
+
+
+                                
+
+
+
+                            
+                            
+

@@ -1,0 +1,333 @@
+- require 'slim/include'
+- local_data = { "title": "Оборудование", "subtitle": "Подзаголовок страницы если есть" }
+doctype html
+html[ data-navigation-type="default" data-navbar-horizontal-shape="default" data-bs-theme="light" lang="en-US" dir="ltr"]
+	include ./components/head/head.slim
+    link[href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" type="text/css" rel="stylesheet"]
+	body
+        main#top.main
+            include ./components/navbar/navbar.slim
+			include ./components/navbarDefault/navbarDefault.slim
+			include ./components/topNavSlim/topNavSlim.slim
+			include ./components/navbarTop/navbarTop.slim
+			include ./components/navbarTopSlim/navbarTopSlim.slim
+			include ./components/navbarComboSlim/navbarComboSlim.slim
+			include ./components/navbarCombo/navbarCombo.slim
+			/include ./components/dualNav/dualNav.slim
+            .content
+                h2.mb-2.lh-sm
+					= local_data[:title]
+				.text-body-tertiary.lead.mb-2
+				include ./components/breadcrump/breadcrump.slim	
+                .mt-4
+                    .mb-9[data-collapse-filemanager-sidebar="data-collapse-filemanager-sidebar"]
+                        .row.gx-4
+                            .col-auto.file-manager-sidebar
+                                div#fileManagerSideBar.phoenix-offcanvas.phoenix-offcanvas-fixed.bg-body.scrollbar.overflow-x-hidden[data-breakpoint="lg"]
+                                    .d-flex.flex-between-center
+                                        h5.mb-2
+                                            | Список оборудования
+                                        button.btn.p-0.fs-8.d-lg-none[data-phoenix-dismiss="offcanvas"]
+                                            span.fa-solid.fa-xmark
+                                    ul#treeviewExample.mb-0.treeview
+                                        li.treeview-list-item
+                                            .treeview-row
+                                            a[data-bs-toggle="collapse" href="#treeviewExample-1-1" role="button" aria-expanded="true"]
+                                                p.treeview-text.text-nowrap
+                                                    span.fa-solid.fa-folder.treeview-icon
+                                                    | Холодильные шкафы
+                                                    span.treeview-badge
+                                                        | 3
+                                                    span.treeview-dot.bg-danger
+                                            ul#treeviewExample-1-1.treeview-list.treeview-border.collapse-show.collapse.show
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-1-2" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | DEXP
+                                                    ul#treeviewExample-1-2.treeview-list.treeview-border.collapse-show.collapse
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | Холодильный шкаф
+                                    ul.mb-0.treeview
+                                        li.treeview-list-item
+                                            .treeview-row
+                                            a[data-bs-toggle="collapse" href="#treeviewExample2" role="button" aria-expanded="true"]
+                                                p.treeview-text.text-nowrap
+                                                    span.fa-solid.fa-folder.treeview-icon
+                                                    | Морозильные лари
+                                            ul#treeviewExample2.treeview-list.treeview-border.collapse-show.collapse.show
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | DEXP
+                                                    ul#treeviewExample-2-1.treeview-list.treeview-border.collapse-show.collapse.show
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-2-2" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP1
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP2  
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP3                          
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | KRAFT
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-2-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | GALATES
+                                    ul.mb-0.treeview
+                                        li.treeview-list-item
+                                            .treeview-row
+                                            a[data-bs-toggle="collapse" href="#treeviewExample3" role="button" aria-expanded="true"]
+                                                p.treeview-text.text-nowrap
+                                                    span.fa-solid.fa-folder.treeview-icon
+                                                    | Холодильные горки
+                                            ul#treeviewExample3.treeview-list.treeview-border.collapse-show.collapse.show
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-3-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | DEXP
+                                                    ul#treeviewExample-3-1.treeview-list.treeview-border.collapse-show.collapse.show
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-3-2" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP1
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-3-1" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP2  
+                                                        li.treeview-list-item
+                                                            .treeview-row
+                                                            a[data-bs-toggle="collapse" href="#treeviewExample-3-1" role="button" aria-expanded="true"]
+                                                                p.treeview-text.text-nowrap
+                                                                    span.fa-solid.fa-folder.treeview-icon
+                                                                    | DEXP3                          
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-3-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | KRAFT
+                                                li.treeview-list-item
+                                                    .treeview-row
+                                                    a[data-bs-toggle="collapse" href="#treeviewExample-3-1" role="button" aria-expanded="true"]
+                                                        p.treeview-text.text-nowrap
+                                                            span.fa-solid.fa-folder.treeview-icon
+                                                            | GALATES
+                            .col.my-files
+                                .row.g-3.flex-between-center.mb-2
+                                    .col-auto.d-flex.gap-2
+                                        a.btn.btn-info.me-2[href="repair_item.html"]
+                                            span.fa.fa-plus.pe-2
+                                            | Новое оборудование
+                                        a.btn.btn-subtle-primary[href="#table-filter" role="button"]
+                                            span.far.fa-sun.pe-2
+                                            | Новый тип оборудования
+                                    .col-auto.d-flex.gap-2
+                                        .search-box
+                                            form.position-relative
+                                                input.form-control.search-input.search
+                                                    .fas.fa-search.search-box-icon
+                                        select.form-select.w-auto
+                                            option
+                                                | последние 7 дней        
+                                .card
+                                    .card-header.py-3.px-4
+                                        .row.g-3.flex-between-center
+                                            .col-auto
+                                                h5.mb-0
+                                                    | Морозильные лари
+                                            .col-auto.d-flex 
+                                                .btn.btn-phoenix-secondary.btn-square.me-2
+                                                    span.fa-solid.fa-table-cells-large
+                                                a.border-primary.text-primary.btn.btn-phoenix-secondary.btn-square 
+                                                    span.fa-solid.fa-list 
+                                                select#dt-length-0.dt-input.form-select.mx-2.mx-sm-3[]
+                                                    option
+                                                        | По возрастанию
+                                                    option
+                                                        | По возрастаниюпо убыванию
+                                                .form-check.form-switch.d-flex.align-items-center
+                                                    input.form-check-input[role="switch" id="viewAsGroup" data-bs-toggle="tooltip" data-bs-title="Группировать"]
+                                    .card-body.pt-0
+                                        .myfiles-action-bar.mx-n4.mb-4
+                                            h6.file-manager-replace-element
+                                                | Всего 12 единиц
+                                            div#file-manager-actions.d-block.d-none
+                                                .d-flex.align-items-center
+                                                    button.btn.p-0.text-body-secondary.fs-8.me-2.me-sm-3
+                                                        span.fa-solid.fa-xmark
+                                                    mb-0.me-4.text-nowrap
+                                                        | Пять позиций найдено
+                                                    d-flex.gap-1.gap-sm-2
+                                                        button.btn.btn-phoenix-secondary.fs-10 btn-square-sm d-none d-sm-block[data-bs-toggle="tooltip" data-bs-title="Скачать"]
+                                                            span.fa-solid.fa-download
+                                                        button.btn.btn-phoenix-secondary.fs-10.btn-square-sm.d-none.d-sm-block[data-bs-toggle="tooltip" data-bs-title="Удалить"]    
+                                                            span.fa-solid.fa-trash
+                                                        button.btn.btn-phoenix-secondary.fs-10.btn-square-sm.d-none.d-sm-block[data-bs-toggle="tooltip" data-bs-title="ССылка"]   
+                                                            span.fa-solid.fa-share-nodes
+                                                        .dropdown
+                                                            .btn.btn-phoenix-secondary.btn-square-sm[ type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]    
+                                                                .fa-solid.fa-ellipsis
+                                                            .dropdown-menu.dropdown-menu-end
+                                                                a.dropdown-item.fw-semibold[href="#"]
+                                                                    | Дублировать
+                                                                a.dropdown-item.fw-semibold[href="#"]
+                                                                    | Переименовать
+                                                                hr.dropdown-divider
+                                                                a.dropdown-item.fw-semibold.text-danger
+                                                                    | Удалить
+                                            button.btn.btn-phoenix-secondary.fs-10.btn-square-sm.d-none.d-xxl-block[data-toggle-file-details="data-toggle-file-details" data-bs-toggle="tooltip" data-bs-title="Показать детали"]
+                                                span.fa-solid fa-info-circle
+                                        div#bulk-select-body.row.gx-xxl-9
+                                            .col.my-files-table.w-xxl-100 
+                                                .table-responsive.ms-n1.ps-1.me-n1.pe-1.scrollbar
+                                                    table#example.table.dataTable.fs-9.mb-0
+                                                        thead
+                                                            tr
+                                                                th.ps-0.pt-0.white-space-nowrap.align-middle.d-flex.align-items-center.dt-orderable-asc.dt-orderable-desc[style="min-width:150px;" data-dt-column="0" rowspan="1" colspan="1"] 
+                                                                    span.dt-column-order[role="button" aria-label="Имя: Activate to sort" tabindex="0"]
+                                                                    .form-check.mb-0.fs-8
+                                                                        input#bulk-select-file-manager.form-check-input[ type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;bulk-select-body&quot;,&quot;actions&quot;:&quot;bulk-select-actions&quot;,&quot;replacedElement&quot;:&quot;bulk-select-replace-element&quot;}" checked="false" indeterminate="indeterminate"]
+                                                                    span.sort.ms-8[data-sort="name"] 
+                                                                        | Полное наименование 
+                                                                th.sort.pt-0.align-middle.dt-orderable-asc.dt-orderable-desc.dt-ordering-desc[scope="col" data-sort="brend" style="min-width:150px;"]
+                                                                    span.dt-column-order[role="button" aria-label="Имя: Activate to sort" tabindex="0"]
+                                                                    | Бренд
+                                                                th.sort.pt-0.align-middle[scope="col"  style="min-width:50px;"]
+                                                                    | Операции
+                                                        tbody#table-latest-review-body.list
+                                                            tr.user-select-none
+                                                                td.align-middle.white-space-nowrap.py-0
+                                                                    .underline-on-hover.d-flex.align-items-center.position-relative.gap-3
+                                                                        input.form-check-input.fs-8.mt-0[type="checkbox" id="1" data-bulk-select-row="data-bulk-select-row" data-file="1"]
+                                                                        a.fw-semibold.text-body-highlight.name[href="#"]
+                                                                            | Холодильный шкаф 107S POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                        a.a.fw-semibold.text-body-highlight.brend[href="#"]
+                                                                            | POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                    .dropdown
+                                                                        .btn.btn-phoenix-secondary.btn-square-sm[ type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]    
+                                                                            .fa-solid.fa-ellipsis
+                                                                        .dropdown-menu.dropdown-menu-end
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Дублировать
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Переименовать
+                                                                            hr.dropdown-divider
+                                                                            a.dropdown-item.fw-semibold.text-danger
+                                                                                | Удалить
+                                                            tr.user-select-none
+                                                                td.align-middle.white-space-nowrap.py-0
+                                                                    .underline-on-hover.d-flex.align-items-center.position-relative.gap-3
+                                                                        input.form-check-input.fs-8.mt-0[type="checkbox" id="1" data-bulk-select-row="data-bulk-select-row" data-file="1"]
+                                                                        a.fw-semibold.text-body-highlight.name[href="#"]
+                                                                            | аХолодильный шкаф 107S POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                        a.a.fw-semibold.text-body-highlight.brend[href="#"]
+                                                                            | POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                    .dropdown
+                                                                        .btn.btn-phoenix-secondary.btn-square-sm[ type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]    
+                                                                            .fa-solid.fa-ellipsis
+                                                                        .dropdown-menu.dropdown-menu-end
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Дублировать
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Переименовать
+                                                                            hr.dropdown-divider
+                                                                            a.dropdown-item.fw-semibold.text-danger
+                                                                                | Удалить    
+                                                            tr.user-select-none
+                                                                td.align-middle.white-space-nowrap.py-0
+                                                                    .underline-on-hover.d-flex.align-items-center.position-relative.gap-3
+                                                                        input.form-check-input.fs-8.mt-0[type="checkbox" id="1" data-bulk-select-row="data-bulk-select-row" data-file="1"]
+                                                                        a.fw-semibold.text-body-highlight.name[href="#"]
+                                                                            | лХолодильный шкаф 107S POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                        a.a.fw-semibold.text-body-highlight.brend[href="#"]
+                                                                            | POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                    .dropdown
+                                                                        .btn.btn-phoenix-secondary.btn-square-sm[ type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]    
+                                                                            .fa-solid.fa-ellipsis
+                                                                        .dropdown-menu.dropdown-menu-end
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Дублировать
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Переименовать
+                                                                            hr.dropdown-divider
+                                                                            a.dropdown-item.fw-semibold.text-danger
+                                                                                | Удалить
+                                                            tr.user-select-none
+                                                                td.align-middle.white-space-nowrap.py-0
+                                                                    .underline-on-hover.d-flex.align-items-center.position-relative.gap-3
+                                                                        input.form-check-input.fs-8.mt-0[type="checkbox" id="1" data-bulk-select-row="data-bulk-select-row" data-file="1"]
+                                                                        a.fw-semibold.text-body-highlight.name[href="#"]
+                                                                            | Холодильный шкаф 107S POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                        a.a.fw-semibold.text-body-highlight.brend[href="#"]
+                                                                            | POLAIR
+                                                                td.align-middle.shared.white-space-nowrap.ps-3
+                                                                    .dropdown
+                                                                        .btn.btn-phoenix-secondary.btn-square-sm[ type="button" data-bs-toggle="dropdown" data-boundary="window" aria-haspopup="true" aria-expanded="false" data-bs-reference="parent"]    
+                                                                            .fa-solid.fa-ellipsis
+                                                                        .dropdown-menu.dropdown-menu-end
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Дублировать
+                                                                            a.dropdown-item.fw-semibold[href="#"]
+                                                                                | Переименовать
+                                                                            hr.dropdown-divider
+                                                                            a.dropdown-item.fw-semibold.text-danger
+                                                                                | Удалить                    
+
+                                                                       
+
+			include ./components/supportChatContainer/supportChatContainer.slim
+		include ./components/supportTheam/supportTheam.slim
+	include ./components/footer/footer.slim
+    script[src="https://code.jquery.com/jquery-3.7.1.js"]
+    script[src="https://code.jquery.com/jquery-3.7.1.js"]
+    script[src="https://cdn.datatables.net/2.2.2/js/dataTables.js"]
+    javascript:
+        new DataTable('#example');                   
+
+
+
+                                
+
+
+
+                            
+                            
+
